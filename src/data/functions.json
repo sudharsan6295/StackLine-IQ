@@ -4,83 +4,183 @@
     "name": "Software Development",
     "shortName": "Dev",
     "description": "Writing, reviewing, and shipping application code faster with AI pair programmers and code-generation agents.",
-    "icon": "Code2"
+    "icon": "Code2",
+    "subtypes": [
+      "Frontend & UI code",
+      "Backend & APIs",
+      "Mobile development",
+      "Autonomous coding agents",
+      "Code review & refactoring"
+    ]
   },
   {
     "id": "product-ideation",
     "name": "Product & Ideation",
     "shortName": "Product",
     "description": "Turning market signals into validated product bets: research synthesis, PRDs, prototyping, and roadmap planning.",
-    "icon": "Lightbulb"
+    "icon": "Lightbulb",
+    "subtypes": [
+      "Market & competitor research",
+      "User research synthesis",
+      "PRD & spec writing",
+      "Roadmapping",
+      "Rapid prototyping"
+    ]
   },
   {
     "id": "qa-testing",
     "name": "QA & Testing",
     "shortName": "QA",
     "description": "Generating, running, and maintaining automated tests, and finding regressions before customers do.",
-    "icon": "FlaskConical"
+    "icon": "FlaskConical",
+    "subtypes": [
+      "Functional test automation",
+      "Visual regression testing",
+      "Performance testing",
+      "Test case generation"
+    ]
   },
   {
     "id": "devops-operations",
     "name": "DevOps & Operations",
     "shortName": "DevOps",
     "description": "Infrastructure-as-code, incident response, observability, and operational automation.",
-    "icon": "Server"
+    "icon": "Server",
+    "subtypes": [
+      "CI/CD automation",
+      "Infrastructure as code",
+      "Incident response & AIOps",
+      "Cloud cost management"
+    ]
   },
   {
     "id": "sales",
     "name": "Sales",
     "shortName": "Sales",
     "description": "Prospecting, call intelligence, proposal generation, and deal-desk automation for revenue teams.",
-    "icon": "TrendingUp"
+    "icon": "TrendingUp",
+    "subtypes": [
+      "Prospecting & lead enrichment",
+      "Conversation intelligence",
+      "Deal forecasting",
+      "Proposal & contract generation"
+    ]
   },
   {
     "id": "marketing",
     "name": "Marketing",
     "shortName": "Marketing",
     "description": "Content, campaign, SEO, and creative generation at the pace modern marketing teams need.",
-    "icon": "Megaphone"
+    "icon": "Megaphone",
+    "subtypes": [
+      "Content & copywriting",
+      "SEO & AI-search optimization",
+      "Creative & design production",
+      "Campaign & lead-scoring automation"
+    ]
   },
   {
     "id": "customer-support",
     "name": "Customer Support",
     "shortName": "Support",
     "description": "Deflecting routine tickets, assisting agents in real time, and mining conversations for product signal.",
-    "icon": "Headset"
+    "icon": "Headset",
+    "subtypes": [
+      "Ticket deflection & chatbots",
+      "Agent-assist & copilot",
+      "Voice & IVR automation",
+      "Support analytics"
+    ]
   },
   {
     "id": "executive-leadership-analytics",
     "name": "Executive Leadership & Analytics",
     "shortName": "Analytics",
     "description": "Business intelligence copilots and analytics assistants that turn company data into decisions.",
-    "icon": "LineChart"
+    "icon": "LineChart",
+    "subtypes": [
+      "Natural-language BI & dashboards",
+      "Forecasting & scenario planning",
+      "Data storytelling",
+      "Strategic reporting"
+    ]
   },
   {
     "id": "finance",
     "name": "Finance",
     "shortName": "Finance",
     "description": "FP&A modeling, close automation, spend analysis, and finance-grade AI copilots.",
-    "icon": "Landmark"
+    "icon": "Landmark",
+    "subtypes": [
+      "FP&A & forecasting",
+      "Accounts payable automation",
+      "Expense & spend management",
+      "Treasury & cash management"
+    ]
   },
   {
     "id": "hr-talent",
     "name": "HR & Talent",
     "shortName": "HR",
     "description": "Sourcing, screening, onboarding, and people-ops automation for talent teams.",
-    "icon": "Users"
+    "icon": "Users",
+    "subtypes": [
+      "Sourcing & screening",
+      "Performance management",
+      "Learning & development",
+      "People analytics"
+    ]
   },
   {
     "id": "legal-compliance",
     "name": "Legal & Compliance",
     "shortName": "Legal",
     "description": "Contract review, policy drafting, and compliance research with AI-assisted legal workflows.",
-    "icon": "Scale"
+    "icon": "Scale",
+    "subtypes": [
+      "Contract review & redlining",
+      "Contract lifecycle management",
+      "Compliance & regulatory research",
+      "IP & patent research"
+    ]
   },
   {
     "id": "cross-company-ai-assistants",
     "name": "Cross-Company AI Assistants & Knowledge",
     "shortName": "Knowledge",
     "description": "General-purpose assistants and enterprise search/knowledge tools used across every function.",
-    "icon": "Bot"
+    "icon": "Bot",
+    "subtypes": [
+      "General-purpose chat assistant",
+      "Enterprise search & knowledge retrieval",
+      "Meeting notes & summarization",
+      "Workplace copilot (docs/email/chat)"
+    ]
+  },
+  {
+    "id": "design-creative",
+    "name": "Design & Creative",
+    "shortName": "Design",
+    "description": "UI/UX design, brand, and creative asset production — from prototypes to generated images and video.",
+    "icon": "Palette",
+    "subtypes": [
+      "UI/UX design & prototyping",
+      "Generative image & video",
+      "Brand & graphic design",
+      "Motion & video editing"
+    ]
+  },
+  {
+    "id": "it-security",
+    "name": "IT & Security",
+    "shortName": "IT & Security",
+    "description": "Identity, endpoint, and threat management — the access-control and defense layer every other function runs on top of.",
+    "icon": "ShieldCheck",
+    "subtypes": [
+      "Identity & access management",
+      "Threat detection & response",
+      "IT helpdesk & service management",
+      "Endpoint & device management"
+    ]
   }
 ]

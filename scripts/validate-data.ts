@@ -6,7 +6,12 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
-import { functionSchema, phaseSchema, toolSchema } from "../src/lib/schema";
+import {
+  functionSchema,
+  phaseSchema,
+  toolSchema,
+  functionConnectionSchema,
+} from "../src/lib/schema";
 
 const DATA_DIR = path.join(__dirname, "..", "src", "data");
 const TOOLS_DIR = path.join(DATA_DIR, "tools");
@@ -111,6 +116,42 @@ for (const file of toolFiles) {
   }
 }
 
+const connectionsRaw = readJson(
+  path.join(DATA_DIR, "function-connections.json"),
+);
+const connectionsResult = functionConnectionSchema
+  .array()
+  .safeParse(connectionsRaw);
+let connectionCount = 0;
+if (!connectionsResult.success) {
+  fail(
+    `function-connections.json failed validation:\n${connectionsResult.error.toString()}`,
+  );
+} else {
+  connectionCount = connectionsResult.data.length;
+  const seenPairs = new Set<string>();
+  for (const conn of connectionsResult.data) {
+    if (!functionIds.has(conn.from)) {
+      fail(
+        `function-connections.json: unknown "from" function id "${conn.from}"`,
+      );
+    }
+    if (!functionIds.has(conn.to)) {
+      fail(`function-connections.json: unknown "to" function id "${conn.to}"`);
+    }
+    if (conn.from === conn.to) {
+      fail(
+        `function-connections.json: self-referencing connection "${conn.from}" -> "${conn.to}"`,
+      );
+    }
+    const pairKey = `${conn.from}->${conn.to}`;
+    if (seenPairs.has(pairKey)) {
+      fail(`function-connections.json: duplicate connection "${pairKey}"`);
+    }
+    seenPairs.add(pairKey);
+  }
+}
+
 if (errorCount > 0) {
   console.error(
     `\n${errorCount} data error(s) found. Fix src/data/*.json before building.`,
@@ -119,5 +160,5 @@ if (errorCount > 0) {
 }
 
 console.log(
-  `✓ Data OK — ${functionIds.size} functions, ${phaseIds.size} phases, ${toolCount} tools (${topPickCount} top picks, ${freeCount} with a free tier) across ${toolFiles.length} files.`,
+  `✓ Data OK — ${functionIds.size} functions, ${phaseIds.size} phases, ${toolCount} tools (${topPickCount} top picks, ${freeCount} with a free tier) across ${toolFiles.length} files, ${connectionCount} function connections.`,
 );

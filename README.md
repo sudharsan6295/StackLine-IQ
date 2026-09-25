@@ -20,6 +20,9 @@ sourced pricing and free-tier details kept current in version control.
 - **TanStack Query/Table** are installed for future data-heavy views (not
   yet wired to a live endpoint — all current data is static/local).
 - **Recharts** for the Stack Builder's cost chart.
+- **@xyflow/react (React Flow)** for the interactive architecture canvas —
+  node-graph rendering, pan/zoom, and edge routing for the function ×
+  lifecycle relationship diagram.
 - **Zod** for the data schema and build-time validation.
 - **Vitest** + **Testing Library** for unit/component tests, **Playwright**
   for end-to-end tests (desktop + mobile viewport projects).
@@ -31,8 +34,16 @@ sourced pricing and free-tier details kept current in version control.
 src/
   app/                    Routes (App Router). Every page is statically
                            generated via generateStaticParams.
-    page.tsx               Homepage: hero, live stats, the function×phase
-                           matrix, filterable/searchable tool registry.
+    page.tsx               Homepage: hero, live stats, a compact lifecycle
+                           preview diagram, the function×phase matrix, and
+                           the filterable/searchable tool registry.
+    architecture/           The full interactive architecture: a React
+                           Flow canvas of all 7 phases + 14 functions with
+                           real connections (lifecycle sequence, feedback
+                           loop, phase↔function membership, cross-function
+                           relationships), click-to-explore detail panel,
+                           plus a fully static/accessible directory of the
+                           same content below it.
     functions/[id]/        One static page per business function: its tools
                            grouped by phase, plus an interactive Pilot →
                            Scale → Optimize adoption roadmap.
@@ -47,12 +58,22 @@ src/
                            by hand.
     error.tsx, not-found.tsx  Error boundary and 404 empty state.
   components/              UI components. `ui/` is shadcn-generated
-                           primitives; everything else is hand-built for
-                           this app (ToolCard, FunctionPhaseMatrix,
-                           RegistryExplorer, CompareBar, RoadmapTimeline...).
+                           primitives; `architecture/` is the React Flow
+                           canvas (PhaseNode, FunctionNode, DetailPanel,
+                           the accessible FunctionDirectory fallback);
+                           everything else is hand-built for this app
+                           (ToolCard, FunctionPhaseMatrix, RegistryExplorer,
+                           CompareBar, RoadmapTimeline, ArchitectureDiagram
+                           the homepage's compact preview...).
   data/
-    functions.json           The 12 business functions.
+    functions.json           The 14 business functions, each with a
+                           `subtypes[]` breakdown (e.g. Sales → Prospecting
+                           & lead enrichment, Conversation intelligence...).
     phases.json               The 7 lifecycle phases.
+    function-connections.json  Curated, directed cross-function
+                           relationships (`{from, to, relationship}`) — the
+                           "how functions hand off to each other" graph
+                           the architecture page visualizes.
     tools/<function>.json     One file per function — the tool records
                            whose *primary* home is that function (a tool
                            can still list additional functions/phases it
@@ -106,14 +127,17 @@ inconsistent record (e.g. a `Free` badge on a tool that isn't actually
 **Both the business functions and lifecycle phases are a fixed, curated
 list** (`src/data/functions.json` / `phases.json`) rather than open-ended,
 since the whole product's information architecture (the matrix, the filter
-UI, the stack builder) is built around a stable set of 12 functions × 7
-phases. Adding a genuinely new function or phase is a deliberate content
-decision, not a routine PR — it means adding the entry to that file _and_
-at least one tool file referencing it.
+UI, the stack builder, the architecture canvas) is built around a stable
+set of 14 functions × 7 phases. Adding a genuinely new function or phase is
+a deliberate content decision, not a routine PR — it means adding the entry
+to that file (with its `subtypes[]`) _and_ at least one tool file
+referencing it. `function-connections.json` is validated the same way:
+`npm run validate:data` fails on a connection referencing an unknown
+function id, a self-referencing connection, or a duplicate pair.
 
 ## Research sources & methodology
 
-No tool list was provided — all 51 tool records were researched directly
+No tool list was provided — all 57 tool records were researched directly
 from vendors' official pricing pages (fetched live) and, where a page
 blocked automated fetching or a vendor doesn't publish self-serve pricing,
 corroborated against multiple independent secondary sources (analyst
@@ -125,15 +149,22 @@ official published figure (e.g. Gong, Harvey, Ada, Glean — vendors with no
 public price list). **No price was invented.** `lastChecked` is the date
 that research pass was done (2026-09-25 for the initial data set).
 
-Coverage as of the initial pass: all 12 functions have real, sourced tool
+Coverage as of the initial pass: all 14 functions have real, sourced tool
 records, though not all reach the ideal 6–10-per-function range yet —
 Software Development, Product & Ideation, Marketing, and Customer Support
-were researched most deeply (6–8 tools each); QA & Testing, DevOps &
-Operations, Sales, Executive Leadership & Analytics, Finance, HR & Talent,
-and Legal & Compliance currently have 3 tools each. Extending any function's
-coverage is exactly the "small JSON diff PR" the data model was built for
-— add a record to that function's file in `src/data/tools/`, following the
-existing schema, and `npm run validate:data` will confirm it's well-formed.
+were researched most deeply (6–8 tools each); the other 10 functions
+(including Design & Creative and IT & Security, added in a follow-up pass
+to round out coverage) currently have 3 tools each. Extending any
+function's coverage is exactly the "small JSON diff PR" the data model was
+built for — add a record to that function's file in `src/data/tools/`,
+following the existing schema, and `npm run validate:data` will confirm
+it's well-formed.
+
+The `function-connections.json` relationships (which function hands off to
+which, and why) are an original design judgment, not scraped from any
+source — a reasonable first cut at how these functions actually interact
+in a typical enterprise, meant to be corrected/extended by whoever actually
+runs these functions rather than treated as authoritative.
 
 ## Development
 

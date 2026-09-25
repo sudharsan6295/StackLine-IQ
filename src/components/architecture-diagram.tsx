@@ -1,32 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Lightbulb,
-  Ruler,
-  Hammer,
-  FlaskConical,
-  Rocket,
-  Megaphone,
-  LifeBuoy,
-  ChevronRight,
-  Star,
-  RotateCcw,
-} from "lucide-react";
-import type { ComponentType } from "react";
+import { ChevronRight, Star, RotateCcw, Waypoints } from "lucide-react";
 import { phases } from "@/lib/data";
 import { getTopPicksForPhase } from "@/lib/lifecycle-top-picks";
 import { useUrlFilters } from "@/lib/use-url-filters";
-
-const phaseIcon: Record<string, ComponentType<{ className?: string }>> = {
-  "ideation-discovery": Lightbulb,
-  "requirements-design": Ruler,
-  build: Hammer,
-  "test-qa": FlaskConical,
-  "release-operate": Rocket,
-  "go-to-market-sales": Megaphone,
-  "support-maintenance": LifeBuoy,
-};
+import { getPhaseIcon } from "@/lib/phase-icons";
 
 const CHIPS_PER_STAGE = 3;
 
@@ -44,7 +23,7 @@ export function ArchitectureDiagram() {
     <div className="flex flex-col gap-3">
       <div className="-mx-4 flex snap-x snap-mandatory gap-0 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0">
         {phases.map((phase, i) => {
-          const Icon = phaseIcon[phase.id] ?? Lightbulb;
+          const Icon = getPhaseIcon(phase.id);
           const picks = getTopPicksForPhase(phase.id);
           const shown = picks.slice(0, CHIPS_PER_STAGE);
           const extra = picks.length - shown.length;
@@ -127,13 +106,22 @@ export function ArchitectureDiagram() {
         })}
       </div>
 
-      <div className="flex items-center gap-2 rounded-sm border border-dashed border-line px-3 py-2 text-xs text-muted-foreground">
-        <RotateCcw
-          className="size-3.5 shrink-0 text-signal"
-          aria-hidden="true"
-        />
-        Learnings from {phases[phases.length - 1]?.name} feed back into{" "}
-        {phases[0]?.name} — the loop starts again for the next release.
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-2 rounded-sm border border-dashed border-line px-3 py-2 text-xs text-muted-foreground">
+          <RotateCcw
+            className="size-3.5 shrink-0 text-signal"
+            aria-hidden="true"
+          />
+          Learnings from {phases[phases.length - 1]?.name} feed back into{" "}
+          {phases[0]?.name} — the loop starts again for the next release.
+        </div>
+        <Link
+          href="/architecture"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-sm border border-line px-3 py-2 text-xs font-medium hover:border-signal hover:text-signal"
+        >
+          <Waypoints className="size-3.5" aria-hidden="true" />
+          Explore the full interactive architecture
+        </Link>
       </div>
     </div>
   );

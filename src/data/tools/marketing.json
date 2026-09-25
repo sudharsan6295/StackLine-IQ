@@ -140,7 +140,7 @@
     "logoInitial": "CA",
     "bestFor": "Fast, on-brand marketing design and creative production for non-designers",
     "description": "Canva's AI suite (Magic Studio) generates and edits designs, images, and brand-consistent creative assets directly inside the design tool most marketing teams already use.",
-    "functions": ["marketing"],
+    "functions": ["marketing", "design-creative"],
     "phases": ["build", "go-to-market-sales"],
     "pricingModel": "freemium",
     "badge": "Freemium",

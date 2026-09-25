@@ -1,0 +1,80 @@
+[
+  {
+    "id": "figma",
+    "name": "Figma (Figma AI)",
+    "logoInitial": "FG",
+    "bestFor": "Collaborative UI/UX design and prototyping with AI built into the tool teams already design in",
+    "description": "The standard collaborative design and prototyping tool, with Figma AI credits powering generation, restyling, and prototyping-assist features across every plan.",
+    "functions": ["design-creative", "product-ideation"],
+    "phases": ["requirements-design", "build"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Starter plan: 150 AI credits/day, capped at 500/month"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 16,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Professional full seat $16/mo (3,000 AI credits/month; Dev seat $12, Collab seat $3). Organization full seat $55/mo annual (3,500 credits). Enterprise full seat $90/mo annual (4,250 credits)."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.figma.com",
+    "sourceUrl": "https://www.figma.com/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "logoInitial": "AF",
+    "bestFor": "Commercially-safe generative image, video, and audio creation integrated with Adobe's creative apps",
+    "description": "Adobe's generative AI model family for images, video, audio, and translation, trained to be commercially safe for enterprise use and built into Photoshop, Illustrator, and Premiere.",
+    "functions": ["design-creative", "marketing"],
+    "phases": ["build"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "25 generative credits/month, unlimited standard generations"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 9.99,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Standard $9.99/mo (2,000 credits); Pro $19.99/mo (4,000); Pro Plus $49.99/mo (10,000); Premium $199.99/mo (50,000 credits). Credits are only consumed by premium features (video, translation, partner models)."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://firefly.adobe.com",
+    "sourceUrl": "https://firefly.adobe.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "midjourney",
+    "name": "Midjourney",
+    "logoInitial": "MJ",
+    "bestFor": "The highest-quality AI image and video generation for creative and marketing visuals",
+    "description": "A standalone AI image and video generation tool, widely regarded for the highest aesthetic quality of its outputs, used for concept art, marketing visuals, and creative exploration.",
+    "functions": ["design-creative", "marketing"],
+    "phases": ["build"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": { "available": false, "limits": "No free plan or trial" },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 10,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Basic $10/mo (200 min Fast GPU, no Relax Mode); Standard $30/mo; Pro $60/mo; Mega $120/mo (~20% cheaper billed annually). Companies with over $1M annual revenue must use Pro or Mega for commercial use."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://www.midjourney.com",
+    "sourceUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
+    "lastChecked": "2026-09-25"
+  }
+]

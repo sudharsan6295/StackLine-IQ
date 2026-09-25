@@ -1,0 +1,122 @@
+[
+  {
+    "from": "product-ideation",
+    "to": "software-development",
+    "relationship": "Hands off validated specs and requirements to build"
+  },
+  {
+    "from": "product-ideation",
+    "to": "design-creative",
+    "relationship": "Briefs design on user flows and prototypes to explore"
+  },
+  {
+    "from": "design-creative",
+    "to": "software-development",
+    "relationship": "Delivers design specs and assets for implementation"
+  },
+  {
+    "from": "software-development",
+    "to": "qa-testing",
+    "relationship": "Code moves into test before it can release"
+  },
+  {
+    "from": "qa-testing",
+    "to": "devops-operations",
+    "relationship": "Passing builds are handed to release pipelines"
+  },
+  {
+    "from": "devops-operations",
+    "to": "it-security",
+    "relationship": "Shares infrastructure access and incident data with security"
+  },
+  {
+    "from": "it-security",
+    "to": "devops-operations",
+    "relationship": "Sets access policy and vulnerability gates for deployments"
+  },
+  {
+    "from": "devops-operations",
+    "to": "customer-support",
+    "relationship": "Incident status feeds customer-facing status updates"
+  },
+  {
+    "from": "marketing",
+    "to": "sales",
+    "relationship": "Hands off qualified leads to the sales pipeline"
+  },
+  {
+    "from": "marketing",
+    "to": "design-creative",
+    "relationship": "Requests creative and brand assets for campaigns"
+  },
+  {
+    "from": "sales",
+    "to": "customer-support",
+    "relationship": "Closed deals transition into onboarding and support"
+  },
+  {
+    "from": "sales",
+    "to": "legal-compliance",
+    "relationship": "Contracts route through legal review before signature"
+  },
+  {
+    "from": "sales",
+    "to": "finance",
+    "relationship": "Closed-won deals feed revenue forecasting and billing"
+  },
+  {
+    "from": "customer-support",
+    "to": "product-ideation",
+    "relationship": "Support tickets and feedback feed the next round of ideation"
+  },
+  {
+    "from": "customer-support",
+    "to": "marketing",
+    "relationship": "Customer sentiment informs messaging and campaigns"
+  },
+  {
+    "from": "finance",
+    "to": "executive-leadership-analytics",
+    "relationship": "Financial data feeds company-wide reporting and forecasts"
+  },
+  {
+    "from": "hr-talent",
+    "to": "finance",
+    "relationship": "Headcount and compensation data feed payroll and budgeting"
+  },
+  {
+    "from": "hr-talent",
+    "to": "legal-compliance",
+    "relationship": "Employment actions require compliance and policy review"
+  },
+  {
+    "from": "legal-compliance",
+    "to": "it-security",
+    "relationship": "Data privacy and regulatory requirements shape access controls"
+  },
+  {
+    "from": "executive-leadership-analytics",
+    "to": "product-ideation",
+    "relationship": "Company-wide metrics inform the next strategic bets"
+  },
+  {
+    "from": "cross-company-ai-assistants",
+    "to": "software-development",
+    "relationship": "General assistants are used across every phase of building"
+  },
+  {
+    "from": "cross-company-ai-assistants",
+    "to": "customer-support",
+    "relationship": "Powers the internal knowledge search agents surface to customers"
+  },
+  {
+    "from": "cross-company-ai-assistants",
+    "to": "hr-talent",
+    "relationship": "Answers employee policy and benefits questions"
+  },
+  {
+    "from": "it-security",
+    "to": "hr-talent",
+    "relationship": "Offboarding in HR triggers access revocation"
+  }
+]

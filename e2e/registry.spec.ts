@@ -52,6 +52,11 @@ test("clicking a matrix cell filters the tool grid", async ({ page }) => {
 
 test("search filters tools by name", async ({ page }) => {
   await page.goto("/");
+  const matchLocator = page.getByText(/tools match/);
+  const totalCount = Number(
+    (await matchLocator.textContent())?.match(/\d+/)?.[0],
+  );
+
   await page
     .getByPlaceholder("Search tools by name or use case…")
     .fill("Copilot");
@@ -59,14 +64,14 @@ test("search filters tools by name", async ({ page }) => {
     page.getByRole("heading", { name: "GitHub Copilot" }),
   ).toBeVisible();
   // Fuzzy search legitimately surfaces a handful of near-matches; just
-  // confirm it narrowed the full 51-tool registry down meaningfully. Poll
-  // rather than reading textContent once, since the result count updates
+  // confirm it narrowed the full registry down meaningfully (not hardcoding
+  // the total tool count, which grows as the data set grows). Poll rather
+  // than reading textContent once, since the result count updates
   // asynchronously after the debounced URL/state update.
-  const matchLocator = page.getByText(/tools match/);
-  await expect(matchLocator).not.toHaveText("51 tools match");
+  await expect(matchLocator).not.toHaveText(`${totalCount} tools match`);
   const count = Number((await matchLocator.textContent())?.match(/\d+/)?.[0]);
   expect(count).toBeGreaterThan(0);
-  expect(count).toBeLessThan(51);
+  expect(count).toBeLessThan(totalCount);
 });
 
 test("shortlisting a tool shows the shortlist bar and persists a CSV export button", async ({

@@ -1,12 +1,15 @@
 import functionsData from "@/data/functions.json";
 import phasesData from "@/data/phases.json";
+import functionConnectionsData from "@/data/function-connections.json";
 import {
   functionSchema,
   phaseSchema,
   toolSchema,
+  functionConnectionSchema,
   type BusinessFunction,
   type LifecyclePhase,
   type Tool,
+  type FunctionConnection,
 } from "@/lib/schema";
 
 // Vite/webpack can statically glob JSON at build time; Next.js supports
@@ -26,6 +29,8 @@ import finance from "@/data/tools/finance.json";
 import hrTalent from "@/data/tools/hr-talent.json";
 import legalCompliance from "@/data/tools/legal-compliance.json";
 import crossCompanyAiAssistants from "@/data/tools/cross-company-ai-assistants.json";
+import designCreative from "@/data/tools/design-creative.json";
+import itSecurity from "@/data/tools/it-security.json";
 
 const rawToolFiles = [
   softwareDevelopment,
@@ -40,6 +45,8 @@ const rawToolFiles = [
   hrTalent,
   legalCompliance,
   crossCompanyAiAssistants,
+  designCreative,
+  itSecurity,
 ];
 
 export const functions: BusinessFunction[] = functionSchema
@@ -50,6 +57,8 @@ export const phases: LifecyclePhase[] = phaseSchema
   .parse(phasesData)
   .sort((a, b) => a.order - b.order);
 export const tools: Tool[] = toolSchema.array().parse(rawToolFiles.flat());
+export const functionConnections: FunctionConnection[] =
+  functionConnectionSchema.array().parse(functionConnectionsData);
 
 export const functionById = new Map(functions.map((f) => [f.id, f]));
 export const phaseById = new Map(phases.map((p) => [p.id, p]));
@@ -67,6 +76,52 @@ export function getToolsForCell(functionId: string, phaseId: string): Tool[] {
   return tools.filter(
     (t) => t.functions.includes(functionId) && t.phases.includes(phaseId),
   );
+}
+
+export function getPhasesForFunction(functionId: string): LifecyclePhase[] {
+  const phaseIds = new Set(
+    getToolsForFunction(functionId).flatMap((t) => t.phases),
+  );
+  return phases.filter((p) => phaseIds.has(p.id));
+}
+
+export function getFunctionsForPhase(phaseId: string): BusinessFunction[] {
+  const phaseTools = getToolsForPhase(phaseId);
+  const functionIds = new Set(phaseTools.flatMap((t) => t.functions));
+  return functions.filter((f) => functionIds.has(f.id));
+}
+
+export function getTopPicksForFunction(functionId: string): Tool[] {
+  return tools.filter((t) => t.functions.includes(functionId) && t.topPick);
+}
+
+export interface RelatedFunction {
+  functionId: string;
+  relationship: string;
+  direction: "outgoing" | "incoming";
+}
+
+/** Every connection touching this function, in either direction. */
+export function getConnectionsForFunction(
+  functionId: string,
+): RelatedFunction[] {
+  const related: RelatedFunction[] = [];
+  for (const c of functionConnections) {
+    if (c.from === functionId) {
+      related.push({
+        functionId: c.to,
+        relationship: c.relationship,
+        direction: "outgoing",
+      });
+    } else if (c.to === functionId) {
+      related.push({
+        functionId: c.from,
+        relationship: c.relationship,
+        direction: "incoming",
+      });
+    }
+  }
+  return related;
 }
 
 export function getMatrixCounts(): Record<string, Record<string, number>> {

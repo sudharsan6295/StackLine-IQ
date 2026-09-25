@@ -63,10 +63,21 @@ export const functionSchema = z
     shortName: z.string().min(1).optional(),
     description: z.string().min(1),
     icon: z.string().min(1),
+    subtypes: z.array(z.string().min(1)).min(1),
   })
   .strict();
 
 export type BusinessFunction = z.infer<typeof functionSchema>;
+
+export const functionConnectionSchema = z
+  .object({
+    from: z.string().min(1),
+    to: z.string().min(1),
+    relationship: z.string().min(1),
+  })
+  .strict();
+
+export type FunctionConnection = z.infer<typeof functionConnectionSchema>;
 
 export const phaseSchema = z
   .object({
