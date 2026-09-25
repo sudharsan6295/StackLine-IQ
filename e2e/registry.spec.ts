@@ -11,6 +11,35 @@ test("homepage renders the hero, live stats, and matrix", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("the lifecycle architecture diagram shows top picks and links to tool pages", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", {
+      name: "From idea to support: the AI-augmented lifecycle",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Ideation & Discovery" }),
+  ).toBeVisible();
+  const link = page.getByRole("link", { name: "GitHub Copilot" }).first();
+  await link.click();
+  await expect(page).toHaveURL(/\/tools\/github-copilot/);
+});
+
+test("+more on a lifecycle stage filters the registry by that phase", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: /\+\d+ more/ })
+    .first()
+    .click();
+  await expect(page).toHaveURL(/ph=ideation-discovery/);
+  await expect(page.getByText(/tools match/)).toBeVisible();
+});
+
 test("clicking a matrix cell filters the tool grid", async ({ page }) => {
   await page.goto("/");
   const cell = page

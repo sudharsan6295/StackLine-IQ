@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight, Compass } from "lucide-react";
 import { RegistryExplorer } from "@/components/registry-explorer";
+import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { CompareBar } from "@/components/compare-bar";
 import { LiveStat } from "@/components/live-stat";
 import { stats } from "@/lib/data";
@@ -55,6 +56,26 @@ export default function Home() {
               label="Category-leading top picks"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+          <p className="font-data text-xs font-semibold tracking-[0.2em] text-signal uppercase">
+            Architecture at a glance
+          </p>
+          <h2 className="mt-2 font-display text-xl font-bold tracking-tight sm:text-2xl">
+            From idea to support: the AI-augmented lifecycle
+          </h2>
+          <p className="mt-2 mb-6 max-w-2xl text-sm text-muted-foreground">
+            Every stage of shipping a product, start to end, with the
+            category-leading tool for that stage. Scroll to see all seven —
+            select a tool for its pricing, or &ldquo;+more&rdquo; to see every
+            top pick for that stage in the registry below.
+          </p>
+          <Suspense>
+            <ArchitectureDiagram />
+          </Suspense>
         </div>
       </section>
 
