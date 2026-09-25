@@ -1,0 +1,86 @@
+[
+  {
+    "id": "software-development",
+    "name": "Software Development",
+    "shortName": "Dev",
+    "description": "Writing, reviewing, and shipping application code faster with AI pair programmers and code-generation agents.",
+    "icon": "Code2"
+  },
+  {
+    "id": "product-ideation",
+    "name": "Product & Ideation",
+    "shortName": "Product",
+    "description": "Turning market signals into validated product bets: research synthesis, PRDs, prototyping, and roadmap planning.",
+    "icon": "Lightbulb"
+  },
+  {
+    "id": "qa-testing",
+    "name": "QA & Testing",
+    "shortName": "QA",
+    "description": "Generating, running, and maintaining automated tests, and finding regressions before customers do.",
+    "icon": "FlaskConical"
+  },
+  {
+    "id": "devops-operations",
+    "name": "DevOps & Operations",
+    "shortName": "DevOps",
+    "description": "Infrastructure-as-code, incident response, observability, and operational automation.",
+    "icon": "Server"
+  },
+  {
+    "id": "sales",
+    "name": "Sales",
+    "shortName": "Sales",
+    "description": "Prospecting, call intelligence, proposal generation, and deal-desk automation for revenue teams.",
+    "icon": "TrendingUp"
+  },
+  {
+    "id": "marketing",
+    "name": "Marketing",
+    "shortName": "Marketing",
+    "description": "Content, campaign, SEO, and creative generation at the pace modern marketing teams need.",
+    "icon": "Megaphone"
+  },
+  {
+    "id": "customer-support",
+    "name": "Customer Support",
+    "shortName": "Support",
+    "description": "Deflecting routine tickets, assisting agents in real time, and mining conversations for product signal.",
+    "icon": "Headset"
+  },
+  {
+    "id": "executive-leadership-analytics",
+    "name": "Executive Leadership & Analytics",
+    "shortName": "Analytics",
+    "description": "Business intelligence copilots and analytics assistants that turn company data into decisions.",
+    "icon": "LineChart"
+  },
+  {
+    "id": "finance",
+    "name": "Finance",
+    "shortName": "Finance",
+    "description": "FP&A modeling, close automation, spend analysis, and finance-grade AI copilots.",
+    "icon": "Landmark"
+  },
+  {
+    "id": "hr-talent",
+    "name": "HR & Talent",
+    "shortName": "HR",
+    "description": "Sourcing, screening, onboarding, and people-ops automation for talent teams.",
+    "icon": "Users"
+  },
+  {
+    "id": "legal-compliance",
+    "name": "Legal & Compliance",
+    "shortName": "Legal",
+    "description": "Contract review, policy drafting, and compliance research with AI-assisted legal workflows.",
+    "icon": "Scale"
+  },
+  {
+    "id": "cross-company-ai-assistants",
+    "name": "Cross-Company AI Assistants & Knowledge",
+    "shortName": "Knowledge",
+    "description": "General-purpose assistants and enterprise search/knowledge tools used across every function.",
+    "icon": "Bot"
+  }
+]

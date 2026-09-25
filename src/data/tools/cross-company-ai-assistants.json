@@ -1,0 +1,107 @@
+[
+  {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "logoInitial": "GP",
+    "bestFor": "The most widely adopted general-purpose AI assistant, for every function that needs a capable default chatbot",
+    "description": "OpenAI's general-purpose assistant for writing, research, analysis, coding, and image/voice tasks — the default choice for broad, cross-functional AI assistance across an enterprise.",
+    "functions": ["cross-company-ai-assistants"],
+    "phases": ["ideation-discovery", "build", "support-maintenance"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free plan with core chat access; usage limits apply"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 20,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Go is $8/mo; Plus $20/mo; Pro $100–$200/mo. Business (team workspace) is $25/user/month. Enterprise is custom, per-user pricing negotiated per organization."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://chatgpt.com",
+    "sourceUrl": "https://openai.com/business/chatgpt-pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "logoInitial": "CL",
+    "bestFor": "A general-purpose AI assistant known for careful reasoning, long-context work, and enterprise-grade trust and safety",
+    "description": "Anthropic's general-purpose assistant for chat, writing, research, and analysis (distinct from Claude Code, its coding-specific tool), used broadly across teams for everyday AI-assisted work.",
+    "functions": ["cross-company-ai-assistants"],
+    "phases": ["ideation-discovery", "build", "support-maintenance"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free plan with web, desktop, and mobile chat access"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 20,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Pro is $20/mo ($17/mo annual). Max plans from $100/mo (5x usage) or $200/mo (20x). Team Standard $25/seat/mo, Team Premium $125/seat/mo. Enterprise from $20/seat/month plus usage-based API costs."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://claude.com",
+    "sourceUrl": "https://claude.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "microsoft-365-copilot",
+    "name": "Microsoft 365 Copilot",
+    "logoInitial": "M3",
+    "bestFor": "An AI assistant embedded directly into Word, Excel, Outlook, and Teams for organizations already on Microsoft 365",
+    "description": "Copilot layered across the Microsoft 365 apps enterprises already run on — drafting documents, summarizing email threads and meetings, and building spreadsheets and slides from a prompt.",
+    "functions": ["cross-company-ai-assistants"],
+    "phases": ["build", "support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; requires an underlying Microsoft 365 license"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 30,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "$30/user/month with annual commitment, on top of a required Microsoft 365 base license (e.g. E3/E5). A discounted Business tier (~$18–$21/user/month) is available for organizations under 300 users."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.microsoft.com/en-us/microsoft-365/microsoft-copilot",
+    "sourceUrl": "https://www.microsoft.com/en-us/microsoft-365/copilot/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "glean",
+    "name": "Glean",
+    "logoInitial": "GL",
+    "bestFor": "Enterprise search and a company-wide knowledge assistant that connects every internal tool and document",
+    "description": "An enterprise AI search and knowledge assistant that indexes and reasons across a company's connected apps (Slack, Drive, Confluence, Jira, and more) to answer questions with cited internal sources.",
+    "functions": ["cross-company-ai-assistants"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; demo-and-quote sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing. Community- and procurement-reported figures put per-user cost around $45–$75+/user/month for the base search license, plus roughly $15/user/month for advanced AI features, with a ~100-seat / ~$50K–$60K minimum annual contract — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.glean.com",
+    "sourceUrl": "https://www.glean.com/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]

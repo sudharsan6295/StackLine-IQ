@@ -1,0 +1,77 @@
+[
+  {
+    "id": "mabl",
+    "name": "mabl",
+    "logoInitial": "MB",
+    "bestFor": "Low-code, self-healing end-to-end test automation across web, mobile, and API",
+    "description": "An AI-native test automation platform that authors and auto-heals UI, API, accessibility, and performance tests as the application under test changes, cutting flaky-test maintenance.",
+    "functions": ["qa-testing"],
+    "phases": ["test-qa"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No public free tier; sales-led trial only"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "mabl does not publish list pricing. Third-party contract data (Vendr and others) estimates Starter plans around $450–$600/month and Growth-tier deployments $1,200–$3,000/month on annual contracts — a market-observed range, not an official price. Confirm current pricing directly with mabl."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.mabl.com",
+    "sourceUrl": "https://www.mabl.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "katalon",
+    "name": "Katalon Platform",
+    "logoInitial": "KT",
+    "bestFor": "A full test automation platform with a genuinely free desktop tool to start from",
+    "description": "An AI-assisted test automation platform (Katalon Studio plus a cloud True Platform) covering web, mobile, API, and desktop testing, with a permanently free local/manual tier.",
+    "functions": ["qa-testing"],
+    "phases": ["test-qa"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Katalon Studio (local/manual execution) is free forever"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 58,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "True Platform from ~$58/seat/month (billed annually, ~$700/seat/year); Professional plans from ~$84/seat/month. CI/parallel execution (Runtime Engine) and cloud execution are separate paid add-ons. Enterprise bundles are custom."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://katalon.com",
+    "sourceUrl": "https://katalon.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "applitools",
+    "name": "Applitools",
+    "logoInitial": "AP",
+    "bestFor": "AI-powered visual regression testing that catches pixel-level UI bugs functional tests miss",
+    "description": "Visual AI testing that compares rendered UI screenshots across browsers and devices, using computer vision to flag real visual regressions while ignoring rendering noise.",
+    "functions": ["qa-testing"],
+    "phases": ["test-qa"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free tier with roughly 100 visual checkpoints/month, no credit card required"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Every paid tier beyond the free checkpoint allowance requires a custom annual quote based on checkpoint volume; no self-serve list price is published."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://applitools.com",
+    "sourceUrl": "https://applitools.com/pricing/",
+    "lastChecked": "2026-09-25"
+  }
+]

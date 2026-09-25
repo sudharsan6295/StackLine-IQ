@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ramp",
+    "name": "Ramp",
+    "logoInitial": "RM",
+    "bestFor": "AI-automated corporate card, spend, and accounts-payable management with a genuinely free core plan",
+    "description": "A finance operations platform (corporate cards, expense management, AP/invoice OCR) with Ramp Intelligence: a natural-language finance assistant, AI policy generation, and agentic approval of routine transactions.",
+    "functions": ["finance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free plan: unlimited corporate cards, expense management, AP with invoice OCR, basic accounting automation"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 15,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Ramp Plus is $15/user/month, adding advanced approval workflows, custom policies, and procurement. Ramp Enterprise is custom-priced with dedicated support and enterprise SSO."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://ramp.com",
+    "sourceUrl": "https://ramp.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "mosaic",
+    "name": "Mosaic",
+    "logoInitial": "MO",
+    "bestFor": "AI-assisted FP&A: automated reporting, forecasting, and metrics pulled straight from source systems",
+    "description": "A strategic finance / FP&A platform that connects to ERP, CRM, and HRIS systems to automate reporting and build driver-based financial models and forecasts, with AI-assisted analysis.",
+    "functions": ["finance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; demo-and-quote sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Mosaic does not publish pricing on its website. Plans are described as Analytics, Foundation, and Growth deployment tiers, scoped by team size and modules, all requiring a custom quote."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.mosaic.tech",
+    "sourceUrl": "https://www.mosaic.tech/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "vic-ai",
+    "name": "Vic.ai",
+    "logoInitial": "VC",
+    "bestFor": "Autonomous, high-volume invoice processing for finance teams that want AP off their plate",
+    "description": "An AI-first accounts payable platform that autonomously processes, codes, and approves invoices at high confidence thresholds, reducing manual AP data entry.",
+    "functions": ["finance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier or self-serve trial; enterprise-only annual contracts"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No public price list; priced by user count, monthly invoice volume, and module mix (Autopilot, VicAnalytics, VicCard, VicPay). Reported deal sizes run from roughly $25,000 to several hundred thousand dollars per year."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.vic.ai",
+    "sourceUrl": "https://www.vic.ai/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]

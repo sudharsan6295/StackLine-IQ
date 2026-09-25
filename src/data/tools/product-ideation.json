@@ -1,0 +1,161 @@
+[
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "logoInitial": "PX",
+    "bestFor": "Fast, cited market and competitor research to kick off product discovery",
+    "description": "An AI answer engine that searches the live web and returns cited, source-backed answers — the fastest way to get up to speed on a market, competitor, or technology before writing a single requirement.",
+    "functions": ["product-ideation", "cross-company-ai-assistants"],
+    "phases": ["ideation-discovery"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free tier with limited daily Pro searches"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 20,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Pro is $20/mo. Enterprise Pro is $40/seat/month and Enterprise Max is $325/seat/month, with SCIM, audit logs, and configurable data retention."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.perplexity.ai",
+    "sourceUrl": "https://www.perplexity.ai/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "logoInitial": "NO",
+    "bestFor": "Turning research and meeting notes into PRDs, specs, and a searchable knowledge base",
+    "description": "AI built directly into Notion's docs and databases — drafting PRDs, summarizing meetings, auto-filling databases, and (on Business+) running multi-step tasks via Notion Agent.",
+    "functions": ["product-ideation", "cross-company-ai-assistants"],
+    "phases": ["ideation-discovery", "requirements-design"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free workspace plan includes a limited AI trial"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 10,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Plus is $10/member/month (AI still trial-limited). Business at $20/member/month unlocks full Notion Agent, AI meeting notes, and enterprise search. Enterprise is custom."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.notion.com/product/ai",
+    "sourceUrl": "https://www.notion.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "miro-ai",
+    "name": "Miro AI",
+    "logoInitial": "MI",
+    "bestFor": "AI-assisted brainstorming, diagramming, and turning sticky notes into structured plans",
+    "description": "AI features layered onto Miro's collaborative whiteboard — diagram generation, note clustering and synthesis, and interactive prototyping for early-stage product exploration.",
+    "functions": ["product-ideation"],
+    "phases": ["ideation-discovery", "requirements-design"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "3 editable boards, 10 AI credits/month"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 8,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Starter is $8/member/month (billed yearly) with 25 AI credits/member/month; Business is $20/member/month with 50 credits; Enterprise is custom, starting at 2,500 pooled credits/month."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://miro.com",
+    "sourceUrl": "https://miro.com/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "v0",
+    "name": "v0 by Vercel",
+    "logoInitial": "V0",
+    "bestFor": "Turning a product idea into a clickable, real-code UI prototype in minutes",
+    "description": "Vercel's AI UI generator that produces working React/Next.js components and full screens from a text prompt or screenshot — a fast bridge from idea to reviewable prototype.",
+    "functions": ["product-ideation", "software-development"],
+    "phases": ["requirements-design", "build"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "$5 of monthly credits included, 7 messages/day"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 30,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Plus is $30/mo ($30 of monthly credits/user); Business is $100/user/month; Enterprise is custom with training opt-out and SAML SSO."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://v0.app",
+    "sourceUrl": "https://v0.app/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "productboard",
+    "name": "Productboard",
+    "logoInitial": "PB",
+    "bestFor": "Turning scattered customer feedback into a prioritized, AI-assisted roadmap",
+    "description": "A product management platform whose Spark AI agent clusters customer feedback, surfaces themes, drafts specs, and helps prioritize what to build next.",
+    "functions": ["product-ideation"],
+    "phases": ["ideation-discovery", "requirements-design"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Free plan: 50 AI credits/month, unlimited roadmaps, 500 feedback notes, 25 contributors"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 19,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Plus is $19/maker/month (annual), 250 AI credits/maker; Business $59/maker/month, 500 credits; Enterprise custom, 800 credits/maker."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://productboard.com",
+    "sourceUrl": "https://productboard.com/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "dovetail",
+    "name": "Dovetail",
+    "logoInitial": "DT",
+    "bestFor": "AI-assisted synthesis of user interviews, call transcripts, and survey data into themes",
+    "description": "A research repository and analysis tool that uses AI to summarize interviews, tag transcripts, cluster insights, and surface recurring themes across all of a team's user research.",
+    "functions": ["product-ideation"],
+    "phases": ["ideation-discovery"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "1 channel, 1 project, basic AI summaries and opportunity tracking, no card required"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published mid-tier price — Dovetail moves directly from Free to a custom-quoted Enterprise plan with unlimited projects, AI dashboards, and semantic search."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://dovetail.com",
+    "sourceUrl": "https://dovetail.com/pricing/",
+    "lastChecked": "2026-09-25"
+  }
+]

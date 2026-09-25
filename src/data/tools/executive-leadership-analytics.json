@@ -1,0 +1,77 @@
+[
+  {
+    "id": "microsoft-copilot-power-bi",
+    "name": "Microsoft Copilot (Power BI / Fabric)",
+    "logoInitial": "MS",
+    "bestFor": "Natural-language business intelligence for enterprises already on Microsoft 365 and Fabric",
+    "description": "Copilot inside Power BI lets leaders ask questions of company data in plain English and auto-generates reports and summaries, running on rented Microsoft Fabric compute capacity rather than a per-user AI fee.",
+    "functions": ["executive-leadership-analytics"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; requires a paid Power BI Pro/PPU seat plus Fabric capacity"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Copilot isn't licensed per user — it runs on Fabric capacity billed monthly (F2 and up, roughly $263–$16,800+/month depending on size) with usage metered in tokens, on top of Power BI Pro (~$14/user/month) or Premium Per User (~$24/user/month) seats. Confirm current Fabric SKU pricing directly with Microsoft."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+    "sourceUrl": "https://community.fabric.microsoft.com/t5/Service/What-is-pricing-for-copilot-in-fabric-and-power-bi/m-p/4362086",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "thoughtspot",
+    "name": "ThoughtSpot (Spotter)",
+    "logoInitial": "TS",
+    "bestFor": "Self-serve, natural-language analytics for business users who don't want to write SQL",
+    "description": "An AI-powered analytics platform where Spotter answers natural-language questions over live company data, letting executives and analysts explore metrics conversationally.",
+    "functions": ["executive-leadership-analytics"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier for production analytics; a scoped free Developer plan exists only for embedded-analytics proof-of-concepts (5 users, 1 year)"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 25,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Essentials $25/user/month (basic AI search, 25M rows); Pro $50/user/month (Spotter AI, 25 AI queries/user/month included, 250M rows, overage billed per query); Enterprise is custom with unlimited data and users."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.thoughtspot.com",
+    "sourceUrl": "https://www.thoughtspot.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "tableau-agent",
+    "name": "Tableau (Tableau Agent)",
+    "logoInitial": "TB",
+    "bestFor": "AI-assisted visual analytics for organizations standardized on Tableau/Salesforce",
+    "description": "Tableau's visualization platform with Tableau Agent (natural-language chart creation, powered by Einstein) and Agentforce analytics skills, bundled into the Tableau+ tier.",
+    "functions": ["executive-leadership-analytics"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": { "available": false, "limits": "No free tier" },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 75,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Tableau Standard is $75/user/month, Tableau Enterprise $115/user/month for the base analytics product. The AI features (Tableau Agent, Pulse Premium, Agentforce skills) live in the separately priced Tableau+ bundle, which is custom/sales-quoted only."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.tableau.com",
+    "sourceUrl": "https://www.tableau.com/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]

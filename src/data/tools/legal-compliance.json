@@ -1,0 +1,74 @@
+[
+  {
+    "id": "harvey",
+    "name": "Harvey",
+    "logoInitial": "HV",
+    "bestFor": "The category-leading AI platform for law firms and in-house legal teams doing document-heavy legal work",
+    "description": "A legal AI platform built with and for law firms, handling contract analysis, research, drafting, and due diligence at the level of accuracy large firms require, deeply integrated into legal workflows.",
+    "functions": ["legal-compliance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; enterprise sales process only"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing. Industry-reported figures: roughly $1,000–$2,000/user/month for mid-market firms, dropping to $100–$200/user/month at Am Law 100 scale with volume discounts; 25–50 seat minimums; median annual contract reported around $175,000 — not official figures."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.harvey.ai",
+    "sourceUrl": "https://www.harvey.ai/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "ironclad",
+    "name": "Ironclad (Jurist AI)",
+    "logoInitial": "IC",
+    "bestFor": "AI-assisted contract lifecycle management — drafting, redlining, and analyzing contracts at scale",
+    "description": "A contract lifecycle management platform whose Jurist AI Assist and AI Contract Analysis modules draft, review, and extract obligations from contracts, integrated into approval workflows.",
+    "functions": ["legal-compliance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; demo-and-quote sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing. Reported figures: base platform roughly $30,000–$250,000+/year (mid-market commonly $50K–$120K); the Jurist AI Assist add-on is separately reported at $50,000–$200,000/year — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://ironcladapp.com",
+    "sourceUrl": "https://ironcladapp.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "spellbook",
+    "name": "Spellbook",
+    "logoInitial": "SP",
+    "bestFor": "AI contract drafting and redlining that works inside Microsoft Word, for smaller legal teams",
+    "description": "An AI contract-drafting copilot that runs as a Word add-in, suggesting redlines, flagging risky clauses, and drafting new provisions in the tool lawyers already draft in.",
+    "functions": ["legal-compliance"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "7-day free trial; no persistent free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published price list — quoted per seat. Industry-reported figures: Associate-level plans around $89/user/month, rising through Pro, to Enterprise reported around $350/user/month with a 6-month minimum commitment — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://spellbook.com",
+    "sourceUrl": "https://spellbook.com/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]

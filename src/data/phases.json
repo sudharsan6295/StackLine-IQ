@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ideation-discovery",
+    "name": "Ideation & Discovery",
+    "description": "Explore problems, research markets and users, and validate ideas before committing resources.",
+    "order": 1
+  },
+  {
+    "id": "requirements-design",
+    "name": "Requirements & Design",
+    "description": "Turn validated ideas into specs, designs, and plans engineering can build against.",
+    "order": 2
+  },
+  {
+    "id": "build",
+    "name": "Build",
+    "description": "Write, generate, and assemble the product itself — code, content, campaigns, or models.",
+    "order": 3
+  },
+  {
+    "id": "test-qa",
+    "name": "Test & QA",
+    "description": "Verify quality, find regressions, and confirm the work is ready to ship.",
+    "order": 4
+  },
+  {
+    "id": "release-operate",
+    "name": "Release & Operate",
+    "description": "Ship, deploy, monitor, and keep systems running reliably in production.",
+    "order": 5
+  },
+  {
+    "id": "go-to-market-sales",
+    "name": "Go-to-Market & Sales",
+    "description": "Launch, sell, and communicate the value of what was built to the market.",
+    "order": 6
+  },
+  {
+    "id": "support-maintenance",
+    "name": "Support & Maintenance",
+    "description": "Support customers, fix issues, and keep the product healthy after launch — feeding learnings back into the next round of ideation.",
+    "order": 7
+  }
+]

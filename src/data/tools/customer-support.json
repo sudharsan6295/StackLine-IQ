@@ -1,0 +1,158 @@
+[
+  {
+    "id": "intercom-fin",
+    "name": "Intercom Fin",
+    "logoInitial": "IC",
+    "bestFor": "The highest-resolution-rate AI support agent, billed only for tickets it actually resolves",
+    "description": "Intercom's AI Agent (Fin) resolves customer tickets autonomously across chat, email, and voice, and can run on top of an existing helpdesk like Salesforce with no seat cost.",
+    "functions": ["customer-support"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "14-day free trial, no credit card required; no persistent free plan"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 29,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Essential $29/seat/month, Advanced $85/seat/month, Expert $132/seat/month (all annual). Fin AI Agent itself is billed separately at $0.99 per resolved outcome on any plan, or standalone with no seats required."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.intercom.com/fin",
+    "sourceUrl": "https://www.intercom.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "zendesk-ai",
+    "name": "Zendesk AI",
+    "logoInitial": "ZD",
+    "bestFor": "AI agents and copilot layered onto the incumbent enterprise helpdesk platform",
+    "description": "Zendesk's built-in AI agents and Copilot handle routine tickets, triage, and draft agent replies, billed on top of Zendesk's established omnichannel support suite.",
+    "functions": ["customer-support"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "14-day free trial of the Professional suite; no persistent free plan"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 19,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Support Team $19/agent/month, Suite Team $55, Suite Professional $115 (all annual). Suite Enterprise+Copilot is custom. AI agent usage is billed per successful automated resolution, on top of the seat price."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.zendesk.com/service/ai/",
+    "sourceUrl": "https://www.zendesk.com/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "ada",
+    "name": "Ada",
+    "logoInitial": "AD",
+    "bestFor": "AI-native, no-code support automation for very high ticket volumes",
+    "description": "A purpose-built AI customer service agent platform (no traditional helpdesk seats) designed for high-volume, multi-channel deflection, configured without code by support ops teams.",
+    "functions": ["customer-support"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No self-serve free tier; demo-and-quote sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Ada does not publish self-serve pricing. It bills per conversation (~$0.35 each) or per AI resolution (reported at roughly $1–$3.50 each) depending on contract. Third-party procurement data (Vendr) reports contracts ranging from roughly $36K to $314K/year — a market-observed range, not an official price."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.ada.cx",
+    "sourceUrl": "https://www.ada.cx/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "freshdesk-freddy",
+    "name": "Freshdesk (Freddy AI)",
+    "logoInitial": "FD",
+    "bestFor": "A cost-effective helpdesk with AI agent and copilot bundled in from the entry tier",
+    "description": "Freshworks' helpdesk with Freddy AI Agent (ticket deflection) and optional Freddy AI Copilot (agent assist) bundled into every plan, including the lowest-cost tier.",
+    "functions": ["customer-support"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "14-day trial of the Enterprise plan; no persistent free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 19,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Growth $19/agent/month, Pro $55/agent/month, Enterprise $89/agent/month (all annual, all include 500 Freddy AI Agent sessions). Freddy AI Copilot is a $29/agent/month add-on; extra AI sessions are $49 per 100."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.freshworks.com/freshdesk/",
+    "sourceUrl": "https://www.freshworks.com/freshdesk/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "gorgias",
+    "name": "Gorgias",
+    "logoInitial": "GO",
+    "bestFor": "Ecommerce brands (especially on Shopify) that want AI support tied to order and customer data",
+    "description": "A helpdesk built for ecommerce, with an AI Agent that resolves tickets using live order, shipping, and customer data, priced per ticket volume rather than per seat.",
+    "functions": ["customer-support"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": { "available": false, "limits": "No persistent free tier" },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 10,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Starter $10/mo (50 tickets), Basic $60/mo (300 tickets), Pro $360/mo (2,000 tickets), Advanced $900/mo (5,000 tickets), Enterprise custom (5,000+). AI Agent is pay-per-resolution on every tier; not priced per seat."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://www.gorgias.com",
+    "sourceUrl": "https://www.gorgias.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "salesforce-agentforce",
+    "name": "Salesforce Agentforce",
+    "logoInitial": "SF",
+    "bestFor": "Enterprises already on Salesforce that want AI agents wired directly into CRM data and workflows",
+    "description": "Salesforce's AI agent platform for service (and sales) use cases, acting autonomously on live CRM records — cases, orders, knowledge — inside the Salesforce platform teams already run on.",
+    "functions": ["customer-support", "sales"],
+    "phases": ["support-maintenance", "go-to-market-sales"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; requires an underlying Salesforce org"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 125,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Per-user licensing starts around $125/user/month; usage-based alternatives are $2 per conversation, or Flex Credits at $500 per 100,000 credits (~$0.10 per standard action). Conversation and Flex Credit billing cannot be combined in one org."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.salesforce.com/agentforce/",
+    "sourceUrl": "https://www.salesforce.com/agentforce/pricing/",
+    "lastChecked": "2026-09-25"
+  }
+]

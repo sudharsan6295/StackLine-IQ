@@ -1,0 +1,77 @@
+[
+  {
+    "id": "gong",
+    "name": "Gong",
+    "logoInitial": "GN",
+    "bestFor": "AI-analyzed call and email intelligence that tells revenue leaders what's really happening in deals",
+    "description": "A revenue intelligence platform that records and analyzes sales calls, emails, and deal activity with AI, surfacing coaching insights, deal risk, and forecast signals for sales leaders.",
+    "functions": ["sales"],
+    "phases": ["go-to-market-sales"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; sales-led onboarding for all customers"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Gong does not publish list pricing. Market-reported data puts Foundations around $1,300–$1,600/user/year, plus a mandatory platform fee of roughly $5,000–$50,000/year and a $7,500+ onboarding fee — reported figures, not an official price list. Confirm directly with Gong."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.gong.io",
+    "sourceUrl": "https://www.gong.io/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "clari",
+    "name": "Clari",
+    "logoInitial": "CL",
+    "bestFor": "AI-driven revenue forecasting and pipeline risk management for sales leadership",
+    "description": "A revenue operations platform (Forecast, Copilot conversation intelligence, Groove sales engagement) that uses AI to flag at-risk deals and improve forecast accuracy across a sales org.",
+    "functions": ["sales", "executive-leadership-analytics"],
+    "phases": ["go-to-market-sales"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; direct-sales pricing model"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published list price. Market-reported estimates: Forecast/Core module ~$1,200–$1,500/user/year; Copilot conversation intelligence ~$60–$110/user/month; full stack commonly $200–$310/user/month plus five-figure implementation — reported figures, not official pricing."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.clari.com",
+    "sourceUrl": "https://www.clari.com/pricing/",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "apollo-io",
+    "name": "Apollo.io",
+    "logoInitial": "AO",
+    "bestFor": "AI-assisted prospecting, enrichment, and outbound sequencing with an actually usable free plan",
+    "description": "A sales intelligence and engagement platform combining a large B2B contact database with AI email writing, call analysis, and multichannel outbound sequences.",
+    "functions": ["sales"],
+    "phases": ["go-to-market-sales"],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "50 data credits/month, company & people search, limited sequences"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 49,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Basic $49/user/month (annual, 5,000 credits/year); Professional $79/user/month (AI email writing, dialer); Organization $119/user/month (custom reports, 200 mobile credits/month)."
+    },
+    "topPick": true,
+    "enterpriseReady": false,
+    "officialUrl": "https://www.apollo.io",
+    "sourceUrl": "https://www.apollo.io/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]

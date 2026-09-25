@@ -1,0 +1,77 @@
+[
+  {
+    "id": "eightfold-ai",
+    "name": "Eightfold AI",
+    "logoInitial": "EF",
+    "bestFor": "Large-enterprise talent intelligence: AI matching across sourcing, internal mobility, and workforce planning",
+    "description": "A talent intelligence platform that uses AI to match candidates and employees to roles across acquisition, internal mobility, and workforce planning, built for very large organizations.",
+    "functions": ["hr-talent"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; enterprise sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing; each module (talent acquisition, talent management, workforce exchange) is scoped and quoted separately. Analyst estimates put costs around $7–$10 per employee/month, with large-enterprise annual contracts commonly reported in the $150K–$500K+ range — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://eightfold.ai",
+    "sourceUrl": "https://eightfold.ai/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "hirevue",
+    "name": "HireVue",
+    "logoInitial": "HV",
+    "bestFor": "AI-assisted video interviewing and candidate screening at hiring scale",
+    "description": "A hiring platform combining on-demand video interviews with AI-assisted screening and assessments, integrated into enterprise ATS workflows to speed up high-volume hiring.",
+    "functions": ["hr-talent"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; request-a-demo sales process"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published self-serve pricing. Three packages (Essential, Enterprise, Premium) are quoted by sales; third-party procurement data (Vendr) reports contracts averaging roughly $49,855/year, typically $35K–$145K+, plus $15K–$40K implementation — reported figures, not an official price list."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.hirevue.com",
+    "sourceUrl": "https://www.hirevue.com/pricing",
+    "lastChecked": "2026-09-25"
+  },
+  {
+    "id": "lattice",
+    "name": "Lattice",
+    "logoInitial": "LT",
+    "bestFor": "AI-assisted performance management, engagement, and an HR agent that answers people-data questions",
+    "description": "A people management platform (performance reviews, goals, engagement surveys, HRIS) that added a standalone AI Agent to answer HR questions, coach managers, and act on people data.",
+    "functions": ["hr-talent"],
+    "phases": ["support-maintenance"],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; $4,000/year minimum, annual contracts only"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 11,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Foundations HRIS is $11/seat/month; Performance and Goals modules are $8/user/month each; Engagement add-on $4/user/month; Grow (career development) $4/user/month; Compensation $6/user/month. Modular, stacked pricing rather than flat tiers."
+    },
+    "topPick": true,
+    "enterpriseReady": true,
+    "officialUrl": "https://lattice.com",
+    "sourceUrl": "https://lattice.com/pricing",
+    "lastChecked": "2026-09-25"
+  }
+]
