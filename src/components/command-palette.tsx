@@ -13,7 +13,13 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { functions, tools } from "@/lib/data";
-import { Building2, Compass, LayoutGrid, Wrench } from "lucide-react";
+import {
+  Building2,
+  Compass,
+  LayoutGrid,
+  Waypoints,
+  Wrench,
+} from "lucide-react";
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -51,6 +57,9 @@ export function CommandPalette() {
           <CommandGroup heading="Pages">
             <CommandItem onSelect={() => go("/")}>
               <LayoutGrid /> Registry (home)
+            </CommandItem>
+            <CommandItem onSelect={() => go("/architecture")}>
+              <Waypoints /> Interactive Architecture
             </CommandItem>
             <CommandItem onSelect={() => go("/stack-builder")}>
               <Compass /> Enterprise Stack Builder
