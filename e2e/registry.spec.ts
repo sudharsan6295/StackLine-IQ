@@ -11,33 +11,54 @@ test("homepage renders the hero, live stats, and matrix", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("the lifecycle architecture diagram shows top picks and links to tool pages", async ({
+test("the lifecycle map is embedded on the homepage and shows all functions and stages", async ({
   page,
 }) => {
   await page.goto("/");
   await expect(
     page.getByRole("heading", {
-      name: "From idea to support: the AI-augmented lifecycle",
+      name: "How the whole AI-augmented lifecycle fits together",
     }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { name: "Ideation & Discovery" }),
+    page.getByText("Business & go-to-market functions"),
   ).toBeVisible();
-  const link = page.getByRole("link", { name: "GitHub Copilot" }).first();
-  await link.click();
-  await expect(page).toHaveURL(/\/tools\/github-copilot/);
+  await expect(page.getByText("Technical & delivery functions")).toBeVisible();
+  await expect(
+    page.getByTestId("lifecycle-phase-ideation-discovery"),
+  ).toBeVisible();
+  await expect(page.getByTestId("lifecycle-function-sales")).toBeVisible();
+  await expect(
+    page.getByTestId("lifecycle-function-software-development"),
+  ).toBeVisible();
 });
 
-test("+more on a lifecycle stage filters the registry by that phase", async ({
+test("clicking a function in the lifecycle map opens its detail panel with connections and top picks", async ({
   page,
 }) => {
   await page.goto("/");
-  await page
-    .getByRole("button", { name: /\+\d+ more/ })
-    .first()
-    .click();
-  await expect(page).toHaveURL(/ph=ideation-discovery/);
-  await expect(page.getByText(/tools match/)).toBeVisible();
+  await page.getByTestId("lifecycle-function-sales").click();
+  await expect(
+    page.getByRole("heading", { name: "Sales", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("Prospecting & lead enrichment")).toBeVisible();
+  await expect(
+    page.getByText("Hands off qualified leads to the sales pipeline"),
+  ).toBeVisible();
+
+  const toolLink = page.getByRole("link", { name: "Gong" });
+  await toolLink.click();
+  await expect(page).toHaveURL(/\/tools\/gong/);
+});
+
+test("clicking a phase in the lifecycle map shows its active functions and top picks", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.getByTestId("lifecycle-phase-ideation-discovery").click();
+  await expect(page.getByText("Functions active in this stage")).toBeVisible();
+  await expect(page.getByText("Top-pick tools for this stage")).toBeVisible();
+  await expect(page.getByRole("link", { name: "Perplexity" })).toBeVisible();
 });
 
 test("clicking a matrix cell filters the tool grid", async ({ page }) => {

@@ -9,7 +9,6 @@ export const siteConfig = {
 
 export const navLinks = [
   { href: "/", label: "Registry" },
-  { href: "/architecture", label: "Architecture" },
   { href: "/stack-builder", label: "Stack Builder" },
   { href: "/governance", label: "Governance" },
 ];

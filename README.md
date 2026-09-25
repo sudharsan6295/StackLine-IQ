@@ -20,9 +20,6 @@ sourced pricing and free-tier details kept current in version control.
 - **TanStack Query/Table** are installed for future data-heavy views (not
   yet wired to a live endpoint — all current data is static/local).
 - **Recharts** for the Stack Builder's cost chart.
-- **@xyflow/react (React Flow)** for the interactive architecture canvas —
-  node-graph rendering, pan/zoom, and edge routing for the function ×
-  lifecycle relationship diagram.
 - **Zod** for the data schema and build-time validation.
 - **Vitest** + **Testing Library** for unit/component tests, **Playwright**
   for end-to-end tests (desktop + mobile viewport projects).
@@ -34,16 +31,12 @@ sourced pricing and free-tier details kept current in version control.
 src/
   app/                    Routes (App Router). Every page is statically
                            generated via generateStaticParams.
-    page.tsx               Homepage: hero, live stats, a compact lifecycle
-                           preview diagram, the function×phase matrix, and
-                           the filterable/searchable tool registry.
-    architecture/           The full interactive architecture: a React
-                           Flow canvas of all 7 phases + 14 functions with
-                           real connections (lifecycle sequence, feedback
-                           loop, phase↔function membership, cross-function
-                           relationships), click-to-explore detail panel,
-                           plus a fully static/accessible directory of the
-                           same content below it.
+    page.tsx               Homepage: hero, live stats, the interactive
+                           lifecycle map (business functions above a
+                           7-stage bar, technical functions below, click
+                           any node for its detail panel), the
+                           function×phase matrix, and the
+                           filterable/searchable tool registry.
     functions/[id]/        One static page per business function: its tools
                            grouped by phase, plus an interactive Pilot →
                            Scale → Optimize adoption roadmap.
@@ -58,13 +51,12 @@ src/
                            by hand.
     error.tsx, not-found.tsx  Error boundary and 404 empty state.
   components/              UI components. `ui/` is shadcn-generated
-                           primitives; `architecture/` is the React Flow
-                           canvas (PhaseNode, FunctionNode, DetailPanel,
-                           the accessible FunctionDirectory fallback);
-                           everything else is hand-built for this app
-                           (ToolCard, FunctionPhaseMatrix, RegistryExplorer,
-                           CompareBar, RoadmapTimeline, ArchitectureDiagram
-                           the homepage's compact preview...).
+                           primitives; `architecture/` holds the homepage
+                           lifecycle map (`LifecycleMap`, the shared
+                           `DetailPanel` it opens on click) plus the icon
+                           lookups it uses; everything else is hand-built
+                           for this app (ToolCard, FunctionPhaseMatrix,
+                           RegistryExplorer, CompareBar, RoadmapTimeline...).
   data/
     functions.json           The 14 business functions, each with a
                            `subtypes[]` breakdown (e.g. Sales → Prospecting
@@ -72,8 +64,8 @@ src/
     phases.json               The 7 lifecycle phases.
     function-connections.json  Curated, directed cross-function
                            relationships (`{from, to, relationship}`) — the
-                           "how functions hand off to each other" graph
-                           the architecture page visualizes.
+                           "how functions hand off to each other" graph the
+                           lifecycle map's detail panel surfaces on click.
     tools/<function>.json     One file per function — the tool records
                            whose *primary* home is that function (a tool
                            can still list additional functions/phases it
@@ -127,13 +119,28 @@ inconsistent record (e.g. a `Free` badge on a tool that isn't actually
 **Both the business functions and lifecycle phases are a fixed, curated
 list** (`src/data/functions.json` / `phases.json`) rather than open-ended,
 since the whole product's information architecture (the matrix, the filter
-UI, the stack builder, the architecture canvas) is built around a stable
-set of 14 functions × 7 phases. Adding a genuinely new function or phase is
-a deliberate content decision, not a routine PR — it means adding the entry
+UI, the stack builder, the lifecycle map) is built around a stable set of
+14 functions × 7 phases. Adding a genuinely new function or phase is a
+deliberate content decision, not a routine PR — it means adding the entry
 to that file (with its `subtypes[]`) _and_ at least one tool file
-referencing it. `function-connections.json` is validated the same way:
-`npm run validate:data` fails on a connection referencing an unknown
-function id, a self-referencing connection, or a duplicate pair.
+referencing it, plus deciding which lane it belongs in for the lifecycle
+map (`BUSINESS_LANE` / `TECHNICAL_LANE` in `lifecycle-map.tsx`).
+`function-connections.json` is validated the same way: `npm run
+validate:data` fails on a connection referencing an unknown function id, a
+self-referencing connection, or a duplicate pair.
+
+**The homepage's lifecycle map** (`src/components/architecture/
+lifecycle-map.tsx`) renders three horizontal lanes: business/go-to-market
+functions above, the 7-stage pipeline as the middle bar (connected in
+sequence, with a feedback-loop note from the last stage back to the
+first), and technical/delivery functions below — deliberately not a
+separate page or a pan/zoom canvas, so the whole architecture reads at a
+glance without leaving the registry. Clicking any stage or function
+highlights everything it's related to in place (its active stages, or its
+connected functions from `function-connections.json`) and opens a shared
+`DetailPanel` below the map with subtypes, connections, and top-pick
+tools — clicking a connection or a stage chip inside that panel pivots
+the selection rather than navigating away.
 
 ## Research sources & methodology
 

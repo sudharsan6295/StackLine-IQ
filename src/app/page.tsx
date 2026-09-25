@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowRight, Compass } from "lucide-react";
 import { RegistryExplorer } from "@/components/registry-explorer";
-import { ArchitectureDiagram } from "@/components/architecture-diagram";
+import { LifecycleMap } from "@/components/architecture/lifecycle-map";
 import { CompareBar } from "@/components/compare-bar";
 import { LiveStat } from "@/components/live-stat";
 import { stats } from "@/lib/data";
@@ -65,17 +65,15 @@ export default function Home() {
             Architecture at a glance
           </p>
           <h2 className="mt-2 font-display text-xl font-bold tracking-tight sm:text-2xl">
-            From idea to support: the AI-augmented lifecycle
+            How the whole AI-augmented lifecycle fits together
           </h2>
           <p className="mt-2 mb-6 max-w-2xl text-sm text-muted-foreground">
-            Every stage of shipping a product, start to end, with the
-            category-leading tool for that stage. Scroll to see all seven —
-            select a tool for its pricing, or &ldquo;+more&rdquo; to see every
-            top pick for that stage in the registry below.
+            Business functions above feed and are fed by the 7-stage build
+            pipeline; technical functions below build and run it. Click any
+            stage or function to see its subtypes, connections, and top-pick
+            tools.
           </p>
-          <Suspense>
-            <ArchitectureDiagram />
-          </Suspense>
+          <LifecycleMap />
         </div>
       </section>
 
