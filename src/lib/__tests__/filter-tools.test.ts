@@ -29,6 +29,7 @@ function makeTool(overrides: Partial<Tool>): Tool {
     officialUrl: "https://example.com",
     sourceUrl: "https://example.com/pricing",
     lastChecked: "2026-01-01",
+    addedOn: "2026-01-01",
     ...overrides,
   };
 }
