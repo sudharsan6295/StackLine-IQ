@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-config";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { LogoMark } from "@/components/logo-mark";
 import { cn } from "cn";
 
 export function SiteHeader() {
@@ -14,21 +14,24 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+      <div className="gradient-bg h-[2px] w-full" aria-hidden="true" />
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 sm:px-6">
         <Link
-          href="/"
-          className="flex shrink-0 items-center gap-2"
-          aria-label={`${siteConfig.name} — home`}
+          href="/about"
+          className="group flex shrink-0 items-center gap-2"
+          aria-label={`About ${siteConfig.name}`}
         >
-          <span className="flex size-7 items-center justify-center rounded-sm border border-foreground/20 font-data text-[0.65rem] font-bold tracking-tight">
-            AI
-          </span>
-          <span className="font-display text-[0.95rem] font-semibold tracking-tight">
-            {siteConfig.shortName}
+          <LogoMark className="h-8 w-8 shrink-0 transition-transform group-hover:scale-105" />
+          <span className="font-logo text-2xl font-black tracking-tight">
+            <span className="text-foreground">Stackline</span>
+            <span className="text-signal">IQ</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 sm:flex" aria-label="Primary">
+        <nav
+          className="hidden flex-1 items-center justify-center gap-1 sm:flex"
+          aria-label="Primary"
+        >
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -39,10 +42,10 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "rounded-sm px-3 py-1.5 text-sm font-medium transition-colors",
+                  "rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors",
                   active
-                    ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                    ? "gradient-bg text-white shadow-sm"
+                    : "text-muted-foreground hover:bg-secondary hover:text-foreground",
                 )}
               >
                 {link.label}
@@ -59,19 +62,18 @@ export function SiteHeader() {
                 new KeyboardEvent("keydown", { key: "k", metaKey: true }),
               )
             }
-            className="hidden items-center gap-2 rounded-sm border border-line bg-secondary/50 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground sm:flex"
+            className="hidden items-center gap-2 rounded-full border border-line bg-secondary/50 px-3.5 py-1.5 text-sm text-muted-foreground transition-all hover:border-signal/40 hover:text-foreground hover:shadow-sm sm:flex"
             aria-label="Open search (Cmd+K)"
           >
-            <Search className="size-3.5" aria-hidden="true" />
+            <Search className="size-3.5 text-signal" aria-hidden="true" />
             Search
-            <kbd className="ml-1 rounded-xs border border-line bg-background px-1 font-data text-[0.65rem]">
+            <kbd className="ml-1 rounded-full border border-line bg-background px-1.5 font-data text-[0.65rem]">
               ⌘K
             </kbd>
           </button>
-          <ThemeToggle />
           <button
             type="button"
-            className="flex size-8 items-center justify-center rounded-sm border border-line sm:hidden"
+            className="flex size-8 items-center justify-center rounded-full border border-line transition-colors hover:border-signal/40 sm:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((o) => !o)}

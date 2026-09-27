@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, Star, X, LayoutGrid } from "lucide-react";
+import { ArrowRight, ArrowLeft, Star, X, LayoutGrid, Home, Sparkles } from "lucide-react";
 import {
   functionById,
   phaseById,
@@ -32,10 +32,27 @@ function Chip({
     <button
       type="button"
       onClick={onClick}
-      className="rounded-xs border border-line bg-secondary/40 px-2 py-1 text-left text-xs font-medium hover:border-signal hover:text-signal"
+      className="rounded-full border border-line bg-secondary/40 px-2.5 py-1 text-left text-xs font-medium hover:border-signal hover:text-signal"
     >
       {children}
     </button>
+  );
+}
+
+function Breadcrumb({ onSelect, trail }: { onSelect: (selection: Selection) => void; trail: string[] }) {
+  return (
+    <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-muted-foreground">
+      <button type="button" onClick={() => onSelect(null)} className="flex items-center gap-1 hover:text-foreground">
+        <Home className="size-3" aria-hidden="true" />
+        Architecture
+      </button>
+      {trail.map((label) => (
+        <span key={label} className="flex items-center gap-1.5">
+          <span aria-hidden="true">/</span>
+          <span className="text-foreground">{label}</span>
+        </span>
+      ))}
+    </nav>
   );
 }
 
@@ -59,9 +76,10 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
 
     return (
       <div className="flex h-full flex-col gap-4 overflow-y-auto p-4">
+        <Breadcrumb onSelect={onSelect} trail={[phase.name]} />
         <div className="flex items-start justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="flex size-8 items-center justify-center rounded-sm bg-secondary text-signal">
+            <span className="gradient-bg flex size-8 items-center justify-center rounded-lg text-white">
               {/* eslint-disable-next-line react-hooks/static-components -- stable lookup from a static icon map, not a fresh component definition */}
               <Icon className="size-4" aria-hidden="true" />
             </span>
@@ -114,7 +132,7 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
                 <li key={tool.id}>
                   <Link
                     href={`/tools/${tool.id}`}
-                    className="flex items-center justify-between rounded-sm border border-line px-2.5 py-1.5 text-sm hover:border-signal hover:text-signal"
+                    className="flex items-center justify-between rounded-lg border border-line px-2.5 py-1.5 text-sm hover:border-signal hover:text-signal"
                   >
                     {tool.name}
                     <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -145,9 +163,10 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
 
   return (
     <div className="flex h-full flex-col gap-4 overflow-y-auto p-4">
+      <Breadcrumb onSelect={onSelect} trail={[fn.name]} />
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="flex size-8 items-center justify-center rounded-sm bg-secondary text-foreground">
+          <span className="gradient-bg flex size-8 items-center justify-center rounded-lg text-white">
             {/* eslint-disable-next-line react-hooks/static-components -- stable lookup from a static icon map, not a fresh component definition */}
             <Icon className="size-4" aria-hidden="true" />
           </span>
@@ -170,17 +189,18 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
       <p className="text-sm text-muted-foreground">{fn.description}</p>
 
       <div>
-        <p className="mb-2 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
-          Subtypes
+        <p className="mb-2 flex items-center gap-1 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
+          <Sparkles className="size-3 text-signal" aria-hidden="true" />
+          Sub-functions &amp; how AI shows up
         </p>
-        <ul className="flex flex-col gap-1 text-sm">
+        <ul className="flex flex-col gap-2.5 text-sm" title="Hover a sub-function for its AI use case">
           {fn.subtypes.map((s) => (
-            <li key={s} className="flex items-start gap-1.5">
-              <span
-                className="mt-1.5 size-1 shrink-0 rounded-full bg-signal"
-                aria-hidden="true"
-              />
-              {s}
+            <li key={s.name} className="flex items-start gap-1.5" title={s.aiUseCase}>
+              <span className="mt-1.5 size-1 shrink-0 rounded-full bg-signal" aria-hidden="true" />
+              <span>
+                <span className="font-medium">{s.name}</span>
+                <span className="block text-xs text-muted-foreground">{s.aiUseCase}</span>
+              </span>
             </li>
           ))}
         </ul>
@@ -219,7 +239,7 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
                   onClick={() =>
                     onSelect({ type: "function", id: c.functionId })
                   }
-                  className="flex w-full items-start gap-2 rounded-sm border border-line px-2.5 py-1.5 text-left text-xs hover:border-signal"
+                  className="flex w-full items-start gap-2 rounded-lg border border-line px-2.5 py-1.5 text-left text-xs hover:border-signal"
                 >
                   {c.direction === "outgoing" ? (
                     <ArrowRight
@@ -260,7 +280,7 @@ export function DetailPanel({ selection, onSelect }: DetailPanelProps) {
               <li key={tool.id}>
                 <Link
                   href={`/tools/${tool.id}`}
-                  className="flex items-center justify-between rounded-sm border border-line px-2.5 py-1.5 text-sm hover:border-signal hover:text-signal"
+                  className="flex items-center justify-between rounded-lg border border-line px-2.5 py-1.5 text-sm hover:border-signal hover:text-signal"
                 >
                   {tool.name}
                   <ArrowRight className="size-3.5" aria-hidden="true" />

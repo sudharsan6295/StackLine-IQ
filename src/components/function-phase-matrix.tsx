@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { functions, phases, getMatrixCounts } from "@/lib/data";
 import { cn } from "cn";
 
@@ -25,8 +25,28 @@ export function FunctionPhaseMatrix({
     [counts],
   );
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showRightFade, setShowRightFade] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    function updateFade() {
+      if (!el) return;
+      setShowRightFade(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    }
+    updateFade();
+    el.addEventListener("scroll", updateFade, { passive: true });
+    window.addEventListener("resize", updateFade);
+    return () => {
+      el.removeEventListener("scroll", updateFade);
+      window.removeEventListener("resize", updateFade);
+    };
+  }, []);
+
   return (
-    <div className="overflow-x-auto rounded-md border border-line bg-card">
+    <div className="relative overflow-hidden rounded-md border border-line bg-card">
+      <div ref={scrollRef} className="overflow-x-auto">
       <table className="w-full min-w-[880px] border-collapse text-left">
         <caption className="sr-only">
           Number of AI tools available for each business function at each
@@ -105,6 +125,15 @@ export function FunctionPhaseMatrix({
           ))}
         </tbody>
       </table>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute top-0 right-0 bottom-0 w-10 bg-gradient-to-l from-card to-transparent transition-opacity duration-200",
+          showRightFade ? "opacity-100" : "opacity-0",
+        )}
+      />
     </div>
   );
 }

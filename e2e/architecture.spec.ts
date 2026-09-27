@@ -9,7 +9,7 @@ test("architecture page renders the canvas, legend, and accessible directory", a
       name: "How the whole AI-augmented lifecycle fits together",
     }),
   ).toBeVisible();
-  await expect(page.getByText("Lifecycle sequence")).toBeVisible();
+  await expect(page.getByText("Outgoing connections")).toBeVisible();
   await expect(page.locator(".react-flow")).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Every function, in detail" }),

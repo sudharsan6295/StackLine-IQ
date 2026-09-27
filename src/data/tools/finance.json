@@ -5,8 +5,12 @@
     "logoInitial": "RM",
     "bestFor": "AI-automated corporate card, spend, and accounts-payable management with a genuinely free core plan",
     "description": "A finance operations platform (corporate cards, expense management, AP/invoice OCR) with Ramp Intelligence: a natural-language finance assistant, AI policy generation, and agentic approval of routine transactions.",
-    "functions": ["finance"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "finance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -24,31 +28,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://ramp.com",
     "sourceUrl": "https://ramp.com/pricing",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "mosaic",
-    "name": "Mosaic",
-    "logoInitial": "MO",
-    "bestFor": "AI-assisted FP&A: automated reporting, forecasting, and metrics pulled straight from source systems",
-    "description": "A strategic finance / FP&A platform that connects to ERP, CRM, and HRIS systems to automate reporting and build driver-based financial models and forecasts, with AI-assisted analysis.",
-    "functions": ["finance"],
-    "phases": ["support-maintenance"],
-    "pricingModel": "paid",
-    "badge": "Paid",
-    "freeTier": {
-      "available": false,
-      "limits": "No free tier; demo-and-quote sales process"
-    },
-    "paidTier": {
-      "isCustomPricing": true,
-      "notes": "Mosaic does not publish pricing on its website. Plans are described as Analytics, Foundation, and Growth deployment tiers, scoped by team size and modules, all requiring a custom quote."
-    },
-    "topPick": false,
-    "enterpriseReady": true,
-    "officialUrl": "https://www.mosaic.tech",
-    "sourceUrl": "https://www.mosaic.tech/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "vic-ai",
@@ -56,8 +37,12 @@
     "logoInitial": "VC",
     "bestFor": "Autonomous, high-volume invoice processing for finance teams that want AP off their plate",
     "description": "An AI-first accounts payable platform that autonomously processes, codes, and approves invoices at high confidence thresholds, reducing manual AP data entry.",
-    "functions": ["finance"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "finance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -72,6 +57,71 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.vic.ai",
     "sourceUrl": "https://www.vic.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "brex",
+    "name": "Brex",
+    "logoInitial": "BX",
+    "bestFor": "AI-powered corporate cards and spend management with a genuinely free Essentials tier",
+    "description": "A corporate card and spend management platform whose AI features — compliance audit detection, an expense assistant that auto-fills reports, and anomaly alerts — sit on top of unlimited global cards, approvals, and reimbursements. Capital One completed its acquisition of Brex in April 2026.",
+    "functions": [
+      "finance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Essentials plan: unlimited corporate cards, expense rules, bill pay, and accounting integrations for up to two entities, no per-seat fee"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 12,
+      "currency": "USD",
+      "billingUnit": "per user / month",
+      "notes": "Premium is $12/user/month, adding AI compliance audit detection, the Brex AI expense assistant, dynamic approval chains, and deeper ERP/HRIS integrations. Enterprise (unlimited entities, local card issuance, dedicated support) and Smart Card (procurement) are custom-quoted."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.brex.com",
+    "sourceUrl": "https://www.brex.com/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "logoInitial": "PZ",
+    "bestFor": "AI-native, real-time bookkeeping for startups that replaces manual month-end close",
+    "description": "An AI-native accounting platform that auto-categorizes transactions at 98%+ accuracy, keeps financials updated in real time instead of monthly, and connects natively to startup-stack tools like Stripe, Ramp, Brex, and Gusto.",
+    "functions": [
+      "finance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "14-day free trial; no persistent free plan"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 30,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Starter $30/mo (1 seat, 25 lifetime AI credits); Core $72/mo (5 seats); Complete $120/mo (unlimited seats, 100 AI credits/month, AI-powered reconciliations); Scale $360/mo (unlimited seats, 300 AI credits/month, no transaction or integration limits). Bookkeeper-assisted Expert Reviewed and Full Service tiers layer on top, priced separately. US-only."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://puzzle.io",
+    "sourceUrl": "https://puzzle.io/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

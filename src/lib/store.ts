@@ -10,6 +10,9 @@ interface ShortlistState {
   isComparing: (id: string) => boolean;
   clearCompare: () => void;
   clearShortlist: () => void;
+  /** Merges shared ids into the current list — used to hydrate a shared link. */
+  addToShortlist: (ids: string[]) => void;
+  addToCompare: (ids: string[]) => void;
 }
 
 const MAX_COMPARE = 4;
@@ -37,6 +40,16 @@ export const useShortlistStore = create<ShortlistState>()(
       isComparing: (id) => get().compareIds.includes(id),
       clearCompare: () => set({ compareIds: [] }),
       clearShortlist: () => set({ shortlistIds: [] }),
+      addToShortlist: (ids) =>
+        set((state) => ({
+          shortlistIds: Array.from(new Set([...state.shortlistIds, ...ids])),
+        })),
+      addToCompare: (ids) =>
+        set((state) => ({
+          compareIds: Array.from(
+            new Set([...state.compareIds, ...ids]),
+          ).slice(0, MAX_COMPARE),
+        })),
     }),
     { name: "ai-tools-hub-shortlist" },
   ),

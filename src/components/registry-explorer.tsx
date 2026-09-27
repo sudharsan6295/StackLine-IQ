@@ -95,6 +95,7 @@ export function RegistryExplorer() {
           onViewChange={(v) => update({ view: v })}
           onClear={clearAll}
           resultCount={filtered.length}
+          resultTools={filtered}
         />
 
         {groups.length === 0 ? (

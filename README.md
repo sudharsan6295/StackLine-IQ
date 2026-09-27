@@ -1,4 +1,4 @@
-# AI Tools Hub
+# Stackline
 
 The enterprise registry for AI tools: discover the best-in-category AI tool
 for every business function, at every stage of the product lifecycle, with

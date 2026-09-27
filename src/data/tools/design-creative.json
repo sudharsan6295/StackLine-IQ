@@ -5,8 +5,14 @@
     "logoInitial": "FG",
     "bestFor": "Collaborative UI/UX design and prototyping with AI built into the tool teams already design in",
     "description": "The standard collaborative design and prototyping tool, with Figma AI credits powering generation, restyling, and prototyping-assist features across every plan.",
-    "functions": ["design-creative", "product-ideation"],
-    "phases": ["requirements-design", "build"],
+    "functions": [
+      "design-creative",
+      "product-ideation"
+    ],
+    "phases": [
+      "requirements-design",
+      "build"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -24,7 +30,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.figma.com",
     "sourceUrl": "https://www.figma.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "adobe-firefly",
@@ -32,8 +39,13 @@
     "logoInitial": "AF",
     "bestFor": "Commercially-safe generative image, video, and audio creation integrated with Adobe's creative apps",
     "description": "Adobe's generative AI model family for images, video, audio, and translation, trained to be commercially safe for enterprise use and built into Photoshop, Illustrator, and Premiere.",
-    "functions": ["design-creative", "marketing"],
-    "phases": ["build"],
+    "functions": [
+      "design-creative",
+      "marketing"
+    ],
+    "phases": [
+      "build"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -51,7 +63,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://firefly.adobe.com",
     "sourceUrl": "https://firefly.adobe.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "midjourney",
@@ -59,11 +72,19 @@
     "logoInitial": "MJ",
     "bestFor": "The highest-quality AI image and video generation for creative and marketing visuals",
     "description": "A standalone AI image and video generation tool, widely regarded for the highest aesthetic quality of its outputs, used for concept art, marketing visuals, and creative exploration.",
-    "functions": ["design-creative", "marketing"],
-    "phases": ["build"],
+    "functions": [
+      "design-creative",
+      "marketing"
+    ],
+    "phases": [
+      "build"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
-    "freeTier": { "available": false, "limits": "No free plan or trial" },
+    "freeTier": {
+      "available": false,
+      "limits": "No free plan or trial"
+    },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 10,
@@ -75,6 +96,72 @@
     "enterpriseReady": false,
     "officialUrl": "https://www.midjourney.com",
     "sourceUrl": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "logoInitial": "RW",
+    "bestFor": "AI video generation and editing, with a real free tier to try every model before paying",
+    "description": "A generative AI platform for video and image creation (Gen-4.5, Act-Two performance capture, Aleph video editing) plus access to third-party models like Veo and Kling, with an agentic creative collaborator built into every paid plan.",
+    "functions": [
+      "design-creative",
+      "marketing"
+    ],
+    "phases": [
+      "build"
+    ],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "125 one-time credits, a selection of generative models, 5GB storage"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 12,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Standard $12/mo billed annually ($15/mo monthly, 625 credits, all AI video/image models, no watermarks); Pro $28/mo (2,250 credits, 5 projects, 1 Brand Kit); Max $76/mo (9,500 credits, credit rollover, 3 Brand Kits, studio-grade HDR/ProRes export). Prices shown are the annual-billing rate."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://runway.com",
+    "sourceUrl": "https://runway.com/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "framer",
+    "name": "Framer",
+    "logoInitial": "FR",
+    "bestFor": "Prompt-to-website generation and design for teams who want to ship a live site, not just a mockup",
+    "description": "An AI-assisted website builder and design tool that generates a real, editable, publishable site from a prompt or a design, aimed at replacing both the prototyping and the hand-off-to-a-developer steps for marketing and landing pages.",
+    "functions": [
+      "design-creative"
+    ],
+    "phases": [
+      "build"
+    ],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "Full editor access; no custom domain until a paid plan"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 10,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Priced per published site, not per account — running multiple sites means multiple plans. Basic $10/mo, Pro $30/mo (the earlier $100/mo 'Scale' tier is gone; the lineup is now Basic/Pro/Enterprise only). Additional editor seats are $20/user/month on paid plans ($10 for a content-only role). Enterprise is custom, with volume-discounted credits."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://www.framer.com",
+    "sourceUrl": "https://www.framer.com/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

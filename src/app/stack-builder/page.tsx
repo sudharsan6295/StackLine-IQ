@@ -40,9 +40,7 @@ const budgetOptions: {
 ];
 
 export default function StackBuilderPage() {
-  const [selected, setSelected] = useState<string[]>(
-    functions.slice(0, 5).map((f) => f.id),
-  );
+  const [selected, setSelected] = useState<string[]>([]);
   const [teamSize, setTeamSize] = useState(25);
   const [budget, setBudget] = useState<BudgetLevel>("low");
   const [computed, setComputed] = useState(false);
@@ -76,10 +74,10 @@ export default function StackBuilderPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
       <p className="font-data text-xs font-semibold tracking-[0.2em] text-signal uppercase">
-        Enterprise stack builder
+        Build
       </p>
-      <h1 className="mt-2 font-display text-3xl font-bold tracking-tight">
-        Build your AI stack
+      <h1 className="mt-2 font-display text-3xl font-extrabold tracking-tight">
+        Build your <span className="gradient-text">AI stack</span>
       </h1>
       <p className="mt-3 max-w-2xl text-muted-foreground">
         Pick which functions you&apos;re rolling AI out to, your team size, and
@@ -154,7 +152,10 @@ export default function StackBuilderPage() {
             </ToggleGroup>
           </div>
 
-          <Button className="rounded-sm" onClick={() => setComputed(true)}>
+          <Button
+            className="gradient-bg rounded-full text-white hover:opacity-90"
+            onClick={() => setComputed(true)}
+          >
             Recommend a stack
           </Button>
         </div>

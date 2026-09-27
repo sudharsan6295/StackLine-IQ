@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise Stack Builder",
+  title: "Build",
   description:
     "Pick your functions, team size, and budget level to get a recommended AI tool stack with an estimated monthly cost.",
 };

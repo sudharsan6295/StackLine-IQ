@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import { ArrowRight, Compass } from "lucide-react";
+import { ArrowRight, ChevronDown, Compass } from "lucide-react";
 import { RegistryExplorer } from "@/components/registry-explorer";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import { CompareBar } from "@/components/compare-bar";
@@ -9,17 +9,18 @@ import { stats } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className="pb-24">
+    <div>
       <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="font-data text-xs font-semibold tracking-[0.2em] text-signal uppercase">
-            The enterprise AI registry
+            AI, mapped for every team
           </p>
-          <h1 className="mt-3 max-w-2xl font-display text-3xl leading-[1.1] font-bold tracking-tight sm:text-5xl">
-            Know exactly which AI tool to run for every job, in every function.
+          <h1 className="mt-3 max-w-2xl font-display text-3xl leading-[1.1] font-extrabold tracking-tight sm:text-5xl">
+            The right AI tool for every job.{" "}
+            <span className="gradient-text">Every time.</span>
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
-            One registry, mapped across the full product lifecycle — from
+            One stack, mapped across the full product lifecycle — from
             ideation to support — with sourced pricing, free-tier limits, and a
             &ldquo;Top pick&rdquo; called out where one tool clearly leads its
             category.
@@ -27,14 +28,14 @@ export default function Home() {
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a
               href="#registry-filters"
-              className="inline-flex h-10 items-center gap-2 rounded-sm bg-primary px-4 text-sm font-medium text-primary-foreground hover:opacity-90"
+              className="gradient-bg inline-flex h-10 items-center gap-2 rounded-full px-5 text-sm font-semibold text-white shadow-sm transition-transform hover:scale-[1.02]"
             >
-              Browse the registry{" "}
+              Explore the stack{" "}
               <ArrowRight className="size-4" aria-hidden="true" />
             </a>
             <Link
               href="/stack-builder"
-              className="inline-flex h-10 items-center gap-2 rounded-sm border border-line px-4 text-sm font-medium hover:bg-secondary"
+              className="inline-flex h-10 items-center gap-2 rounded-full border border-line px-5 text-sm font-semibold hover:bg-secondary"
             >
               <Compass className="size-4" aria-hidden="true" />
               Build your stack
@@ -60,26 +61,38 @@ export default function Home() {
       </section>
 
       <section className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-          <p className="font-data text-xs font-semibold tracking-[0.2em] text-signal uppercase">
-            Architecture at a glance
-          </p>
-          <h2 className="mt-2 font-display text-xl font-bold tracking-tight sm:text-2xl">
-            From idea to support: the AI-augmented lifecycle
-          </h2>
+        <details className="group mx-auto max-w-6xl px-4 py-6 sm:px-6">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-3 [&::-webkit-details-marker]:hidden">
+            <div>
+              <p className="font-data text-xs font-semibold tracking-[0.2em] text-signal uppercase">
+                Explore
+              </p>
+              <h2 className="mt-2 font-display text-xl font-extrabold tracking-tight sm:text-2xl">
+                From idea to support — see it all connect
+              </h2>
+            </div>
+            <ChevronDown
+              className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+              aria-hidden="true"
+            />
+          </summary>
           <p className="mt-2 mb-6 max-w-2xl text-sm text-muted-foreground">
             Every stage of shipping a product, start to end, with the
-            category-leading tool for that stage. Scroll to see all seven —
-            select a tool for its pricing, or &ldquo;+more&rdquo; to see every
-            top pick for that stage in the registry below.
+            category-leading tool for that stage. Select a tool for its
+            pricing, or &ldquo;+more&rdquo; to see every top pick for that
+            stage — or see the full interactive version on the{" "}
+            <Link href="/architecture" className="text-signal hover:underline">
+              Explore page
+            </Link>
+            .
           </p>
           <Suspense>
             <ArchitectureDiagram />
           </Suspense>
-        </div>
+        </details>
       </section>
 
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <Suspense>
           <RegistryExplorer />
         </Suspense>

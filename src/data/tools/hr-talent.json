@@ -5,8 +5,12 @@
     "logoInitial": "EF",
     "bestFor": "Large-enterprise talent intelligence: AI matching across sourcing, internal mobility, and workforce planning",
     "description": "A talent intelligence platform that uses AI to match candidates and employees to roles across acquisition, internal mobility, and workforce planning, built for very large organizations.",
-    "functions": ["hr-talent"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "hr-talent"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,7 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://eightfold.ai",
     "sourceUrl": "https://eightfold.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "hirevue",
@@ -29,8 +34,12 @@
     "logoInitial": "HV",
     "bestFor": "AI-assisted video interviewing and candidate screening at hiring scale",
     "description": "A hiring platform combining on-demand video interviews with AI-assisted screening and assessments, integrated into enterprise ATS workflows to speed up high-volume hiring.",
-    "functions": ["hr-talent"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "hr-talent"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -45,7 +54,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.hirevue.com",
     "sourceUrl": "https://www.hirevue.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "lattice",
@@ -53,8 +63,12 @@
     "logoInitial": "LT",
     "bestFor": "AI-assisted performance management, engagement, and an HR agent that answers people-data questions",
     "description": "A people management platform (performance reviews, goals, engagement surveys, HRIS) that added a standalone AI Agent to answer HR questions, coach managers, and act on people data.",
-    "functions": ["hr-talent"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "hr-talent"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -63,15 +77,74 @@
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 11,
+      "startingPrice": 4,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Foundations HRIS is $11/seat/month; Performance and Goals modules are $8/user/month each; Engagement add-on $4/user/month; Grow (career development) $4/user/month; Compensation $6/user/month. Modular, stacked pricing rather than flat tiers."
+      "notes": "The separate 'Foundations HRIS' product is no longer listed. Current base products: Performance $10/seat/month, Goals & OKRs $8/seat/month, Engagement $4/seat/month (all include 1:1s, Weekly Updates, Feedback, Q&A Boards, Analytics, AI Agent, and Integrations). Add-ons: Compensation +$6/seat/month, Grow +$4/seat/month. Modular, stacked pricing rather than flat tiers."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://lattice.com",
     "sourceUrl": "https://lattice.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "paradox-olivia",
+    "name": "Paradox (Olivia)",
+    "logoInitial": "PX",
+    "bestFor": "Conversational AI recruiting for high-volume, frontline and hourly hiring over SMS and chat",
+    "description": "A conversational recruiting assistant, Olivia, that screens candidates and books interviews over SMS, WhatsApp, and web chat, built for high-volume frontline and hourly hiring at companies like Chipotle and General Motors. Acquired by Workday in a deal that closed October 2025.",
+    "functions": [
+      "hr-talent"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier or trial; demo-and-quote sales process, typically 12-month minimum contracts"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing. Industry-reported figures: entry packages around $1,000–$1,500/month for basic conversational screening and scheduling, mid-market deployments $3,000–$8,000/month, and full enterprise rollouts $25,000–$100,000+/year, scaling with hiring volume and locations — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.paradox.ai",
+    "sourceUrl": "https://www.hiretruffle.com/blog/paradox-ai-pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "workday-illuminate",
+    "name": "Workday Illuminate",
+    "logoInitial": "WD",
+    "bestFor": "Enterprise HCM AI agents built directly into Workday's own HR and finance data platform",
+    "description": "A family of AI agents built into the Workday platform — including recruiting, payroll, and HR-service agents — trained on Workday's own HR and financial transaction data, with usage metered through a Flex Credits model layered on top of core Workday subscriptions.",
+    "functions": [
+      "hr-talent"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; requires an existing Workday HCM subscription plus Flex Credits"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published price list. Core Workday HCM licensing is reported to start around $34 per employee/month (PEPM), with Illuminate AI agent usage metered separately through Workday Flex Credits, a consumption-based add-on — both scoped and quoted per deployment."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.workday.com",
+    "sourceUrl": "https://newsroom.workday.com/2025-09-16-Workday-Illuminate-TM-Expands-with-New-AI-Agents-for-HR,-Finance,-and-Industry",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

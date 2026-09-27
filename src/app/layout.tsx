@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Archivo, Inter, JetBrains_Mono } from "next/font/google";
+import { Montserrat, Inter, JetBrains_Mono, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CommandPalette } from "@/components/command-palette";
@@ -11,7 +10,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { siteConfig } from "@/lib/site-config";
 import { stats } from "@/lib/data";
 
-const display = Archivo({
+const display = Montserrat({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
@@ -26,6 +25,12 @@ const data = JetBrains_Mono({
   variable: "--font-data",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+const logo = Poppins({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  weight: ["700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -66,27 +71,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${display.variable} ${body.variable} ${data.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} ${data.variable} ${logo.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-dot-grid">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <TooltipProvider delayDuration={150}>
-            <a href="#main-content" className="skip-link">
-              Skip to content
-            </a>
-            <SiteHeader />
-            <CommandPalette />
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-            <SiteFooter />
-          </TooltipProvider>
-        </ThemeProvider>
+        <TooltipProvider delayDuration={150}>
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
+          <SiteHeader />
+          <CommandPalette />
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </TooltipProvider>
         <Analytics />
         <Script
           id="app-jsonld"

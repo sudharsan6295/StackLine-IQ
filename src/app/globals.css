@@ -2,6 +2,18 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/*
+ * Kept even though dark mode is gone (no ThemeProvider, no toggle): without
+ * this, Tailwind's `dark:` variant falls back to its own default —
+ * `@media (prefers-color-scheme: dark)` — which would make every leftover
+ * `dark:` utility class still in the codebase (STAGE_THEMES in
+ * workflow-drilldown.tsx/adoption-lifecycle.tsx, a few shadcn primitives)
+ * react to the visitor's OS preference even though nothing else on the
+ * page does, producing a half-light/half-dark mismatch. Scoping `dark:` to
+ * `.dark *` instead means it only ever activates if something adds a
+ * `dark` class to `<html>` — which nothing does anymore — so every
+ * leftover `dark:` class stays inert regardless of OS setting.
+ */
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,99 +55,71 @@
   --color-signal-foreground: var(--signal-foreground);
   --color-amber: var(--amber);
   --color-amber-foreground: var(--amber-foreground);
+  --color-pop: var(--pop);
+  --color-pop-foreground: var(--pop-foreground);
   --color-line: var(--line);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.55);
+  --radius-md: calc(var(--radius) * 0.75);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --radius-xl: calc(var(--radius) * 1.35);
+  --radius-2xl: calc(var(--radius) * 1.7);
+  --radius-3xl: calc(var(--radius) * 2.1);
+  --radius-4xl: calc(var(--radius) * 2.5);
 }
 
 /*
- * "Registry" palette: cool paper + ink neutrals with a single cobalt
- * signal accent (primary actions, links, active states) and a rare
- * amber accent reserved for "Top pick" flags. Deliberately not the
- * cream+serif or near-black+neon defaults; see design notes in README.
+ * Light-only palette, modeled on the two references given directly: a
+ * clean indigo-blue SaaS/EdTech look (Scaler.com, an "IT.AI Guide"
+ * screenshot) — soft blue-white background, white cards, a strong
+ * indigo-blue primary, a violet secondary accent for rare dual-tone
+ * moments, warm amber for flags/highlights. No dark mode: removed
+ * per direct request (next-themes, the toggle, and the whole .dark
+ * block are gone — see theme-provider.tsx's deletion). Every color
+ * below is contrast-checked at 4.5:1+ against both --background and
+ * --card. --chart-3 stays a real green on purpose — it's the "Free"
+ * pricing-badge accent (tool-card.tsx), a semantic color unrelated to
+ * the brand palette.
  */
 :root {
-  --background: #f6f5f1;
-  --foreground: #14181d;
+  --background: #f7f9fc;
+  --foreground: #111827;
   --card: #ffffff;
-  --card-foreground: #14181d;
+  --card-foreground: #111827;
   --popover: #ffffff;
-  --popover-foreground: #14181d;
-  --primary: #2451ff;
-  --primary-foreground: #f6f5f1;
-  --secondary: #eceae2;
-  --secondary-foreground: #14181d;
-  --muted: #eceae2;
-  --muted-foreground: #5b6570;
-  --accent: #eceae2;
-  --accent-foreground: #14181d;
-  --destructive: #c8371f;
-  --border: #ddd9ce;
-  --input: #ddd9ce;
-  --ring: #2451ff;
-  --chart-1: #2451ff;
-  --chart-2: #c77d14;
-  --chart-3: #1f7a5c;
-  --chart-4: #7a4fd6;
-  --chart-5: #5b6570;
-  --radius: 0.3rem;
-  --sidebar: #f0eee7;
-  --sidebar-foreground: #14181d;
-  --sidebar-primary: #2451ff;
-  --sidebar-primary-foreground: #f6f5f1;
-  --sidebar-accent: #eceae2;
-  --sidebar-accent-foreground: #14181d;
-  --sidebar-border: #ddd9ce;
-  --sidebar-ring: #2451ff;
-  --signal: #2451ff;
-  --signal-foreground: #f6f5f1;
-  --amber: #c77d14;
-  --amber-foreground: #14181d;
-  --line: #ddd9ce;
-}
-
-.dark {
-  --background: #0e1116;
-  --foreground: #eceef1;
-  --card: #161a21;
-  --card-foreground: #eceef1;
-  --popover: #161a21;
-  --popover-foreground: #eceef1;
-  --primary: #5c85ff;
-  --primary-foreground: #0e1116;
-  --secondary: #1d222a;
-  --secondary-foreground: #eceef1;
-  --muted: #1d222a;
-  --muted-foreground: #8891a0;
-  --accent: #1d222a;
-  --accent-foreground: #eceef1;
-  --destructive: #e2604a;
-  --border: #262c36;
-  --input: #262c36;
-  --ring: #5c85ff;
-  --chart-1: #5c85ff;
-  --chart-2: #e0a94a;
-  --chart-3: #3ea883;
-  --chart-4: #9c7ce8;
-  --chart-5: #8891a0;
-  --sidebar: #12151a;
-  --sidebar-foreground: #eceef1;
-  --sidebar-primary: #5c85ff;
-  --sidebar-primary-foreground: #0e1116;
-  --sidebar-accent: #1d222a;
-  --sidebar-accent-foreground: #eceef1;
-  --sidebar-border: #262c36;
-  --sidebar-ring: #5c85ff;
-  --signal: #5c85ff;
-  --signal-foreground: #0e1116;
-  --amber: #e0a94a;
-  --amber-foreground: #14181d;
-  --line: #262c36;
+  --popover-foreground: #111827;
+  --primary: #3559e9;
+  --primary-foreground: #ffffff;
+  --secondary: #eef2fa;
+  --secondary-foreground: #111827;
+  --muted: #eef2fa;
+  --muted-foreground: #5b6472;
+  --accent: #eef2fa;
+  --accent-foreground: #111827;
+  --destructive: #dc2626;
+  --border: #e2e8f5;
+  --input: #e2e8f5;
+  --ring: #3559e9;
+  --chart-1: #3559e9;
+  --chart-2: #6952d8;
+  --chart-3: #15803d;
+  --chart-4: #7c93f0;
+  --chart-5: #b45309;
+  --radius: 0.75rem;
+  --sidebar: #eef2fa;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #3559e9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef2fa;
+  --sidebar-accent-foreground: #111827;
+  --sidebar-border: #e2e8f5;
+  --sidebar-ring: #3559e9;
+  --signal: #3559e9;
+  --signal-foreground: #ffffff;
+  --amber: #b45309;
+  --amber-foreground: #ffffff;
+  --pop: #6952d8;
+  --pop-foreground: #ffffff;
+  --line: #e2e8f5;
 }
 
 @layer base {
@@ -157,6 +141,9 @@
   .font-data {
     font-family: var(--font-data);
   }
+  .font-logo {
+    font-family: var(--font-logo);
+  }
   .bg-dot-grid {
     background-image: radial-gradient(var(--line) 1px, transparent 1px);
     background-size: 24px 24px;
@@ -174,6 +161,27 @@
   }
   .skip-link:focus {
     top: 1rem;
+  }
+  .gradient-text {
+    background: linear-gradient(
+      100deg,
+      var(--signal) 0%,
+      var(--pop) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .gradient-bg {
+    background: linear-gradient(
+      100deg,
+      var(--signal) 0%,
+      var(--pop) 100%
+    );
+  }
+  .gradient-ring {
+    background: linear-gradient(100deg, var(--signal) 0%, var(--pop) 100%);
+    padding: 1px;
   }
 }
 

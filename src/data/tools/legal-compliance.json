@@ -5,8 +5,12 @@
     "logoInitial": "HV",
     "bestFor": "The category-leading AI platform for law firms and in-house legal teams doing document-heavy legal work",
     "description": "A legal AI platform built with and for law firms, handling contract analysis, research, drafting, and due diligence at the level of accuracy large firms require, deeply integrated into legal workflows.",
-    "functions": ["legal-compliance"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "legal-compliance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,7 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.harvey.ai",
     "sourceUrl": "https://www.harvey.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "ironclad",
@@ -29,8 +34,12 @@
     "logoInitial": "IC",
     "bestFor": "AI-assisted contract lifecycle management — drafting, redlining, and analyzing contracts at scale",
     "description": "A contract lifecycle management platform whose Jurist AI Assist and AI Contract Analysis modules draft, review, and extract obligations from contracts, integrated into approval workflows.",
-    "functions": ["legal-compliance"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "legal-compliance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -45,7 +54,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://ironcladapp.com",
     "sourceUrl": "https://ironcladapp.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "spellbook",
@@ -53,8 +63,12 @@
     "logoInitial": "SP",
     "bestFor": "AI contract drafting and redlining that works inside Microsoft Word, for smaller legal teams",
     "description": "An AI contract-drafting copilot that runs as a Word add-in, suggesting redlines, flagging risky clauses, and drafting new provisions in the tool lawyers already draft in.",
-    "functions": ["legal-compliance"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "legal-compliance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -69,6 +83,65 @@
     "enterpriseReady": false,
     "officialUrl": "https://spellbook.com",
     "sourceUrl": "https://spellbook.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "cocounsel",
+    "name": "CoCounsel (Thomson Reuters)",
+    "logoInitial": "CC",
+    "bestFor": "AI legal research, drafting, and document review for firms already on Westlaw or Practical Law",
+    "description": "Thomson Reuters' AI legal assistant, uniting research, drafting, and document analysis in one experience and grounded in Westlaw and Practical Law's trusted content — priced through a self-serve configurator for small firms or sales quote for larger ones.",
+    "functions": [
+      "legal-compliance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "Free trial available on CoCounsel Essentials; no persistent free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Self-serve configurator (firms up to 10 attorneys) prices CoCounsel Essentials around $293/user and CoCounsel Legal around $492/user (annual terms); reported figures elsewhere cite CoCounsel Core from roughly $4,500/user/year rising to ~$9,000/user/year bundled with Westlaw. Firms over 10 attorneys are quoted by sales — not official list prices."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://legal.thomsonreuters.com/en/products/cocounsel-legal",
+    "sourceUrl": "https://legal.thomsonreuters.com/en/products/cocounsel-legal/plans",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "legalon",
+    "name": "LegalOn",
+    "logoInitial": "LO",
+    "bestFor": "AI contract review against expert-built playbooks, scaled from solo attorneys to full in-house legal teams",
+    "description": "An AI contract review and drafting platform that checks contracts against expert-built playbooks and flags risky clauses, for solo attorneys, fractional GCs, and in-house legal teams.",
+    "functions": [
+      "legal-compliance"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "Demo available on request; no persistent free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "The previously published self-serve 'Individual' plan ($550/month, unlimited reviews) is no longer listed. LegalOn now shows three quote-only tiers scaled to team size — Core Review (solo attorneys/fractional GCs), Contracting Suite (in-house teams), and Productivity Suite (full legal workday) — with no public per-seat price; a demo/sales conversation is required for all of them."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.legalontech.com",
+    "sourceUrl": "https://www.legalontech.com/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

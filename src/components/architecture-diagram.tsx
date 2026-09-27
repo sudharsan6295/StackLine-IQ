@@ -1,16 +1,38 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronRight, Star, RotateCcw, Waypoints } from "lucide-react";
 import { phases } from "@/lib/data";
 import { getTopPicksForPhase } from "@/lib/lifecycle-top-picks";
 import { useUrlFilters } from "@/lib/use-url-filters";
 import { getPhaseIcon } from "@/lib/phase-icons";
+import { cn } from "cn";
 
 const CHIPS_PER_STAGE = 3;
 
 export function ArchitectureDiagram() {
   const { update } = useUrlFilters();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeftFade, setShowLeftFade] = useState(false);
+  const [showRightFade, setShowRightFade] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    function updateFades() {
+      if (!el) return;
+      setShowLeftFade(el.scrollLeft > 4);
+      setShowRightFade(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    }
+    updateFades();
+    el.addEventListener("scroll", updateFades, { passive: true });
+    window.addEventListener("resize", updateFades);
+    return () => {
+      el.removeEventListener("scroll", updateFades);
+      window.removeEventListener("resize", updateFades);
+    };
+  }, []);
 
   function showAllForPhase(phaseId: string) {
     update({ phases: [phaseId] });
@@ -21,7 +43,11 @@ export function ArchitectureDiagram() {
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="-mx-4 flex snap-x snap-mandatory gap-0 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0">
+      <div className="relative">
+        <div
+          ref={scrollRef}
+          className="-mx-4 flex snap-x snap-mandatory gap-0 overflow-x-auto px-4 pb-3 sm:mx-0 sm:px-0"
+        >
         {phases.map((phase, i) => {
           const Icon = getPhaseIcon(phase.id);
           const picks = getTopPicksForPhase(phase.id);
@@ -104,6 +130,22 @@ export function ArchitectureDiagram() {
             </div>
           );
         })}
+        </div>
+
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute top-0 bottom-3 left-0 w-8 bg-gradient-to-r from-background to-transparent transition-opacity duration-200 sm:w-12",
+            showLeftFade ? "opacity-100" : "opacity-0",
+          )}
+        />
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute top-0 right-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent transition-opacity duration-200 sm:w-12",
+            showRightFade ? "opacity-100" : "opacity-0",
+          )}
+        />
       </div>
 
       <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">

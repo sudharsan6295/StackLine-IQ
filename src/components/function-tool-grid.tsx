@@ -28,7 +28,7 @@ export function FunctionToolGrid({
         <div key={phase.id} className="flex flex-col gap-3">
           <h3 className="flex items-center gap-2 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
             {phase.name}
-            <span className="rounded-xs border border-line px-1.5 py-0.5">
+            <span className="rounded-full border border-line px-1.5 py-0.5">
               {phaseTools.length}
             </span>
           </h3>

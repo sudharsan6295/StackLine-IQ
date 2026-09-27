@@ -7,12 +7,12 @@ import type { RoadmapStage } from "@/lib/roadmap";
 export function RoadmapTimeline({ stages }: { stages: RoadmapStage[] }) {
   return (
     <Tabs defaultValue={stages[0]?.id} className="w-full">
-      <TabsList className="h-auto w-full justify-start gap-1 rounded-sm bg-secondary/50 p-1">
+      <TabsList className="h-auto w-full justify-start gap-1 rounded-full bg-secondary/50 p-1">
         {stages.map((stage, i) => (
           <TabsTrigger
             key={stage.id}
             value={stage.id}
-            className="flex-1 gap-1.5 rounded-xs data-[state=active]:bg-card"
+            className="flex-1 gap-1.5 rounded-full data-[state=active]:gradient-bg data-[state=active]:text-white"
           >
             <span className="font-data text-[0.65rem] text-muted-foreground">
               {String(i + 1).padStart(2, "0")}
@@ -26,7 +26,7 @@ export function RoadmapTimeline({ stages }: { stages: RoadmapStage[] }) {
         <TabsContent
           key={stage.id}
           value={stage.id}
-          className="mt-4 rounded-md border border-line bg-card p-5"
+          className="mt-4 rounded-xl border border-line bg-card p-5"
         >
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="font-display text-lg font-semibold">{stage.name}</h3>
@@ -49,7 +49,7 @@ export function RoadmapTimeline({ stages }: { stages: RoadmapStage[] }) {
           </ul>
 
           <div className="mt-4 grid grid-cols-1 gap-3 border-t border-line pt-4 sm:grid-cols-2">
-            <div className="flex gap-2 rounded-sm border border-line bg-secondary/40 p-3 text-xs">
+            <div className="flex gap-2 rounded-lg border border-line bg-secondary/40 p-3 text-xs">
               <ShieldCheck
                 className="size-4 shrink-0 text-amber"
                 aria-hidden="true"
@@ -63,7 +63,7 @@ export function RoadmapTimeline({ stages }: { stages: RoadmapStage[] }) {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2 rounded-sm border border-line bg-secondary/40 p-3 text-xs">
+            <div className="flex gap-2 rounded-lg border border-line bg-secondary/40 p-3 text-xs">
               <Target
                 className="size-4 shrink-0 text-signal"
                 aria-hidden="true"

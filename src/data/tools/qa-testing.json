@@ -5,8 +5,12 @@
     "logoInitial": "MB",
     "bestFor": "Low-code, self-healing end-to-end test automation across web, mobile, and API",
     "description": "An AI-native test automation platform that authors and auto-heals UI, API, accessibility, and performance tests as the application under test changes, cutting flaky-test maintenance.",
-    "functions": ["qa-testing"],
-    "phases": ["test-qa"],
+    "functions": [
+      "qa-testing"
+    ],
+    "phases": [
+      "test-qa"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,7 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.mabl.com",
     "sourceUrl": "https://www.mabl.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "katalon",
@@ -29,8 +34,12 @@
     "logoInitial": "KT",
     "bestFor": "A full test automation platform with a genuinely free desktop tool to start from",
     "description": "An AI-assisted test automation platform (Katalon Studio plus a cloud True Platform) covering web, mobile, API, and desktop testing, with a permanently free local/manual tier.",
-    "functions": ["qa-testing"],
-    "phases": ["test-qa"],
+    "functions": [
+      "qa-testing"
+    ],
+    "phases": [
+      "test-qa"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -39,16 +48,17 @@
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 58,
+      "startingPrice": 84,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "True Platform from ~$58/seat/month (billed annually, ~$700/seat/year); Professional plans from ~$84/seat/month. CI/parallel execution (Runtime Engine) and cloud execution are separate paid add-ons. Enterprise bundles are custom."
+      "notes": "Professional is $84/seat/month billed annually for the first 3 seats ($150/seat/month from the 4th seat on; $184/seat/month if billed monthly), with AI agents for test authoring, failure analysis, and self-healing included. Runtime Engine (CI/parallel execution) is a $145/license/month add-on; cross-browser and mobile cloud execution are $158/session/month. Enterprise bundles are custom."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://katalon.com",
     "sourceUrl": "https://katalon.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "applitools",
@@ -56,22 +66,91 @@
     "logoInitial": "AP",
     "bestFor": "AI-powered visual regression testing that catches pixel-level UI bugs functional tests miss",
     "description": "Visual AI testing that compares rendered UI screenshots across browsers and devices, using computer vision to flag real visual regressions while ignoring rendering noise.",
-    "functions": ["qa-testing"],
-    "phases": ["test-qa"],
-    "pricingModel": "freemium",
-    "badge": "Freemium",
+    "functions": [
+      "qa-testing"
+    ],
+    "phases": [
+      "test-qa"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
     "freeTier": {
-      "available": true,
-      "limits": "Free tier with roughly 100 visual checkpoints/month, no credit card required"
+      "available": false,
+      "limits": "No persistent free tier any more — free trial only (registration required, no card)"
     },
     "paidTier": {
-      "isCustomPricing": true,
-      "notes": "Every paid tier beyond the free checkpoint allowance requires a custom annual quote based on checkpoint volume; no self-serve list price is published."
+      "isCustomPricing": false,
+      "startingPrice": 667,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Starter is $667/month (paid annually), including 100,000 component checkpoints or 1,000 page checkpoints. Professional (from 150 active pages / 1,500 components, unlimited executions) and Enterprise (from 350 active pages / 1,500 components) are custom-quoted."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://applitools.com",
     "sourceUrl": "https://applitools.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "testmu-ai-kaneai",
+    "name": "TestMu AI (KaneAI)",
+    "logoInitial": "KA",
+    "bestFor": "Agentic AI test authoring — describe a test in plain English and an AI agent writes, runs, and heals it",
+    "description": "KaneAI is an agentic AI QE platform (formerly LambdaTest, rebranded to TestMu AI in January 2026) that authors multi-language test scripts from natural-language intent, auto-heals broken tests, and includes cloud execution minutes in every plan.",
+    "functions": [
+      "qa-testing"
+    ],
+    "phases": [
+      "test-qa"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No-credit-card evaluation of the local Kane CLI workflow; no persistent free plan"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 19,
+      "currency": "USD",
+      "billingUnit": "usage-based",
+      "notes": "Priced per agent/month on credit plans, not per seat: Starter $19/agent/mo ($17 billed annually, 2,000 credits, local Kane CLI authoring only, no HyperExecute minutes), Pro $99/agent/mo ($89 annually, 12,000 credits, cloud web authoring, 100 HyperExecute execution minutes/month), Max $199/agent/mo ($179 annually, 25,000 credits, cloud web + mobile authoring, 300 HyperExecute execution minutes/month). Each agent includes one Test Manager seat. Enterprise is custom."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.testmuai.com/kane-ai/",
+    "sourceUrl": "https://www.testmuai.com/pricing/",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "tricentis-testim",
+    "name": "Tricentis Testim",
+    "logoInitial": "TT",
+    "bestFor": "AI-stabilized test automation for teams already standardized on the Tricentis enterprise testing platform",
+    "description": "An AI-powered web test automation tool (Testim, acquired by Tricentis in 2022) that uses machine learning to identify UI elements and keep tests passing through app changes, sold through Tricentis's enterprise, quote-only sales motion.",
+    "functions": [
+      "qa-testing"
+    ],
+    "phases": [
+      "test-qa"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; request-a-demo sales process only"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing — request-only, annual contracts. Industry-reported figures: small teams (3-5 engineers) around $10,000-$20,000/year, mid-market contracts $20,000-$50,000+/year, scaling with team size and run volume — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.tricentis.com/products/test-automation-web-apps-testim",
+    "sourceUrl": "https://www.tricentis.com/products/test-automation-web-apps-testim/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

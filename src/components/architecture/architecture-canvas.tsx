@@ -4,7 +4,6 @@ import { useCallback, useMemo, useState } from "react";
 import {
   ReactFlow,
   Background,
-  Controls,
   BackgroundVariant,
   type Edge,
   type Node,
@@ -36,13 +35,15 @@ import {
   type FunctionNodeState,
 } from "./function-node";
 import { DetailPanel, type Selection } from "./detail-panel";
+import { WorkflowDrilldown } from "./workflow-drilldown";
+import { FeedbackEdge } from "./feedback-edge";
 import { RotateCcw } from "lucide-react";
 
 const nodeTypes = { phase: PhaseNode, function: FunctionNode };
+const edgeTypes = { feedback: FeedbackEdge };
 
 const SIGNAL = "var(--signal)";
 const AMBER = "var(--amber)";
-const MUTED = "var(--muted-foreground)";
 
 export function ArchitectureCanvas() {
   const [selection, setSelection] = useState<Selection>(null);
@@ -116,6 +117,7 @@ export function ArchitectureCanvas() {
       position: getFunctionPosition(i),
       data: {
         fn,
+        index: i,
         toolCount: getToolsForFunction(fn.id).length,
         state: functionState(fn.id),
       },
@@ -150,23 +152,25 @@ export function ArchitectureCanvas() {
       });
     }
 
-    // Feedback loop: last phase back to first, arcing above the row
+    // Feedback loop: last phase back to first, arcing out to the left of
+    // the vertical spine (functions sit to the right, so looping left
+    // keeps this line clear of everything else).
     const first = phases[0];
     const last = phases[phases.length - 1];
     result.push({
       id: "feedback-loop",
+      type: "feedback",
       source: `phase:${last.id}`,
       target: `phase:${first.id}`,
-      sourceHandle: "top-source",
-      targetHandle: "top-target",
-      label: "feedback loop",
-      labelStyle: { fill: MUTED, fontSize: 10, fontFamily: "var(--font-data)" },
+      sourceHandle: "left-source",
+      targetHandle: "left-target",
       style: {
-        stroke: MUTED,
+        stroke: SIGNAL,
         strokeWidth: 1.5,
         strokeDasharray: "5 4",
-        opacity: dim ? 0.15 : 0.6,
+        opacity: dim ? 0.15 : 0.7,
       },
+      animated: true,
     });
 
     // Phase <-> function membership
@@ -192,7 +196,7 @@ export function ArchitectureCanvas() {
           target: `function:${fn.id}`,
           sourceHandle,
           targetHandle,
-          style: { stroke: SIGNAL, strokeWidth: 1.75, opacity: 0.85 },
+          style: { stroke: AMBER, strokeWidth: 1.75, opacity: 0.9 },
           animated: true,
         });
       }
@@ -210,25 +214,13 @@ export function ArchitectureCanvas() {
         getFunctionPosition(fromIdx),
         getFunctionPosition(toIdx),
       );
-      const outgoing = conn.from === selection?.id;
       result.push({
         id: `conn:${conn.from}-${conn.to}`,
         source: `function:${conn.from}`,
         target: `function:${conn.to}`,
         sourceHandle,
         targetHandle,
-        label: conn.relationship,
-        labelStyle: {
-          fill: MUTED,
-          fontSize: 9.5,
-          fontFamily: "var(--font-data)",
-        },
-        labelBgStyle: { fill: "var(--card)", opacity: 0.9 },
-        style: {
-          stroke: outgoing ? SIGNAL : AMBER,
-          strokeWidth: 1.75,
-          opacity: 0.9,
-        },
+        style: { stroke: AMBER, strokeWidth: 1.75, opacity: 0.9 },
         animated: true,
       });
     }
@@ -244,53 +236,62 @@ export function ArchitectureCanvas() {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1fr_320px]">
-      <div className="relative h-[560px] overflow-hidden rounded-md border border-line bg-card sm:h-[620px]">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          nodeTypes={nodeTypes}
-          onNodeClick={onNodeClick}
-          onPaneClick={() => setSelection(null)}
-          nodesDraggable={false}
-          nodesConnectable={false}
-          elementsSelectable={true}
-          fitView
-          fitViewOptions={{ padding: 0.15 }}
-          minZoom={0.4}
-          maxZoom={1.5}
-          proOptions={{ hideAttribution: true }}
-        >
-          <Background
-            variant={BackgroundVariant.Dots}
-            gap={20}
-            size={1}
-            color="var(--line)"
-          />
-          <Controls
-            showInteractive={false}
-            className="!border-line !bg-card [&_button]:!border-line [&_button]:!bg-card [&_button]:!text-foreground"
-          />
-        </ReactFlow>
-
-        {selection && (
-          <button
-            type="button"
-            onClick={() => setSelection(null)}
-            className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-sm border border-line bg-card px-2.5 py-1.5 text-xs font-medium shadow-sm hover:border-signal hover:text-signal"
+    <div>
+      <div className="grid grid-cols-1 gap-4 xl:grid-cols-[1fr_340px]">
+        <div className="relative h-[calc(100vh-160px)] min-h-[640px] overflow-hidden rounded-xl border border-line bg-card">
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            nodeTypes={nodeTypes}
+            edgeTypes={edgeTypes}
+            onNodeClick={onNodeClick}
+            onPaneClick={() => setSelection(null)}
+            nodesDraggable={false}
+            nodesConnectable={false}
+            elementsSelectable={true}
+            fitView
+            fitViewOptions={{ padding: 0.06 }}
+            minZoom={0.15}
+            maxZoom={1.5}
+            zoomOnScroll={false}
+            zoomOnPinch={false}
+            zoomOnDoubleClick={false}
+            proOptions={{ hideAttribution: true }}
           >
-            <RotateCcw className="size-3.5" aria-hidden="true" />
-            Reset view
-          </button>
-        )}
+            <Background
+              variant={BackgroundVariant.Dots}
+              gap={20}
+              size={1}
+              color="var(--line)"
+            />
+          </ReactFlow>
+
+          {selection && (
+            <button
+              type="button"
+              onClick={() => setSelection(null)}
+              className="absolute top-3 right-3 z-10 flex items-center gap-1.5 rounded-full border border-line bg-card px-2.5 py-1.5 text-xs font-medium shadow-sm hover:border-signal hover:text-signal"
+            >
+              <RotateCcw className="size-3.5" aria-hidden="true" />
+              Reset view
+            </button>
+          )}
+        </div>
+
+        <div
+          data-testid="architecture-detail-panel"
+          className="h-[420px] overflow-hidden rounded-xl border border-line bg-card xl:h-[calc(100vh-160px)]"
+        >
+          <DetailPanel selection={selection} onSelect={setSelection} />
+        </div>
       </div>
 
-      <div
-        data-testid="architecture-detail-panel"
-        className="h-[400px] overflow-hidden rounded-md border border-line bg-card xl:h-[620px]"
-      >
-        <DetailPanel selection={selection} onSelect={setSelection} />
-      </div>
+      {selection?.type === "function" && (
+        <WorkflowDrilldown
+          functionId={selection.id}
+          onClose={() => setSelection(null)}
+        />
+      )}
     </div>
   );
 }

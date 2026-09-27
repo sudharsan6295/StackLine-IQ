@@ -5,8 +5,13 @@
     "logoInitial": "JA",
     "bestFor": "On-brand marketing copy and content produced at scale across a whole team",
     "description": "An AI content platform purpose-built for marketing teams, with brand voice controls, workflow agents, and a canvas for producing campaigns, ads, and long-form content on-brand.",
-    "functions": ["marketing"],
-    "phases": ["build", "go-to-market-sales"],
+    "functions": [
+      "marketing"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -24,7 +29,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.jasper.ai",
     "sourceUrl": "https://www.jasper.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "copy-ai",
@@ -32,8 +38,14 @@
     "logoInitial": "CP",
     "bestFor": "Workflow-driven AI copywriting and go-to-market content automation",
     "description": "An AI workflow platform for marketing and GTM content — from chat-based copywriting up to multi-step automated content and outreach workflows with credit-based scaling.",
-    "functions": ["marketing", "sales"],
-    "phases": ["build", "go-to-market-sales"],
+    "functions": [
+      "marketing",
+      "sales"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -51,7 +63,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.copy.ai",
     "sourceUrl": "https://www.copy.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "hubspot-marketing-hub",
@@ -59,8 +72,15 @@
     "logoInitial": "HS",
     "bestFor": "Teams that want AI content, campaigns, and lead scoring built into their CRM/marketing platform",
     "description": "HubSpot's marketing suite with Breeze, its native AI assistant and agents, generating content, forms, and campaign insights directly inside the CRM data marketing teams already use.",
-    "functions": ["marketing", "sales"],
-    "phases": ["build", "go-to-market-sales", "support-maintenance"],
+    "functions": [
+      "marketing",
+      "sales"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales",
+      "support-maintenance"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -78,7 +98,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.hubspot.com/products/marketing",
     "sourceUrl": "https://www.hubspot.com/pricing/marketing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "surfer-seo",
@@ -86,8 +107,13 @@
     "logoInitial": "SF",
     "bestFor": "AI-assisted SEO content optimization and tracking visibility inside AI search results",
     "description": "An SEO content platform that scores and optimizes drafts against top-ranking pages, and now tracks brand visibility inside ChatGPT, Gemini, and AI Overviews as AI search grows.",
-    "functions": ["marketing"],
-    "phases": ["build", "go-to-market-sales"],
+    "functions": [
+      "marketing"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -105,7 +131,8 @@
     "enterpriseReady": false,
     "officialUrl": "https://surferseo.com",
     "sourceUrl": "https://surferseo.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "synthesia",
@@ -113,8 +140,13 @@
     "logoInitial": "SY",
     "bestFor": "Turning scripts into professional AI-avatar video for training, ads, and campaigns without a camera crew",
     "description": "An AI video generation platform that turns text scripts into presenter-led videos using realistic AI avatars and voices, used for marketing, training, and internal comms video at scale.",
-    "functions": ["marketing"],
-    "phases": ["build", "go-to-market-sales"],
+    "functions": [
+      "marketing"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -132,7 +164,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.synthesia.io",
     "sourceUrl": "https://www.synthesia.io/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "canva",
@@ -140,8 +173,14 @@
     "logoInitial": "CA",
     "bestFor": "Fast, on-brand marketing design and creative production for non-designers",
     "description": "Canva's AI suite (Magic Studio) generates and edits designs, images, and brand-consistent creative assets directly inside the design tool most marketing teams already use.",
-    "functions": ["marketing", "design-creative"],
-    "phases": ["build", "go-to-market-sales"],
+    "functions": [
+      "marketing",
+      "design-creative"
+    ],
+    "phases": [
+      "build",
+      "go-to-market-sales"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -159,6 +198,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.canva.com",
     "sourceUrl": "https://www.canva.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   }
 ]

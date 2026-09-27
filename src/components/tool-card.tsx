@@ -1,9 +1,15 @@
 "use client";
 
-import { Star, Building2, Bookmark, Scale } from "lucide-react";
+import { Star, Building2, Bookmark, Scale, TriangleAlert } from "lucide-react";
 import type { Tool } from "@/lib/schema";
-import { formatFreeTier, formatPrice } from "@/lib/format";
+import {
+  formatFreeTier,
+  formatPriceCompact,
+  isPricingStale,
+  STALE_PRICING_DAYS,
+} from "@/lib/format";
 import { useShortlistStore } from "@/lib/store";
+import { useHasMounted } from "@/lib/use-has-mounted";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
 
@@ -19,14 +25,22 @@ interface ToolCardProps {
 }
 
 export function ToolCard({ tool, onOpenDetails }: ToolCardProps) {
-  const isShortlisted = useShortlistStore((s) => s.isShortlisted(tool.id));
-  const isComparing = useShortlistStore((s) => s.isComparing(tool.id));
+  // The shortlist/compare store persists to localStorage, which doesn't
+  // exist during SSR — gate the derived booleans on mount so the client's
+  // first render matches the server's (always "not saved/comparing")
+  // instead of jumping straight to the rehydrated value and triggering a
+  // hydration mismatch. See use-has-mounted.ts.
+  const mounted = useHasMounted();
+  const isShortlistedRaw = useShortlistStore((s) => s.isShortlisted(tool.id));
+  const isComparingRaw = useShortlistStore((s) => s.isComparing(tool.id));
+  const isShortlisted = mounted && isShortlistedRaw;
+  const isComparing = mounted && isComparingRaw;
   const toggleShortlist = useShortlistStore((s) => s.toggleShortlist);
   const toggleCompare = useShortlistStore((s) => s.toggleCompare);
 
   return (
     <div
-      className="group flex h-full flex-col rounded-md border border-line bg-card"
+      className="group flex h-full flex-col rounded-xl border border-line bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg"
       style={{ borderTopWidth: "3px", borderTopColor: edgeColor[tool.badge] }}
     >
       <button
@@ -45,9 +59,9 @@ export function ToolCard({ tool, onOpenDetails }: ToolCardProps) {
             </h3>
           </div>
           {tool.topPick && (
-            <span className="flex items-center gap-1 rounded-xs border border-amber/40 bg-amber/10 px-1.5 py-0.5 font-data text-[0.6rem] font-semibold tracking-wide text-amber uppercase">
+            <span className="gradient-bg flex items-center gap-1 rounded-full px-2 py-0.5 font-data text-[0.6rem] font-bold tracking-wide text-white uppercase">
               <Star className="size-2.5 fill-current" aria-hidden="true" />
-              Top pick
+              Best pick
             </span>
           )}
         </div>
@@ -59,7 +73,7 @@ export function ToolCard({ tool, onOpenDetails }: ToolCardProps) {
             <span className="text-muted-foreground">
               {formatFreeTier(tool)}
             </span>
-            <span className="font-semibold">{formatPrice(tool)}</span>
+            <span className="font-semibold">{formatPriceCompact(tool)}</span>
           </div>
           <div className="flex flex-wrap items-center gap-1 text-[0.65rem] text-muted-foreground">
             {tool.enterpriseReady && (
@@ -71,6 +85,15 @@ export function ToolCard({ tool, onOpenDetails }: ToolCardProps) {
             <span className="rounded-xs border border-line px-1 py-0.5">
               {tool.badge}
             </span>
+            {isPricingStale(tool) && (
+              <span
+                className="inline-flex items-center gap-0.5 rounded-xs border border-amber/40 bg-amber/10 px-1 py-0.5 text-amber"
+                title={`Pricing last verified ${tool.lastChecked} — over ${STALE_PRICING_DAYS} days ago`}
+              >
+                <TriangleAlert className="size-2.5" aria-hidden="true" />
+                May be outdated
+              </span>
+            )}
           </div>
         </div>
       </button>
@@ -90,20 +113,25 @@ export function ToolCard({ tool, onOpenDetails }: ToolCardProps) {
             className={cn("size-3.5", isShortlisted && "fill-current")}
             aria-hidden="true"
           />
-          {isShortlisted ? "Shortlisted" : "Shortlist"}
+          {isShortlisted ? "Saved" : "Save"}
         </Button>
         <Button
           variant="ghost"
           size="sm"
           className={cn(
             "h-7 flex-1 gap-1.5 rounded-sm text-xs",
-            isComparing && "bg-secondary",
+            isComparing && "bg-secondary text-signal",
           )}
           onClick={() => toggleCompare(tool.id)}
           aria-pressed={isComparing}
+          aria-label={
+            isComparing
+              ? `Remove ${tool.name} from compare`
+              : `Add ${tool.name} to compare`
+          }
         >
           <Scale className="size-3.5" aria-hidden="true" />
-          Compare
+          {isComparing ? "Comparing" : "Compare"}
         </Button>
       </div>
     </div>

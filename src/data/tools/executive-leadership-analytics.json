@@ -5,8 +5,12 @@
     "logoInitial": "MS",
     "bestFor": "Natural-language business intelligence for enterprises already on Microsoft 365 and Fabric",
     "description": "Copilot inside Power BI lets leaders ask questions of company data in plain English and auto-generates reports and summaries, running on rented Microsoft Fabric compute capacity rather than a per-user AI fee.",
-    "functions": ["executive-leadership-analytics"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "executive-leadership-analytics"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,7 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
     "sourceUrl": "https://community.fabric.microsoft.com/t5/Service/What-is-pricing-for-copilot-in-fabric-and-power-bi/m-p/4362086",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "thoughtspot",
@@ -29,13 +34,17 @@
     "logoInitial": "TS",
     "bestFor": "Self-serve, natural-language analytics for business users who don't want to write SQL",
     "description": "An AI-powered analytics platform where Spotter answers natural-language questions over live company data, letting executives and analysts explore metrics conversationally.",
-    "functions": ["executive-leadership-analytics"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "executive-leadership-analytics"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
       "available": false,
-      "limits": "No free tier for production analytics; a scoped free Developer plan exists only for embedded-analytics proof-of-concepts (5 users, 1 year)"
+      "limits": "No free tier for production analytics; a scoped free Developer plan exists only for embedded-analytics proof-of-concepts (up to 10 users, free for 1 year)"
     },
     "paidTier": {
       "isCustomPricing": false,
@@ -48,7 +57,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.thoughtspot.com",
     "sourceUrl": "https://www.thoughtspot.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "tableau-agent",
@@ -56,11 +66,18 @@
     "logoInitial": "TB",
     "bestFor": "AI-assisted visual analytics for organizations standardized on Tableau/Salesforce",
     "description": "Tableau's visualization platform with Tableau Agent (natural-language chart creation, powered by Einstein) and Agentforce analytics skills, bundled into the Tableau+ tier.",
-    "functions": ["executive-leadership-analytics"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "executive-leadership-analytics"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
-    "freeTier": { "available": false, "limits": "No free tier" },
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier"
+    },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 75,
@@ -72,6 +89,68 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.tableau.com",
     "sourceUrl": "https://www.tableau.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "domo",
+    "name": "Domo",
+    "logoInitial": "DM",
+    "bestFor": "Usage-based BI with AI-generated insights, for teams that want to pay for consumption rather than seats",
+    "description": "A cloud BI and data platform that moved from fixed per-user tiers to a consumption-based credit model, with Domo AI Pro adding predictive analytics, automated insights, and natural-language summaries that draw from the same credit pool as everything else.",
+    "functions": [
+      "executive-leadership-analytics"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "30-day full-platform trial, unlimited users, no credit card required — not a persistent free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published price list; consumption-based via Domo Credits, with AI Pro features (predictions, automated insights) metering separately from the same credit pool. Reported figures: base user fee around $750/user/year, minimum viable deployments (10-25 users) around $30,000/year, scaling into six figures with data volume and integrations — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.domo.com",
+    "sourceUrl": "https://www.domo.com/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "qlik-cloud-analytics",
+    "name": "Qlik Cloud Analytics",
+    "logoInitial": "QL",
+    "bestFor": "Capacity-based BI with AI/predictive analytics reserved for its higher tiers",
+    "description": "Qlik's cloud analytics platform (Qlik Sense) with associative, in-memory analysis and, from the Premium tier up, AI-driven predictive analytics via automated machine learning — priced by data capacity rather than per user.",
+    "functions": [
+      "executive-leadership-analytics"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 300,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Starter $300/mo (10 users, 10GB Data for Analysis) — includes conversational AI (Answers Agents) and anomaly detection. Standard $825/mo (25GB, no added per-user cost) — expanded Answers Agents access, still no ML. Premium $2,750/mo (50GB) is the first tier with machine-learning predictive analytics (Qlik Predict) plus added GenAI capacity. Enterprise is custom, starting at 250GB data capacity, reportedly $11,000-$27,500/mo depending on capacity."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.qlik.com/us/products/qlik-sense",
+    "sourceUrl": "https://www.qlik.com/us/pricing",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

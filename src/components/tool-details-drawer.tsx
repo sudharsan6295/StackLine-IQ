@@ -1,10 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { ExternalLink, Star, Building2, CalendarClock } from "lucide-react";
+import {
+  ExternalLink,
+  Star,
+  Building2,
+  CalendarClock,
+  TriangleAlert,
+} from "lucide-react";
 import type { Tool } from "@/lib/schema";
 import { functionById, phaseById } from "@/lib/data";
-import { formatFreeTier, formatPrice } from "@/lib/format";
+import {
+  formatFreeTier,
+  formatPrice,
+  isPricingStale,
+  STALE_PRICING_DAYS,
+} from "@/lib/format";
 import {
   Drawer,
   DrawerContent,
@@ -31,7 +42,7 @@ export function ToolDetailsDrawer({
           <>
             <DrawerHeader className="text-left">
               <div className="flex items-center gap-2">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-sm bg-secondary font-data text-xs font-semibold">
+                <span className="gradient-bg flex size-9 shrink-0 items-center justify-center rounded-xl font-data text-xs font-bold text-white">
                   {tool.logoInitial ?? tool.name.slice(0, 2).toUpperCase()}
                 </span>
                 <div>
@@ -41,12 +52,12 @@ export function ToolDetailsDrawer({
                   <DrawerDescription>{tool.bestFor}</DrawerDescription>
                 </div>
                 {tool.topPick && (
-                  <span className="ml-auto flex items-center gap-1 self-start rounded-xs border border-amber/40 bg-amber/10 px-1.5 py-0.5 font-data text-[0.6rem] font-semibold tracking-wide text-amber uppercase">
+                  <span className="gradient-bg ml-auto flex items-center gap-1 self-start rounded-full px-2 py-0.5 font-data text-[0.6rem] font-semibold tracking-wide text-white uppercase">
                     <Star
                       className="size-2.5 fill-current"
                       aria-hidden="true"
                     />
-                    Top pick
+                    Best pick
                   </span>
                 )}
               </div>
@@ -55,7 +66,7 @@ export function ToolDetailsDrawer({
             <div className="flex flex-col gap-5 overflow-y-auto px-4 pb-4">
               <p className="text-sm text-foreground/90">{tool.description}</p>
 
-              <div className="grid grid-cols-2 gap-3 rounded-sm border border-line bg-secondary/40 p-3 font-data text-xs">
+              <div className="grid grid-cols-2 gap-3 rounded-xl border border-line bg-secondary/40 p-3 font-data text-xs">
                 <div>
                   <div className="text-muted-foreground">Free tier</div>
                   <div className="mt-0.5 font-semibold">
@@ -102,9 +113,21 @@ export function ToolDetailsDrawer({
                     Enterprise-ready
                   </span>
                 )}
-                <span className="flex items-center gap-1">
-                  <CalendarClock className="size-3.5" aria-hidden="true" />{" "}
+                <span
+                  className={
+                    isPricingStale(tool)
+                      ? "flex items-center gap-1 text-amber"
+                      : "flex items-center gap-1"
+                  }
+                >
+                  {isPricingStale(tool) ? (
+                    <TriangleAlert className="size-3.5" aria-hidden="true" />
+                  ) : (
+                    <CalendarClock className="size-3.5" aria-hidden="true" />
+                  )}{" "}
                   Checked {tool.lastChecked}
+                  {isPricingStale(tool) &&
+                    ` — over ${STALE_PRICING_DAYS} days ago`}
                 </span>
                 <a
                   href={tool.sourceUrl}
@@ -119,7 +142,7 @@ export function ToolDetailsDrawer({
             </div>
 
             <DrawerFooter className="flex-row gap-2 border-t border-line pt-3">
-              <Button asChild className="flex-1 rounded-sm">
+              <Button asChild className="gradient-bg flex-1 rounded-full text-white hover:opacity-90">
                 <a
                   href={tool.officialUrl}
                   target="_blank"
@@ -129,7 +152,7 @@ export function ToolDetailsDrawer({
                   <ExternalLink className="ml-1 size-3.5" aria-hidden="true" />
                 </a>
               </Button>
-              <Button asChild variant="outline" className="flex-1 rounded-sm">
+              <Button asChild variant="outline" className="flex-1 rounded-full">
                 <Link href={`/tools/${tool.id}`}>Full details page</Link>
               </Button>
             </DrawerFooter>

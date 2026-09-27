@@ -19,7 +19,7 @@ export function LiveStat({ value, label }: LiveStatProps) {
       "(prefers-reduced-motion: reduce)",
     ).matches;
     const controls = animate(0, value, {
-      duration: prefersReducedMotion ? 0 : 0.9,
+      duration: prefersReducedMotion ? 0 : 0.5,
       ease: "easeOut",
       onUpdate: (v) => setDisplay(Math.round(v)),
     });

@@ -1,9 +1,11 @@
 "use client";
 
-import { Search, X, SlidersHorizontal } from "lucide-react";
+import { Search, X, SlidersHorizontal, Download } from "lucide-react";
 import { functions, phases } from "@/lib/data";
 import type { ToolFilters } from "@/lib/filter-tools";
 import { isFiltersEmpty } from "@/lib/filter-tools";
+import type { Tool } from "@/lib/schema";
+import { toolsToCsv, downloadCsv } from "@/lib/csv";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +29,7 @@ interface RegistryFilterBarProps {
   onViewChange: (view: "function" | "phase") => void;
   onClear: () => void;
   resultCount: number;
+  resultTools: Tool[];
 }
 
 export function RegistryFilterBar({
@@ -37,6 +40,7 @@ export function RegistryFilterBar({
   onViewChange,
   onClear,
   resultCount,
+  resultTools,
 }: RegistryFilterBarProps) {
   const activeFilterCount =
     filters.functions.length +
@@ -74,7 +78,11 @@ export function RegistryFilterBar({
               )}
             </Button>
           </PopoverTrigger>
-          <PopoverContent align="end" className="w-80 rounded-md p-4">
+          <PopoverContent
+            align="end"
+            collisionPadding={{ top: 64, bottom: 16 }}
+            className="max-h-[var(--radix-popover-content-available-height)] w-80 overflow-y-auto rounded-md p-4"
+          >
             <div className="flex flex-col gap-5">
               <div>
                 <div className="mb-2 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
@@ -143,7 +151,7 @@ export function RegistryFilterBar({
 
               <div>
                 <div className="mb-2 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                  Function
+                  Team
                 </div>
                 <div className="grid max-h-40 grid-cols-1 gap-1.5 overflow-y-auto pr-1">
                   {functions.map((fn) => (
@@ -163,7 +171,7 @@ export function RegistryFilterBar({
 
               <div>
                 <div className="mb-2 font-data text-xs font-medium tracking-wide text-muted-foreground uppercase">
-                  Lifecycle phase
+                  Stage
                 </div>
                 <div className="grid max-h-40 grid-cols-1 gap-1.5 overflow-y-auto pr-1">
                   {phases.map((phase) => (
@@ -192,17 +200,31 @@ export function RegistryFilterBar({
         >
           <ToggleGroupItem
             value="function"
-            className="h-9 rounded-none rounded-l-sm px-3 text-xs data-[state=on]:bg-secondary"
+            className="h-9 rounded-none rounded-l-sm px-3 text-xs data-[state=on]:gradient-bg data-[state=on]:text-white"
           >
-            By Function
+            By Team
           </ToggleGroupItem>
           <ToggleGroupItem
             value="phase"
-            className="h-9 rounded-none rounded-r-sm px-3 text-xs data-[state=on]:bg-secondary"
+            className="h-9 rounded-none rounded-r-sm px-3 text-xs data-[state=on]:gradient-bg data-[state=on]:text-white"
           >
-            By Phase
+            By Stage
           </ToggleGroupItem>
         </ToggleGroup>
+
+        <Button
+          type="button"
+          variant="outline"
+          className="h-9 shrink-0 gap-1.5 rounded-sm"
+          disabled={resultTools.length === 0}
+          onClick={() =>
+            downloadCsv("ai-tools-registry.csv", toolsToCsv(resultTools))
+          }
+          title="Export the current filtered results as CSV"
+        >
+          <Download className="size-3.5" aria-hidden="true" />
+          <span className="hidden sm:inline">Export CSV</span>
+        </Button>
       </div>
 
       <div className="flex items-center justify-between text-xs text-muted-foreground">

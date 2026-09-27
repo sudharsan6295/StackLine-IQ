@@ -5,8 +5,13 @@
     "logoInitial": "MS",
     "bestFor": "AI-assisted threat investigation and response for teams already on Microsoft's security stack",
     "description": "An AI assistant for security teams that investigates incidents, summarizes threat intelligence, and drafts response actions across Microsoft Defender, Sentinel, and Entra, billed by compute usage.",
-    "functions": ["it-security", "devops-operations"],
-    "phases": ["release-operate"],
+    "functions": [
+      "it-security",
+      "devops-operations"
+    ],
+    "phases": [
+      "release-operate"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -24,7 +29,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot",
     "sourceUrl": "https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "crowdstrike-charlotte-ai",
@@ -32,8 +38,12 @@
     "logoInitial": "CS",
     "bestFor": "Agentic AI-driven endpoint detection, response, and SOC automation at enterprise scale",
     "description": "CrowdStrike's Charlotte AI acts as an agentic security analyst inside the Falcon platform — triaging alerts, investigating incidents, and automating routine SOC workflows for existing Falcon customers.",
-    "functions": ["it-security"],
-    "phases": ["release-operate"],
+    "functions": [
+      "it-security"
+    ],
+    "phases": [
+      "release-operate"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -48,7 +58,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/",
     "sourceUrl": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/agentic-soar/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "okta",
@@ -56,8 +67,12 @@
     "logoInitial": "OK",
     "bestFor": "Identity and access management with AI-assisted adaptive authentication and lifecycle automation",
     "description": "Workforce identity and single sign-on with adaptive, risk-based MFA and automated user lifecycle management — the access-control layer every other enterprise AI tool in this registry ultimately sits behind.",
-    "functions": ["it-security"],
-    "phases": ["release-operate"],
+    "functions": [
+      "it-security"
+    ],
+    "phases": [
+      "release-operate"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -75,6 +90,68 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.okta.com",
     "sourceUrl": "https://www.okta.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
+  },
+  {
+    "id": "sentinelone-purple-ai",
+    "name": "SentinelOne (Purple AI)",
+    "logoInitial": "S1",
+    "bestFor": "An agentic AI security analyst that investigates and triages alerts across the endpoint platform",
+    "description": "SentinelOne's Purple AI acts as an agentic security analyst inside the Singularity platform — running natural-language threat hunts, auto-investigating alerts, and summarizing incidents — bundled into the platform's higher tiers rather than priced standalone.",
+    "functions": [
+      "it-security"
+    ],
+    "phases": [
+      "release-operate"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier; free trial investigations available without a payment method"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 179.99,
+      "currency": "USD",
+      "billingUnit": "per year",
+      "notes": "Purple AI is included starting from Singularity Complete ($179.99/endpoint/year) and Singularity Commercial ($229.99/endpoint/year); lower Core ($69.99) and Control ($79.99) tiers don't include it. Singularity Enterprise is custom-quoted. AI-powered investigation usage is also metered via Singularity Credits, a platform-wide usage currency."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.sentinelone.com/platform/purple/",
+    "sourceUrl": "https://www.sentinelone.com/platform-packages/",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
+  },
+  {
+    "id": "moveworks",
+    "name": "Moveworks",
+    "logoInitial": "MW",
+    "bestFor": "An agentic AI front door for IT and employee support that auto-resolves tickets across enterprise systems",
+    "description": "An enterprise AI agent platform that sits in front of IT (and HR/finance) helpdesk systems, autonomously resolving common employee requests via chat and orchestrating actions across connected tools. Acquired by ServiceNow in December 2025.",
+    "functions": [
+      "it-security"
+    ],
+    "phases": [
+      "release-operate"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No free tier or self-serve trial; quote-based sales process only"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "No published pricing; billed per employee per year via custom quote. Third-party procurement data (Vendr) puts the median contract around $130,000/year (observed range $89,500–$271,333), with typical annual contracts commonly reported in the $90,000–$300,000 range plus $50,000–$200,000 in implementation services depending on deployment complexity — not official figures. Packaging may change following the ServiceNow acquisition."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://www.moveworks.com",
+    "sourceUrl": "https://www.vendr.com/marketplace/moveworks",
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-26"
   }
 ]

@@ -16,6 +16,7 @@ import { functions, tools } from "@/lib/data";
 import {
   Building2,
   Compass,
+  Info,
   LayoutGrid,
   Waypoints,
   Wrench,
@@ -51,7 +52,10 @@ export function CommandPalette() {
       description="Search tools and functions"
     >
       <Command>
-        <CommandInput placeholder="Search tools, functions, or jump to a page…" />
+        <CommandInput
+          autoFocus
+          placeholder="Search tools, functions, or jump to a page…"
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Pages">
@@ -59,13 +63,16 @@ export function CommandPalette() {
               <LayoutGrid /> Registry (home)
             </CommandItem>
             <CommandItem onSelect={() => go("/architecture")}>
-              <Waypoints /> Interactive Architecture
+              <Waypoints /> Explore
             </CommandItem>
             <CommandItem onSelect={() => go("/stack-builder")}>
-              <Compass /> Enterprise Stack Builder
+              <Compass /> Build
             </CommandItem>
             <CommandItem onSelect={() => go("/governance")}>
-              <Building2 /> Governance &amp; Safety
+              <Building2 /> Governance
+            </CommandItem>
+            <CommandItem onSelect={() => go("/about")}>
+              <Info /> About
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
@@ -86,8 +93,9 @@ export function CommandPalette() {
                 key={tool.id}
                 onSelect={() => go(`/tools/${tool.id}`)}
               >
-                <Wrench /> {tool.name}
-                <span className="ml-auto truncate text-xs text-muted-foreground">
+                <Wrench />
+                <span className="min-w-0 flex-1 truncate">{tool.name}</span>
+                <span className="ml-2 max-w-[45%] shrink-0 truncate text-xs text-muted-foreground">
                   {tool.bestFor}
                 </span>
               </CommandItem>

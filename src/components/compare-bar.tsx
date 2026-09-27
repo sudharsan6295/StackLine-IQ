@@ -1,10 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import { Scale, Bookmark, Download, Link as LinkIcon, X } from "lucide-react";
+import { Suspense, useEffect, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import {
+  Scale,
+  Bookmark,
+  Download,
+  Link as LinkIcon,
+  X,
+  ExternalLink,
+} from "lucide-react";
 import { useShortlistStore } from "@/lib/store";
-import { toolById } from "@/lib/data";
-import { formatFreeTier, formatPrice } from "@/lib/format";
+import { useHasMounted } from "@/lib/use-has-mounted";
+import { toolById, functionById, phaseById } from "@/lib/data";
+import {
+  formatFreeTier,
+  formatPrice,
+  formatPriceCompact,
+  isPricingStale,
+} from "@/lib/format";
 import { toolsToCsv, downloadCsv } from "@/lib/csv";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,12 +30,66 @@ import {
   SheetFooter,
 } from "@/components/ui/sheet";
 
+/**
+ * useSearchParams needs a Suspense boundary, and not every place that
+ * renders CompareBar (e.g. function-tool-grid.tsx) already provides one —
+ * so CompareBar wraps its own real implementation rather than relying on
+ * every call site to remember to.
+ */
 export function CompareBar() {
-  const compareIds = useShortlistStore((s) => s.compareIds);
-  const shortlistIds = useShortlistStore((s) => s.shortlistIds);
+  return (
+    <Suspense fallback={null}>
+      <CompareBarInner />
+    </Suspense>
+  );
+}
+
+function CompareBarInner() {
+  // Same SSR/localStorage mismatch as tool-card.tsx: this whole bar mounts
+  // or stays hidden based on persisted state that doesn't exist on the
+  // server, so gate the read on mount rather than letting the client's
+  // first render disagree with the server's (always-hidden) markup.
+  const mounted = useHasMounted();
+  const compareIdsRaw = useShortlistStore((s) => s.compareIds);
+  const shortlistIdsRaw = useShortlistStore((s) => s.shortlistIds);
+  const compareIds = mounted ? compareIdsRaw : [];
+  const shortlistIds = mounted ? shortlistIdsRaw : [];
   const toggleCompare = useShortlistStore((s) => s.toggleCompare);
   const toggleShortlist = useShortlistStore((s) => s.toggleShortlist);
   const clearCompare = useShortlistStore((s) => s.clearCompare);
+  const addToShortlist = useShortlistStore((s) => s.addToShortlist);
+  const addToCompare = useShortlistStore((s) => s.addToCompare);
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  // Hydrate from a shared link (?shortlist=id,id or ?compare=id,id), then
+  // strip the params so refreshing or navigating away doesn't re-apply them.
+  useEffect(() => {
+    const shortlistParam = searchParams.get("shortlist");
+    const compareParam = searchParams.get("compare");
+    if (!shortlistParam && !compareParam) return;
+
+    if (shortlistParam) {
+      const ids = shortlistParam.split(",").filter((id) => toolById.has(id));
+      if (ids.length) addToShortlist(ids);
+    }
+    if (compareParam) {
+      const ids = compareParam.split(",").filter((id) => toolById.has(id));
+      if (ids.length) addToCompare(ids);
+    }
+
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete("shortlist");
+    params.delete("compare");
+    const query = params.toString();
+    router.replace(query ? `${pathname}?${query}` : pathname, {
+      scroll: false,
+    });
+    // Only ever run this against the params present on first load.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const [compareOpen, setCompareOpen] = useState(false);
   const [shortlistOpen, setShortlistOpen] = useState(false);
@@ -43,15 +111,90 @@ export function CompareBar() {
       label: "Best for",
       render: (t) => <span className="text-muted-foreground">{t.bestFor}</span>,
     },
+    {
+      label: "Description",
+      render: (t) => (
+        <span className="text-muted-foreground">{t.description}</span>
+      ),
+    },
     { label: "Badge", render: (t) => t.badge },
     { label: "Free tier", render: (t) => formatFreeTier(t) },
     { label: "Starting price", render: (t) => formatPrice(t) },
+    {
+      label: "Pricing notes",
+      render: (t) => (
+        <span className="text-muted-foreground">
+          {t.paidTier.notes ?? "—"}
+        </span>
+      ),
+    },
+    {
+      label: "Functions",
+      render: (t) => (
+        <div className="flex flex-wrap gap-1">
+          {t.functions.map((id) => (
+            <span
+              key={id}
+              className="rounded-full border border-line px-1.5 py-0.5 text-[0.65rem] text-muted-foreground"
+            >
+              {functionById.get(id)?.shortName ?? functionById.get(id)?.name ?? id}
+            </span>
+          ))}
+        </div>
+      ),
+    },
+    {
+      label: "Lifecycle stages",
+      render: (t) => (
+        <div className="flex flex-wrap gap-1">
+          {t.phases.map((id) => (
+            <span
+              key={id}
+              className="rounded-full border border-dashed border-line px-1.5 py-0.5 text-[0.65rem] text-muted-foreground"
+            >
+              {phaseById.get(id)?.name ?? id}
+            </span>
+          ))}
+        </div>
+      ),
+    },
     {
       label: "Enterprise-ready",
       render: (t) => (t.enterpriseReady ? "Yes" : "No"),
     },
     { label: "Top pick", render: (t) => (t.topPick ? "Yes" : "—") },
-    { label: "Last checked", render: (t) => t.lastChecked },
+    {
+      label: "Last checked",
+      render: (t) => (
+        <span className={isPricingStale(t) ? "text-amber" : undefined}>
+          {t.lastChecked}
+          {isPricingStale(t) && " — may be outdated"}
+        </span>
+      ),
+    },
+    {
+      label: "Links",
+      render: (t) => (
+        <div className="flex flex-col gap-1">
+          <a
+            href={t.officialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-signal hover:underline"
+          >
+            Visit site <ExternalLink className="size-3" aria-hidden="true" />
+          </a>
+          <a
+            href={t.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
+          >
+            Pricing source <ExternalLink className="size-3" aria-hidden="true" />
+          </a>
+        </div>
+      ),
+    },
   ];
 
   return (
@@ -77,7 +220,7 @@ export function CompareBar() {
               onClick={() => setShortlistOpen(true)}
             >
               <Bookmark className="size-3.5" aria-hidden="true" />
-              Shortlist ({shortlistIds.length})
+              Saved ({shortlistIds.length})
             </Button>
           )}
         </div>
@@ -86,12 +229,13 @@ export function CompareBar() {
       <Sheet open={compareOpen} onOpenChange={setCompareOpen}>
         <SheetContent
           side="bottom"
-          className="max-h-[85vh] overflow-y-auto rounded-t-md"
+          className="max-h-[85vh] overflow-y-auto rounded-t-xl"
         >
           <SheetHeader>
             <SheetTitle className="font-display">Compare tools</SheetTitle>
             <SheetDescription>
-              Side-by-side comparison of up to 4 shortlisted tools.
+              Detailed side-by-side comparison of up to 4 compared tools —
+              click the × on any column to remove it.
             </SheetDescription>
           </SheetHeader>
           <div className="overflow-x-auto px-4 pb-4">
@@ -100,16 +244,16 @@ export function CompareBar() {
                 Add tools to compare from any tool card.
               </p>
             ) : (
-              <table className="w-full min-w-[560px] border-collapse text-sm">
+              <table className="w-full min-w-[560px] table-fixed border-collapse text-sm">
                 <thead>
                   <tr>
-                    <th className="w-32 p-2 text-left font-data text-xs text-muted-foreground uppercase">
+                    <th className="w-28 p-2 text-left font-data text-xs text-muted-foreground uppercase">
                       Field
                     </th>
                     {compareTools.map((t) => (
                       <th
                         key={t.id}
-                        className="border-l border-line p-2 text-left"
+                        className="w-[240px] border-l border-line p-2 text-left"
                       >
                         <div className="flex items-center justify-between gap-2">
                           <span className="font-display font-semibold">
@@ -139,7 +283,7 @@ export function CompareBar() {
                       {compareTools.map((t) => (
                         <td
                           key={t.id}
-                          className="border-l border-line p-2 align-top"
+                          className="border-l border-line p-2 align-top break-words"
                         >
                           {row.render(t)}
                         </td>
@@ -150,7 +294,7 @@ export function CompareBar() {
               </table>
             )}
           </div>
-          <SheetFooter className="flex-row justify-between gap-2 border-t border-line pt-3">
+          <SheetFooter className="flex-row flex-wrap justify-between gap-2 border-t border-line pt-3">
             <Button
               variant="ghost"
               size="sm"
@@ -159,6 +303,32 @@ export function CompareBar() {
             >
               Clear compare
             </Button>
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-1.5"
+                disabled={compareTools.length === 0}
+                onClick={() =>
+                  downloadCsv("ai-tools-compare.csv", toolsToCsv(compareTools))
+                }
+              >
+                <Download className="size-3.5" aria-hidden="true" /> Export CSV
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-1.5"
+                disabled={compareTools.length === 0}
+                onClick={() => {
+                  const url = new URL(window.location.origin);
+                  url.searchParams.set("compare", compareIds.join(","));
+                  navigator.clipboard.writeText(url.toString());
+                }}
+              >
+                <LinkIcon className="size-3.5" aria-hidden="true" /> Copy link
+              </Button>
+            </div>
           </SheetFooter>
         </SheetContent>
       </Sheet>
@@ -166,15 +336,15 @@ export function CompareBar() {
       <Sheet open={shortlistOpen} onOpenChange={setShortlistOpen}>
         <SheetContent side="right" className="flex w-full flex-col sm:max-w-sm">
           <SheetHeader>
-            <SheetTitle className="font-display">Your shortlist</SheetTitle>
+            <SheetTitle className="font-display">Saved tools</SheetTitle>
             <SheetDescription>
-              Saved tools, kept in this browser. Export or share the list.
+              Kept in this browser. Export or share the list.
             </SheetDescription>
           </SheetHeader>
           <div className="flex-1 overflow-y-auto px-4">
             {shortlistTools.length === 0 ? (
               <p className="py-8 text-center text-sm text-muted-foreground">
-                Nothing shortlisted yet.
+                Nothing saved yet.
               </p>
             ) : (
               <ul className="flex flex-col gap-2">
@@ -186,13 +356,13 @@ export function CompareBar() {
                     <div>
                       <div className="font-medium">{t.name}</div>
                       <div className="text-xs text-muted-foreground">
-                        {formatPrice(t)}
+                        {formatPriceCompact(t)}
                       </div>
                     </div>
                     <button
                       type="button"
                       onClick={() => toggleShortlist(t.id)}
-                      aria-label={`Remove ${t.name} from shortlist`}
+                      aria-label={`Remove ${t.name} from saved`}
                     >
                       <X className="size-4 text-muted-foreground hover:text-foreground" />
                     </button>

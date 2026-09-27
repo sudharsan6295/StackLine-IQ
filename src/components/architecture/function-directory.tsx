@@ -29,10 +29,10 @@ export function FunctionDirectory() {
           <article
             key={fn.id}
             id={`function-${fn.id}`}
-            className="flex flex-col gap-3 rounded-md border border-line bg-card p-4"
+            className="flex flex-col gap-3 rounded-xl border border-line bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-lg"
           >
             <div className="flex items-center gap-2">
-              <span className="flex size-8 items-center justify-center rounded-sm bg-secondary">
+              <span className="gradient-bg flex size-8 items-center justify-center rounded-lg text-white">
                 <Icon className="size-4" aria-hidden="true" />
               </span>
               <h3 className="font-display text-sm font-semibold">{fn.name}</h3>
@@ -41,15 +41,13 @@ export function FunctionDirectory() {
 
             <div>
               <h4 className="font-data text-[0.65rem] font-medium tracking-wide text-muted-foreground uppercase">
-                Subtypes
+                Sub-functions &amp; how AI shows up
               </h4>
-              <ul className="mt-1 flex flex-wrap gap-1">
+              <ul className="mt-1 flex flex-col gap-1.5">
                 {fn.subtypes.map((s) => (
-                  <li
-                    key={s}
-                    className="rounded-xs border border-line px-1.5 py-0.5 text-[0.65rem] text-muted-foreground"
-                  >
-                    {s}
+                  <li key={s.name} className="text-[0.7rem]" title={s.aiUseCase}>
+                    <span className="font-medium">{s.name}</span>
+                    <span className="block text-muted-foreground">{s.aiUseCase}</span>
                   </li>
                 ))}
               </ul>
@@ -63,7 +61,7 @@ export function FunctionDirectory() {
                 {activePhases.map((p) => (
                   <li
                     key={p.id}
-                    className="rounded-xs border border-dashed border-line px-1.5 py-0.5 text-[0.65rem] text-muted-foreground"
+                    className="rounded-full border border-dashed border-line px-1.5 py-0.5 text-[0.65rem] text-muted-foreground"
                   >
                     {p.name}
                   </li>
@@ -102,7 +100,7 @@ export function FunctionDirectory() {
                   <Link
                     key={tool.id}
                     href={`/tools/${tool.id}`}
-                    className="rounded-xs border border-amber/40 bg-amber/10 px-1.5 py-0.5 text-[0.65rem] font-medium text-amber hover:border-amber"
+                    className="rounded-full border border-amber/40 bg-amber/10 px-1.5 py-0.5 text-[0.65rem] font-medium text-amber hover:border-amber"
                   >
                     {tool.name}
                   </Link>

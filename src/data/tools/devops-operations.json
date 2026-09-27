@@ -5,8 +5,12 @@
     "logoInitial": "DD",
     "bestFor": "AI incident investigation and root-cause analysis for teams already standardized on Datadog",
     "description": "Datadog's AI agent that investigates incidents, correlates telemetry, chats over observability data, and proposes fixes — sold as a credit-based add-on to an existing Datadog subscription.",
-    "functions": ["devops-operations"],
-    "phases": ["release-operate"],
+    "functions": [
+      "devops-operations"
+    ],
+    "phases": [
+      "release-operate"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,7 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.datadoghq.com/product/ai/bits-ai-agents/",
     "sourceUrl": "https://www.datadoghq.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "pagerduty",
@@ -29,8 +34,12 @@
     "logoInitial": "PD",
     "bestFor": "On-call incident response with AI-driven noise reduction and event correlation",
     "description": "Incident response and on-call management with an AIOps add-on that correlates and de-duplicates alert noise into actionable incidents, plus an AI-assisted status page and automation suite.",
-    "functions": ["devops-operations"],
-    "phases": ["release-operate"],
+    "functions": [
+      "devops-operations"
+    ],
+    "phases": [
+      "release-operate"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -42,13 +51,14 @@
       "startingPrice": 21,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Professional $21/responder/month, Business $41/responder/month (annual billing). The AIOps module is a separate add-on starting around $699/month annual (or ~$799 monthly), licensed per accepted event. Digital Operations (Enterprise) is custom."
+      "notes": "Professional $21/responder/month (annual) or $25/month (monthly). PagerDuty has restructured its AI/analytics pricing: the legacy per-responder 'Business' tier and AIOps add-on (~$699/month) still exist for renewal, but new customers get AI via the PD Reliability Platform, a separate platform-fee product — Starter $2,800/year (10 seats, 5,000 Signal Intelligence events, 5,000 AI actions), Essential $12,000/year (20 seats), Plus $48,000/year (40 seats), Ultimate custom (500 seats)."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.pagerduty.com",
     "sourceUrl": "https://www.pagerduty.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "harness-aida",
@@ -56,8 +66,14 @@
     "logoInitial": "HN",
     "bestFor": "AI-assisted CI/CD, cloud cost management, and infrastructure-as-code in one modular platform",
     "description": "A software delivery platform (CI/CD, feature flags, cloud cost management, IaC) with AIDA, its built-in AI assistant, included even on the free tier.",
-    "functions": ["devops-operations", "software-development"],
-    "phases": ["build", "release-operate"],
+    "functions": [
+      "devops-operations",
+      "software-development"
+    ],
+    "phases": [
+      "build",
+      "release-operate"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -72,6 +88,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.harness.io",
     "sourceUrl": "https://www.harness.io/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   }
 ]

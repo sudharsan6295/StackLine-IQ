@@ -5,8 +5,13 @@
     "logoInitial": "PX",
     "bestFor": "Fast, cited market and competitor research to kick off product discovery",
     "description": "An AI answer engine that searches the live web and returns cited, source-backed answers — the fastest way to get up to speed on a market, competitor, or technology before writing a single requirement.",
-    "functions": ["product-ideation", "cross-company-ai-assistants"],
-    "phases": ["ideation-discovery"],
+    "functions": [
+      "product-ideation",
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "ideation-discovery"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -24,7 +29,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.perplexity.ai",
     "sourceUrl": "https://www.perplexity.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "notion-ai",
@@ -32,8 +38,14 @@
     "logoInitial": "NO",
     "bestFor": "Turning research and meeting notes into PRDs, specs, and a searchable knowledge base",
     "description": "AI built directly into Notion's docs and databases — drafting PRDs, summarizing meetings, auto-filling databases, and (on Business+) running multi-step tasks via Notion Agent.",
-    "functions": ["product-ideation", "cross-company-ai-assistants"],
-    "phases": ["ideation-discovery", "requirements-design"],
+    "functions": [
+      "product-ideation",
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "requirements-design"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -51,7 +63,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.notion.com/product/ai",
     "sourceUrl": "https://www.notion.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "miro-ai",
@@ -59,8 +72,13 @@
     "logoInitial": "MI",
     "bestFor": "AI-assisted brainstorming, diagramming, and turning sticky notes into structured plans",
     "description": "AI features layered onto Miro's collaborative whiteboard — diagram generation, note clustering and synthesis, and interactive prototyping for early-stage product exploration.",
-    "functions": ["product-ideation"],
-    "phases": ["ideation-discovery", "requirements-design"],
+    "functions": [
+      "product-ideation"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "requirements-design"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -78,7 +96,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://miro.com",
     "sourceUrl": "https://miro.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "v0",
@@ -86,8 +105,14 @@
     "logoInitial": "V0",
     "bestFor": "Turning a product idea into a clickable, real-code UI prototype in minutes",
     "description": "Vercel's AI UI generator that produces working React/Next.js components and full screens from a text prompt or screenshot — a fast bridge from idea to reviewable prototype.",
-    "functions": ["product-ideation", "software-development"],
-    "phases": ["requirements-design", "build"],
+    "functions": [
+      "product-ideation",
+      "software-development"
+    ],
+    "phases": [
+      "requirements-design",
+      "build"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -105,7 +130,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://v0.app",
     "sourceUrl": "https://v0.app/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "productboard",
@@ -113,8 +139,13 @@
     "logoInitial": "PB",
     "bestFor": "Turning scattered customer feedback into a prioritized, AI-assisted roadmap",
     "description": "A product management platform whose Spark AI agent clusters customer feedback, surfaces themes, drafts specs, and helps prioritize what to build next.",
-    "functions": ["product-ideation"],
-    "phases": ["ideation-discovery", "requirements-design"],
+    "functions": [
+      "product-ideation"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "requirements-design"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -132,7 +163,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://productboard.com",
     "sourceUrl": "https://productboard.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "dovetail",
@@ -140,8 +172,12 @@
     "logoInitial": "DT",
     "bestFor": "AI-assisted synthesis of user interviews, call transcripts, and survey data into themes",
     "description": "A research repository and analysis tool that uses AI to summarize interviews, tag transcripts, cluster insights, and surface recurring themes across all of a team's user research.",
-    "functions": ["product-ideation"],
-    "phases": ["ideation-discovery"],
+    "functions": [
+      "product-ideation"
+    ],
+    "phases": [
+      "ideation-discovery"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -156,6 +192,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://dovetail.com",
     "sourceUrl": "https://dovetail.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   }
 ]

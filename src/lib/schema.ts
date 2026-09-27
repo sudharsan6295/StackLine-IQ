@@ -51,10 +51,44 @@ export const toolSchema = z
     lastChecked: z
       .string()
       .regex(/^\d{4}-\d{2}-\d{2}$/, "lastChecked must be YYYY-MM-DD"),
+    addedOn: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}$/, "addedOn must be YYYY-MM-DD"),
   })
   .strict();
 
 export type Tool = z.infer<typeof toolSchema>;
+
+export const subFunctionSchema = z
+  .object({
+    name: z.string().min(1),
+    aiUseCase: z.string().min(1),
+  })
+  .strict();
+
+export type SubFunction = z.infer<typeof subFunctionSchema>;
+
+export const workflowStageSchema = z
+  .object({
+    name: z.string().min(1),
+    icon: z.string().min(1),
+    items: z.array(z.string().min(1)).min(2).max(4),
+    // Tool ids relevant to this specific stage of the function's internal
+    // workflow — a subset of that function's own tools (see functionSchema's
+    // own tools-by-functions.json cross-reference), not a free choice from
+    // the whole registry. Optional so existing stages keep validating while
+    // this gets filled in; the drill-down falls back to nothing shown for a
+    // stage with no mapping yet rather than guessing.
+    toolIds: z.array(z.string().min(1)).optional(),
+    // For a stage where no registry tool genuinely fits (checked, not
+    // skipped) — a short, honest note on the generic path: an MCP server,
+    // a vendor API, or a general-purpose AI assistant, rather than forcing
+    // a weak tool match just to fill the slot.
+    noToolSuggestion: z.string().min(1).optional(),
+  })
+  .strict();
+
+export type WorkflowStage = z.infer<typeof workflowStageSchema>;
 
 export const functionSchema = z
   .object({
@@ -63,7 +97,8 @@ export const functionSchema = z
     shortName: z.string().min(1).optional(),
     description: z.string().min(1),
     icon: z.string().min(1),
-    subtypes: z.array(z.string().min(1)).min(1),
+    subtypes: z.array(subFunctionSchema).min(1),
+    workflow: z.array(workflowStageSchema).min(3).max(6),
   })
   .strict();
 

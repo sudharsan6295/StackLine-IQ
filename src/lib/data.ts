@@ -124,6 +124,31 @@ export function getConnectionsForFunction(
   return related;
 }
 
+/** Tools sorted newest-first by addedOn — the real, git-derived date each
+ * tool entry was introduced (see scripts/backfill note in schema.ts), not
+ * a re-verification date. */
+export function getRecentlyAddedTools(limit?: number): Tool[] {
+  const sorted = [...tools].sort((a, b) =>
+    b.addedOn === a.addedOn ? a.name.localeCompare(b.name) : b.addedOn.localeCompare(a.addedOn),
+  );
+  return limit ? sorted.slice(0, limit) : sorted;
+}
+
+/** Tools sorted newest-first by lastChecked — a genuine, sourced "what
+ * changed" signal distinct from addedOn: a tool re-appearing here means its
+ * pricing/free-tier was just re-verified against the vendor's own page, not
+ * that it's new to the registry. Used by /whats-new's second changelog
+ * stream (see the page's own note on why the two dates are tracked
+ * separately). */
+export function getRecentlyCheckedTools(limit?: number): Tool[] {
+  const sorted = [...tools].sort((a, b) =>
+    b.lastChecked === a.lastChecked
+      ? a.name.localeCompare(b.name)
+      : b.lastChecked.localeCompare(a.lastChecked),
+  );
+  return limit ? sorted.slice(0, limit) : sorted;
+}
+
 export function getMatrixCounts(): Record<string, Record<string, number>> {
   const counts: Record<string, Record<string, number>> = {};
   for (const fn of functions) {

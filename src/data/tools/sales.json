@@ -5,8 +5,12 @@
     "logoInitial": "GN",
     "bestFor": "AI-analyzed call and email intelligence that tells revenue leaders what's really happening in deals",
     "description": "A revenue intelligence platform that records and analyzes sales calls, emails, and deal activity with AI, surfacing coaching insights, deal risk, and forecast signals for sales leaders.",
-    "functions": ["sales"],
-    "phases": ["go-to-market-sales"],
+    "functions": [
+      "sales"
+    ],
+    "phases": [
+      "go-to-market-sales"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -21,31 +25,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.gong.io",
     "sourceUrl": "https://www.gong.io/pricing/",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "clari",
-    "name": "Clari",
-    "logoInitial": "CL",
-    "bestFor": "AI-driven revenue forecasting and pipeline risk management for sales leadership",
-    "description": "A revenue operations platform (Forecast, Copilot conversation intelligence, Groove sales engagement) that uses AI to flag at-risk deals and improve forecast accuracy across a sales org.",
-    "functions": ["sales", "executive-leadership-analytics"],
-    "phases": ["go-to-market-sales"],
-    "pricingModel": "paid",
-    "badge": "Paid",
-    "freeTier": {
-      "available": false,
-      "limits": "No free tier; direct-sales pricing model"
-    },
-    "paidTier": {
-      "isCustomPricing": true,
-      "notes": "No published list price. Market-reported estimates: Forecast/Core module ~$1,200–$1,500/user/year; Copilot conversation intelligence ~$60–$110/user/month; full stack commonly $200–$310/user/month plus five-figure implementation — reported figures, not official pricing."
-    },
-    "topPick": false,
-    "enterpriseReady": true,
-    "officialUrl": "https://www.clari.com",
-    "sourceUrl": "https://www.clari.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "apollo-io",
@@ -53,8 +34,12 @@
     "logoInitial": "AO",
     "bestFor": "AI-assisted prospecting, enrichment, and outbound sequencing with an actually usable free plan",
     "description": "A sales intelligence and engagement platform combining a large B2B contact database with AI email writing, call analysis, and multichannel outbound sequences.",
-    "functions": ["sales"],
-    "phases": ["go-to-market-sales"],
+    "functions": [
+      "sales"
+    ],
+    "phases": [
+      "go-to-market-sales"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -72,6 +57,7 @@
     "enterpriseReady": false,
     "officialUrl": "https://www.apollo.io",
     "sourceUrl": "https://www.apollo.io/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   }
 ]

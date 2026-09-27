@@ -6,11 +6,87 @@
     "description": "Writing, reviewing, and shipping application code faster with AI pair programmers and code-generation agents.",
     "icon": "Code2",
     "subtypes": [
-      "Frontend & UI code",
-      "Backend & APIs",
-      "Mobile development",
-      "Autonomous coding agents",
-      "Code review & refactoring"
+      {
+        "name": "Frontend & UI code",
+        "aiUseCase": "AI-generated components from Figma or a prompt, with design-system conventions applied automatically"
+      },
+      {
+        "name": "Backend & APIs",
+        "aiUseCase": "Schema-aware code completion and AI-scaffolded endpoints from an API spec"
+      },
+      {
+        "name": "Mobile development",
+        "aiUseCase": "Cross-platform code generation and AI-assisted platform-specific debugging"
+      },
+      {
+        "name": "Autonomous coding agents",
+        "aiUseCase": "End-to-end ticket-to-PR agents that plan, write, test, and open pull requests unattended"
+      },
+      {
+        "name": "Code review & refactoring",
+        "aiUseCase": "AI static analysis, automated PR comments, and safe large-scale refactors"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Development Cycle",
+        "icon": "ClipboardList",
+        "items": [
+          "AI Backlog Prioritization",
+          "Intelligent Sprint Planning",
+          "Predictive Effort Estimation"
+        ],
+        "noToolSuggestion": "No dedicated tool in this registry — connect your backlog (Jira/Linear API or MCP server) to a general coding agent already listed above (e.g. Claude Code, GitHub Copilot) for prioritization and estimation."
+      },
+      {
+        "name": "Code Authoring",
+        "icon": "Code2",
+        "items": [
+          "AI Code Completion",
+          "Automated Documentation",
+          "Secure Coding Suggestions"
+        ],
+        "toolIds": [
+          "github-copilot",
+          "cursor",
+          "jetbrains-ai-assistant",
+          "amazon-q-developer"
+        ]
+      },
+      {
+        "name": "Integration with Jira",
+        "icon": "Link2",
+        "items": [
+          "AI Ticket Creation",
+          "Smart Task Linking",
+          "Predictive Workload Balancing"
+        ],
+        "noToolSuggestion": "No dedicated tool — Atlassian's Jira REST API or its official Jira MCP server, paired with any coding agent already in this stack, covers ticket creation and task linking."
+      },
+      {
+        "name": "Code Review",
+        "icon": "GitPullRequest",
+        "items": [
+          "AI Static Analysis",
+          "Automated PR Comments",
+          "Vulnerability Risk Scoring"
+        ],
+        "toolIds": [
+          "github-copilot"
+        ]
+      },
+      {
+        "name": "CI/CD Pipeline",
+        "icon": "Rocket",
+        "items": [
+          "Pipeline Optimization",
+          "Failure Prediction",
+          "Smart Rollback"
+        ],
+        "toolIds": [
+          "harness-aida"
+        ]
+      }
     ]
   },
   {
@@ -20,11 +96,80 @@
     "description": "Turning market signals into validated product bets: research synthesis, PRDs, prototyping, and roadmap planning.",
     "icon": "Lightbulb",
     "subtypes": [
-      "Market & competitor research",
-      "User research synthesis",
-      "PRD & spec writing",
-      "Roadmapping",
-      "Rapid prototyping"
+      {
+        "name": "Market & competitor research",
+        "aiUseCase": "AI-synthesized competitor teardowns and market-trend analysis from live web data"
+      },
+      {
+        "name": "User research synthesis",
+        "aiUseCase": "AI clustering of interview transcripts and survey responses into ranked themes"
+      },
+      {
+        "name": "PRD & spec writing",
+        "aiUseCase": "AI-drafted requirements and edge cases from a rough one-paragraph brief"
+      },
+      {
+        "name": "Roadmapping",
+        "aiUseCase": "AI-assisted prioritization scoring (RICE/ICE) and cross-team dependency mapping"
+      },
+      {
+        "name": "Rapid prototyping",
+        "aiUseCase": "Prompt-to-UI generation producing a clickable prototype in minutes"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Discovery & Research",
+        "icon": "Search",
+        "items": [
+          "AI Market Scanning",
+          "Competitor Signal Tracking",
+          "User Interview Synthesis"
+        ],
+        "toolIds": [
+          "perplexity",
+          "dovetail"
+        ]
+      },
+      {
+        "name": "Requirements Definition",
+        "icon": "FileText",
+        "items": [
+          "AI-Drafted PRDs",
+          "Edge-Case Generation",
+          "Acceptance-Criteria Suggestions"
+        ],
+        "toolIds": [
+          "notion-ai"
+        ]
+      },
+      {
+        "name": "Prototyping",
+        "icon": "Layers",
+        "items": [
+          "Prompt-to-UI Generation",
+          "Auto-Generated User Flows",
+          "Rapid Variant Testing"
+        ],
+        "toolIds": [
+          "v0",
+          "figma",
+          "replit-agent",
+          "miro-ai"
+        ]
+      },
+      {
+        "name": "Roadmap Planning",
+        "icon": "Map",
+        "items": [
+          "AI Prioritization Scoring",
+          "Dependency Mapping",
+          "Capacity-Aware Sequencing"
+        ],
+        "toolIds": [
+          "productboard"
+        ]
+      }
     ]
   },
   {
@@ -34,10 +179,72 @@
     "description": "Generating, running, and maintaining automated tests, and finding regressions before customers do.",
     "icon": "FlaskConical",
     "subtypes": [
-      "Functional test automation",
-      "Visual regression testing",
-      "Performance testing",
-      "Test case generation"
+      {
+        "name": "Functional test automation",
+        "aiUseCase": "AI-generated test scripts from user stories, with self-healing selectors"
+      },
+      {
+        "name": "Visual regression testing",
+        "aiUseCase": "AI visual-diffing that ignores rendering noise and flags only real UI regressions"
+      },
+      {
+        "name": "Performance testing",
+        "aiUseCase": "AI load simulation with predictive bottleneck detection before release"
+      },
+      {
+        "name": "Test case generation",
+        "aiUseCase": "Auto-generated edge-case tests drawn from requirements and past defect patterns"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Test Planning",
+        "icon": "ClipboardCheck",
+        "items": [
+          "AI Test Case Generation",
+          "Risk-Based Coverage Scoring",
+          "Requirements Traceability"
+        ],
+        "noToolSuggestion": "No dedicated tool — a general-purpose AI assistant (e.g. Claude, ChatGPT) reading your requirements doc via API or MCP can draft test cases and flag coverage gaps."
+      },
+      {
+        "name": "Test Authoring",
+        "icon": "FlaskConical",
+        "items": [
+          "Self-Healing Script Generation",
+          "Data-Driven Test Synthesis",
+          "Accessibility Check Automation"
+        ],
+        "toolIds": [
+          "mabl",
+          "katalon",
+          "testmu-ai-kaneai",
+          "tricentis-testim"
+        ]
+      },
+      {
+        "name": "Execution & Analysis",
+        "icon": "PlayCircle",
+        "items": [
+          "Parallel AI-Orchestrated Runs",
+          "Visual Regression Diffing",
+          "Flaky-Test Detection"
+        ],
+        "toolIds": [
+          "applitools",
+          "mabl"
+        ]
+      },
+      {
+        "name": "Release Readiness",
+        "icon": "ShieldCheck",
+        "items": [
+          "Predictive Defect Scoring",
+          "Regression Risk Heatmaps",
+          "Go/No-Go Recommendation"
+        ],
+        "noToolSuggestion": "No dedicated tool — pull CI/CD and test results via API into a general AI assistant for a synthesized go/no-go summary."
+      }
     ]
   },
   {
@@ -47,10 +254,74 @@
     "description": "Infrastructure-as-code, incident response, observability, and operational automation.",
     "icon": "Server",
     "subtypes": [
-      "CI/CD automation",
-      "Infrastructure as code",
-      "Incident response & AIOps",
-      "Cloud cost management"
+      {
+        "name": "CI/CD automation",
+        "aiUseCase": "AI-optimized pipeline ordering and predictive build-failure detection"
+      },
+      {
+        "name": "Infrastructure as code",
+        "aiUseCase": "AI-generated Terraform/IaC from a plain-English infrastructure description"
+      },
+      {
+        "name": "Incident response & AIOps",
+        "aiUseCase": "AI root-cause analysis, alert correlation, and auto-remediation playbooks"
+      },
+      {
+        "name": "Cloud cost management",
+        "aiUseCase": "AI anomaly detection on spend with automated rightsizing recommendations"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Infrastructure Planning",
+        "icon": "Server",
+        "items": [
+          "AI-Generated IaC",
+          "Cost-Aware Resource Sizing",
+          "Compliance Drift Checks"
+        ],
+        "toolIds": [
+          "harness-aida"
+        ]
+      },
+      {
+        "name": "CI/CD Automation",
+        "icon": "Workflow",
+        "items": [
+          "Pipeline Ordering Optimization",
+          "Predictive Build-Failure Detection",
+          "Auto-Retry Orchestration"
+        ],
+        "toolIds": [
+          "harness-aida"
+        ]
+      },
+      {
+        "name": "Observability",
+        "icon": "Activity",
+        "items": [
+          "Anomaly Detection",
+          "Alert Correlation",
+          "Root-Cause Summarization"
+        ],
+        "toolIds": [
+          "datadog-bits-ai",
+          "pagerduty"
+        ]
+      },
+      {
+        "name": "Incident Response",
+        "icon": "AlertTriangle",
+        "items": [
+          "Auto-Triage & Severity Scoring",
+          "Remediation Playbook Suggestion",
+          "Postmortem Drafting"
+        ],
+        "toolIds": [
+          "pagerduty",
+          "datadog-bits-ai"
+        ]
+      }
     ]
   },
   {
@@ -60,10 +331,71 @@
     "description": "Prospecting, call intelligence, proposal generation, and deal-desk automation for revenue teams.",
     "icon": "TrendingUp",
     "subtypes": [
-      "Prospecting & lead enrichment",
-      "Conversation intelligence",
-      "Deal forecasting",
-      "Proposal & contract generation"
+      {
+        "name": "Prospecting & lead enrichment",
+        "aiUseCase": "AI-scored lead lists with auto-enriched firmographic and intent data"
+      },
+      {
+        "name": "Conversation intelligence",
+        "aiUseCase": "AI call transcription with talk-track, sentiment, and objection analysis"
+      },
+      {
+        "name": "Deal forecasting",
+        "aiUseCase": "AI win-probability scoring from CRM signals and rep activity patterns"
+      },
+      {
+        "name": "Proposal & contract generation",
+        "aiUseCase": "AI-drafted proposals and quotes assembled directly from deal context"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Prospecting",
+        "icon": "Target",
+        "items": [
+          "AI Lead Scoring",
+          "Firmographic Enrichment",
+          "Intent Signal Detection"
+        ],
+        "toolIds": [
+          "apollo-io"
+        ]
+      },
+      {
+        "name": "Engagement",
+        "icon": "Phone",
+        "items": [
+          "AI Call Transcription",
+          "Talk-Track Analysis",
+          "Objection Detection"
+        ],
+        "toolIds": [
+          "gong"
+        ]
+      },
+      {
+        "name": "Deal Management",
+        "icon": "TrendingUp",
+        "items": [
+          "Win-Probability Forecasting",
+          "Next-Best-Action Suggestions",
+          "Pipeline Risk Flags"
+        ],
+        "toolIds": [
+          "gong",
+          "salesforce-agentforce"
+        ]
+      },
+      {
+        "name": "Closing",
+        "icon": "FileSignature",
+        "items": [
+          "AI-Drafted Proposals",
+          "Automated Contract Assembly",
+          "E-Signature Follow-Up Automation"
+        ],
+        "noToolSuggestion": "No dedicated tool — a general AI assistant (e.g. ChatGPT, Claude), fed deal data through your CRM's MCP server or API, can draft proposals and contracts."
+      }
     ]
   },
   {
@@ -73,10 +405,79 @@
     "description": "Content, campaign, SEO, and creative generation at the pace modern marketing teams need.",
     "icon": "Megaphone",
     "subtypes": [
-      "Content & copywriting",
-      "SEO & AI-search optimization",
-      "Creative & design production",
-      "Campaign & lead-scoring automation"
+      {
+        "name": "Content & copywriting",
+        "aiUseCase": "AI-drafted, on-brand campaign copy produced at scale"
+      },
+      {
+        "name": "SEO & AI-search optimization",
+        "aiUseCase": "AI content scoring against top-ranking pages and AI-search visibility tracking"
+      },
+      {
+        "name": "Creative & design production",
+        "aiUseCase": "AI-generated image and video variants for rapid A/B testing"
+      },
+      {
+        "name": "Campaign & lead-scoring automation",
+        "aiUseCase": "AI-driven audience segmentation and automated lead scoring"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Strategy & Research",
+        "icon": "Compass",
+        "items": [
+          "AI Audience Segmentation",
+          "Trend & Topic Discovery",
+          "Competitive Content Scanning"
+        ],
+        "toolIds": [
+          "surfer-seo"
+        ]
+      },
+      {
+        "name": "Content Production",
+        "icon": "PenTool",
+        "items": [
+          "AI-Drafted Copy",
+          "On-Brand Asset Generation",
+          "Multi-Format Repurposing"
+        ],
+        "toolIds": [
+          "jasper",
+          "copy-ai",
+          "hubspot-marketing-hub",
+          "canva",
+          "adobe-firefly",
+          "midjourney",
+          "runway",
+          "synthesia"
+        ]
+      },
+      {
+        "name": "Optimization",
+        "icon": "BarChart3",
+        "items": [
+          "SEO/AI-Search Scoring",
+          "A/B Variant Generation",
+          "Predictive Campaign Performance"
+        ],
+        "toolIds": [
+          "surfer-seo"
+        ]
+      },
+      {
+        "name": "Distribution",
+        "icon": "Send",
+        "items": [
+          "Automated Lead Scoring",
+          "Send-Time Optimization",
+          "Channel Mix Recommendation"
+        ],
+        "toolIds": [
+          "hubspot-marketing-hub"
+        ]
+      }
     ]
   },
   {
@@ -86,10 +487,75 @@
     "description": "Deflecting routine tickets, assisting agents in real time, and mining conversations for product signal.",
     "icon": "Headset",
     "subtypes": [
-      "Ticket deflection & chatbots",
-      "Agent-assist & copilot",
-      "Voice & IVR automation",
-      "Support analytics"
+      {
+        "name": "Ticket deflection & chatbots",
+        "aiUseCase": "AI resolves routine tickets end-to-end before a human agent ever sees them"
+      },
+      {
+        "name": "Agent-assist & copilot",
+        "aiUseCase": "Real-time reply drafting and knowledge-base lookup surfaced to live agents"
+      },
+      {
+        "name": "Voice & IVR automation",
+        "aiUseCase": "AI voice agents that handle calls and route only what genuinely needs a human"
+      },
+      {
+        "name": "Support analytics",
+        "aiUseCase": "AI-surfaced ticket trends and root-cause clustering that feed back into product"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Intake & Triage",
+        "icon": "Inbox",
+        "items": [
+          "AI Ticket Classification",
+          "Priority & Sentiment Scoring",
+          "Smart Routing"
+        ],
+        "toolIds": [
+          "zendesk-ai"
+        ]
+      },
+      {
+        "name": "Resolution",
+        "icon": "MessageSquare",
+        "items": [
+          "Chatbot Deflection",
+          "Agent-Assist Reply Drafting",
+          "Knowledge-Base Lookup"
+        ],
+        "toolIds": [
+          "intercom-fin",
+          "zendesk-ai",
+          "ada",
+          "freshdesk-freddy",
+          "gorgias",
+          "salesforce-agentforce"
+        ]
+      },
+      {
+        "name": "Voice Channel",
+        "icon": "Headset",
+        "items": [
+          "AI Voice Agents",
+          "Call Summarization",
+          "Escalation Detection"
+        ],
+        "toolIds": [
+          "intercom-fin"
+        ]
+      },
+      {
+        "name": "Insights",
+        "icon": "PieChart",
+        "items": [
+          "Ticket Trend Clustering",
+          "Root-Cause Analysis",
+          "Feedback-to-Product Loop"
+        ],
+        "noToolSuggestion": "No dedicated tool — pull ticket data via your helpdesk's API (several tools above already expose one) into a general AI assistant for trend clustering and root-cause analysis."
+      }
     ]
   },
   {
@@ -99,10 +565,78 @@
     "description": "Business intelligence copilots and analytics assistants that turn company data into decisions.",
     "icon": "LineChart",
     "subtypes": [
-      "Natural-language BI & dashboards",
-      "Forecasting & scenario planning",
-      "Data storytelling",
-      "Strategic reporting"
+      {
+        "name": "Natural-language BI & dashboards",
+        "aiUseCase": "Ask a plain-English question and get a chart back from live company data"
+      },
+      {
+        "name": "Forecasting & scenario planning",
+        "aiUseCase": "AI-driven what-if modeling across revenue, headcount, and spend scenarios"
+      },
+      {
+        "name": "Data storytelling",
+        "aiUseCase": "AI-generated executive summaries written directly from raw metrics"
+      },
+      {
+        "name": "Strategic reporting",
+        "aiUseCase": "AI-assembled board decks pulling live figures from connected data sources"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Data Access",
+        "icon": "Database",
+        "items": [
+          "Natural-Language Querying",
+          "Automated Dashboard Generation",
+          "Cross-Source Data Blending"
+        ],
+        "toolIds": [
+          "microsoft-copilot-power-bi",
+          "thoughtspot",
+          "tableau-agent",
+          "domo"
+        ]
+      },
+      {
+        "name": "Analysis",
+        "icon": "LineChart",
+        "items": [
+          "Anomaly & Outlier Detection",
+          "Driver Analysis",
+          "Scenario Modeling"
+        ],
+        "toolIds": [
+          "domo",
+          "qlik-cloud-analytics"
+        ]
+      },
+      {
+        "name": "Forecasting",
+        "icon": "TrendingUp",
+        "items": [
+          "What-If Simulation",
+          "Rolling Forecast Updates",
+          "Confidence-Interval Scoring"
+        ],
+        "toolIds": [
+          "domo",
+          "qlik-cloud-analytics"
+        ]
+      },
+      {
+        "name": "Reporting",
+        "icon": "FileBarChart",
+        "items": [
+          "AI-Written Executive Summaries",
+          "Auto-Assembled Board Decks",
+          "Narrative Trend Explanations"
+        ],
+        "toolIds": [
+          "microsoft-copilot-power-bi",
+          "domo"
+        ]
+      }
     ]
   },
   {
@@ -112,10 +646,70 @@
     "description": "FP&A modeling, close automation, spend analysis, and finance-grade AI copilots.",
     "icon": "Landmark",
     "subtypes": [
-      "FP&A & forecasting",
-      "Accounts payable automation",
-      "Expense & spend management",
-      "Treasury & cash management"
+      {
+        "name": "FP&A & forecasting",
+        "aiUseCase": "AI-driven budget variance analysis and continuously updated rolling forecasts"
+      },
+      {
+        "name": "Accounts payable automation",
+        "aiUseCase": "AI invoice OCR with autonomous coding and approval of routine invoices"
+      },
+      {
+        "name": "Expense & spend management",
+        "aiUseCase": "AI policy enforcement and anomaly flagging on employee spend in real time"
+      },
+      {
+        "name": "Treasury & cash management",
+        "aiUseCase": "AI cash-flow forecasting and liquidity scenario modeling"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Planning",
+        "icon": "Calculator",
+        "items": [
+          "AI Budget Variance Analysis",
+          "Rolling Forecast Automation",
+          "Scenario Comparison"
+        ],
+        "noToolSuggestion": "No dedicated tool — connect your ERP or spreadsheet data via API or MCP to a general AI assistant for driver-based forecasting and scenario modeling."
+      },
+      {
+        "name": "Payables & Spend",
+        "icon": "Receipt",
+        "items": [
+          "Invoice OCR & Coding",
+          "Anomaly & Policy-Violation Flagging",
+          "Auto-Approval Routing"
+        ],
+        "toolIds": [
+          "ramp",
+          "vic-ai",
+          "brex"
+        ]
+      },
+      {
+        "name": "Treasury",
+        "icon": "Landmark",
+        "items": [
+          "Cash-Flow Forecasting",
+          "Liquidity Scenario Modeling",
+          "FX Risk Monitoring"
+        ],
+        "noToolSuggestion": "No dedicated tool — bank and ERP APIs feeding a general AI assistant can produce cash-position and FX-exposure summaries."
+      },
+      {
+        "name": "Close & Reporting",
+        "icon": "FileCheck",
+        "items": [
+          "Automated Reconciliation",
+          "Variance Explanation Drafting",
+          "Audit-Trail Summarization"
+        ],
+        "toolIds": [
+          "puzzle"
+        ]
+      }
     ]
   },
   {
@@ -125,10 +719,76 @@
     "description": "Sourcing, screening, onboarding, and people-ops automation for talent teams.",
     "icon": "Users",
     "subtypes": [
-      "Sourcing & screening",
-      "Performance management",
-      "Learning & development",
-      "People analytics"
+      {
+        "name": "Sourcing & screening",
+        "aiUseCase": "AI candidate matching and resume screening scored against role criteria"
+      },
+      {
+        "name": "Performance management",
+        "aiUseCase": "AI-assisted review drafting and continuous goal-progress tracking"
+      },
+      {
+        "name": "Learning & development",
+        "aiUseCase": "AI-personalized learning paths built from individual skill gaps"
+      },
+      {
+        "name": "People analytics",
+        "aiUseCase": "AI attrition-risk prediction and workforce planning insights"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Sourcing",
+        "icon": "UserSearch",
+        "items": [
+          "AI Candidate Matching",
+          "Resume Screening",
+          "Outreach Personalization"
+        ],
+        "toolIds": [
+          "eightfold-ai",
+          "hirevue",
+          "paradox-olivia",
+          "workday-illuminate"
+        ]
+      },
+      {
+        "name": "Onboarding",
+        "icon": "UserPlus",
+        "items": [
+          "Auto-Generated Onboarding Plans",
+          "Policy Q&A Assistant",
+          "Document Verification"
+        ],
+        "toolIds": [
+          "workday-illuminate"
+        ]
+      },
+      {
+        "name": "Performance",
+        "icon": "Target",
+        "items": [
+          "AI-Assisted Review Drafting",
+          "Goal-Progress Tracking",
+          "Calibration Support"
+        ],
+        "toolIds": [
+          "lattice"
+        ]
+      },
+      {
+        "name": "People Analytics",
+        "icon": "Users",
+        "items": [
+          "Attrition-Risk Prediction",
+          "Workforce Planning Models",
+          "Engagement Signal Detection"
+        ],
+        "toolIds": [
+          "eightfold-ai",
+          "lattice"
+        ]
+      }
     ]
   },
   {
@@ -138,10 +798,77 @@
     "description": "Contract review, policy drafting, and compliance research with AI-assisted legal workflows.",
     "icon": "Scale",
     "subtypes": [
-      "Contract review & redlining",
-      "Contract lifecycle management",
-      "Compliance & regulatory research",
-      "IP & patent research"
+      {
+        "name": "Contract review & redlining",
+        "aiUseCase": "AI clause-level risk flagging with suggested redlines in track changes"
+      },
+      {
+        "name": "Contract lifecycle management",
+        "aiUseCase": "AI-tracked obligations with automated renewal and expiry alerts"
+      },
+      {
+        "name": "Compliance & regulatory research",
+        "aiUseCase": "AI-summarized regulatory changes mapped directly to internal policy"
+      },
+      {
+        "name": "IP & patent research",
+        "aiUseCase": "AI prior-art search and patent landscape analysis"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Intake & Triage",
+        "icon": "Inbox",
+        "items": [
+          "AI Contract Classification",
+          "Risk-Tier Assignment",
+          "Clause Extraction"
+        ],
+        "toolIds": [
+          "harvey",
+          "ironclad",
+          "legalon"
+        ]
+      },
+      {
+        "name": "Review & Redlining",
+        "icon": "FileEdit",
+        "items": [
+          "Clause-Level Risk Flagging",
+          "Suggested Redlines",
+          "Playbook Deviation Detection"
+        ],
+        "toolIds": [
+          "spellbook",
+          "legalon",
+          "ironclad"
+        ]
+      },
+      {
+        "name": "Lifecycle Management",
+        "icon": "RefreshCw",
+        "items": [
+          "Obligation Tracking",
+          "Renewal & Expiry Alerts",
+          "Auto-Generated Amendments"
+        ],
+        "toolIds": [
+          "ironclad"
+        ]
+      },
+      {
+        "name": "Research",
+        "icon": "Scale",
+        "items": [
+          "Regulatory Change Summarization",
+          "Policy Mapping",
+          "Prior-Art & Patent Search"
+        ],
+        "toolIds": [
+          "cocounsel",
+          "harvey"
+        ]
+      }
     ]
   },
   {
@@ -151,10 +878,75 @@
     "description": "General-purpose assistants and enterprise search/knowledge tools used across every function.",
     "icon": "Bot",
     "subtypes": [
-      "General-purpose chat assistant",
-      "Enterprise search & knowledge retrieval",
-      "Meeting notes & summarization",
-      "Workplace copilot (docs/email/chat)"
+      {
+        "name": "General-purpose chat assistant",
+        "aiUseCase": "A company-wide AI assistant for writing, research, and analysis, used by every team"
+      },
+      {
+        "name": "Enterprise search & knowledge retrieval",
+        "aiUseCase": "AI search across every connected tool, returning cited, sourced answers"
+      },
+      {
+        "name": "Meeting notes & summarization",
+        "aiUseCase": "AI-generated meeting notes with decisions and action items extracted automatically"
+      },
+      {
+        "name": "Workplace copilot (docs/email/chat)",
+        "aiUseCase": "AI drafting and summarization embedded directly in the tools people already use daily"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Knowledge Capture",
+        "icon": "Mic",
+        "items": [
+          "Meeting Transcription & Summarization",
+          "Auto-Tagging of Documents",
+          "Decision & Action Extraction"
+        ],
+        "toolIds": [
+          "notion-ai",
+          "microsoft-365-copilot"
+        ]
+      },
+      {
+        "name": "Retrieval",
+        "icon": "SearchCheck",
+        "items": [
+          "Federated Search Across Tools",
+          "Source-Cited Answering",
+          "Permission-Aware Results"
+        ],
+        "toolIds": [
+          "glean",
+          "perplexity"
+        ]
+      },
+      {
+        "name": "Assistance",
+        "icon": "Bot",
+        "items": [
+          "Drafting & Rewriting",
+          "Task Automation via Agents",
+          "Workflow Suggestion"
+        ],
+        "toolIds": [
+          "chatgpt",
+          "claude",
+          "microsoft-365-copilot",
+          "notion-ai"
+        ]
+      },
+      {
+        "name": "Governance",
+        "icon": "Lock",
+        "items": [
+          "Usage & Access Auditing",
+          "Sensitive-Data Redaction",
+          "Answer-Quality Monitoring"
+        ],
+        "noToolSuggestion": "No dedicated tool — this is inherently cross-tool: your identity provider's API (e.g. Okta) plus each AI vendor's own admin/audit API covers usage and access auditing."
+      }
     ]
   },
   {
@@ -164,10 +956,74 @@
     "description": "UI/UX design, brand, and creative asset production — from prototypes to generated images and video.",
     "icon": "Palette",
     "subtypes": [
-      "UI/UX design & prototyping",
-      "Generative image & video",
-      "Brand & graphic design",
-      "Motion & video editing"
+      {
+        "name": "UI/UX design & prototyping",
+        "aiUseCase": "AI wireframe generation and predictive usability heatmaps before a single user test"
+      },
+      {
+        "name": "Generative image & video",
+        "aiUseCase": "Prompt-to-asset generation for campaign and product visuals"
+      },
+      {
+        "name": "Brand & graphic design",
+        "aiUseCase": "AI-assisted on-brand asset variants produced at scale"
+      },
+      {
+        "name": "Motion & video editing",
+        "aiUseCase": "AI auto-editing, captioning, and format resizing across channels"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Research & Ideation",
+        "icon": "Lightbulb",
+        "items": [
+          "AI Moodboard Generation",
+          "Trend Scanning",
+          "Competitive Design Teardown"
+        ],
+        "noToolSuggestion": "No dedicated tool — a general AI assistant already in this registry (Perplexity, Claude, ChatGPT) via API is commonly used for trend scanning and competitive research prompts."
+      },
+      {
+        "name": "Design & Prototyping",
+        "icon": "PenTool",
+        "items": [
+          "AI Wireframe Generation",
+          "Component-Aware UI Suggestions",
+          "Usability Heatmap Prediction"
+        ],
+        "toolIds": [
+          "figma",
+          "framer"
+        ]
+      },
+      {
+        "name": "Asset Production",
+        "icon": "Image",
+        "items": [
+          "Prompt-to-Image/Video Generation",
+          "On-Brand Variant Generation",
+          "Auto-Resizing Across Formats"
+        ],
+        "toolIds": [
+          "adobe-firefly",
+          "midjourney",
+          "runway",
+          "canva"
+        ]
+      },
+      {
+        "name": "Handoff",
+        "icon": "Share2",
+        "items": [
+          "Auto-Generated Design Specs",
+          "Design-to-Code Suggestions",
+          "Version & Feedback Summarization"
+        ],
+        "toolIds": [
+          "framer"
+        ]
+      }
     ]
   },
   {
@@ -177,10 +1033,72 @@
     "description": "Identity, endpoint, and threat management — the access-control and defense layer every other function runs on top of.",
     "icon": "ShieldCheck",
     "subtypes": [
-      "Identity & access management",
-      "Threat detection & response",
-      "IT helpdesk & service management",
-      "Endpoint & device management"
+      {
+        "name": "Identity & access management",
+        "aiUseCase": "AI-driven adaptive, risk-based authentication that steps up only when it needs to"
+      },
+      {
+        "name": "Threat detection & response",
+        "aiUseCase": "AI-correlated alerts with agentic SOC investigation and response"
+      },
+      {
+        "name": "IT helpdesk & service management",
+        "aiUseCase": "AI ticket triage and auto-resolution of common IT requests"
+      },
+      {
+        "name": "Endpoint & device management",
+        "aiUseCase": "AI anomaly detection on device behavior and compliance drift"
+      }
+    ],
+    "workflow": [
+      {
+        "name": "Access Management",
+        "icon": "KeyRound",
+        "items": [
+          "Risk-Based Adaptive Authentication",
+          "Access Anomaly Detection",
+          "Auto-Provisioning & De-Provisioning"
+        ],
+        "toolIds": [
+          "okta"
+        ]
+      },
+      {
+        "name": "Threat Detection",
+        "icon": "ShieldAlert",
+        "items": [
+          "Alert Correlation",
+          "Behavioral Anomaly Detection",
+          "Agentic SOC Investigation"
+        ],
+        "toolIds": [
+          "crowdstrike-charlotte-ai",
+          "sentinelone-purple-ai",
+          "microsoft-security-copilot"
+        ]
+      },
+      {
+        "name": "Helpdesk",
+        "icon": "LifeBuoy",
+        "items": [
+          "AI Ticket Triage",
+          "Auto-Resolution of Common Requests",
+          "Knowledge-Base Suggestion"
+        ],
+        "toolIds": [
+          "moveworks"
+        ]
+      },
+      {
+        "name": "Compliance & Endpoint",
+        "icon": "Laptop",
+        "items": [
+          "Device Compliance Drift Detection",
+          "Vulnerability Prioritization",
+          "Automated Patch Recommendation"
+        ],
+        "noToolSuggestion": "No dedicated tool — most MDM/endpoint platforms expose an API; feeding that into a general AI assistant or the security tools above can help prioritize patches."
+      }
     ]
   }
 ]

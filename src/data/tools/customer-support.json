@@ -5,8 +5,12 @@
     "logoInitial": "IC",
     "bestFor": "The highest-resolution-rate AI support agent, billed only for tickets it actually resolves",
     "description": "Intercom's AI Agent (Fin) resolves customer tickets autonomously across chat, email, and voice, and can run on top of an existing helpdesk like Salesforce with no seat cost.",
-    "functions": ["customer-support"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "customer-support"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -24,7 +28,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.intercom.com/fin",
     "sourceUrl": "https://www.intercom.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "zendesk-ai",
@@ -32,8 +37,12 @@
     "logoInitial": "ZD",
     "bestFor": "AI agents and copilot layered onto the incumbent enterprise helpdesk platform",
     "description": "Zendesk's built-in AI agents and Copilot handle routine tickets, triage, and draft agent replies, billed on top of Zendesk's established omnichannel support suite.",
-    "functions": ["customer-support"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "customer-support"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -51,7 +60,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.zendesk.com/service/ai/",
     "sourceUrl": "https://www.zendesk.com/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "ada",
@@ -59,8 +69,12 @@
     "logoInitial": "AD",
     "bestFor": "AI-native, no-code support automation for very high ticket volumes",
     "description": "A purpose-built AI customer service agent platform (no traditional helpdesk seats) designed for high-volume, multi-channel deflection, configured without code by support ops teams.",
-    "functions": ["customer-support"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "customer-support"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -75,7 +89,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.ada.cx",
     "sourceUrl": "https://www.ada.cx/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "freshdesk-freddy",
@@ -83,8 +98,12 @@
     "logoInitial": "FD",
     "bestFor": "A cost-effective helpdesk with AI agent and copilot bundled in from the entry tier",
     "description": "Freshworks' helpdesk with Freddy AI Agent (ticket deflection) and optional Freddy AI Copilot (agent assist) bundled into every plan, including the lowest-cost tier.",
-    "functions": ["customer-support"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "customer-support"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -102,7 +121,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.freshworks.com/freshdesk/",
     "sourceUrl": "https://www.freshworks.com/freshdesk/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "gorgias",
@@ -110,11 +130,18 @@
     "logoInitial": "GO",
     "bestFor": "Ecommerce brands (especially on Shopify) that want AI support tied to order and customer data",
     "description": "A helpdesk built for ecommerce, with an AI Agent that resolves tickets using live order, shipping, and customer data, priced per ticket volume rather than per seat.",
-    "functions": ["customer-support"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "customer-support"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
-    "freeTier": { "available": false, "limits": "No persistent free tier" },
+    "freeTier": {
+      "available": false,
+      "limits": "No persistent free tier"
+    },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 10,
@@ -126,7 +153,8 @@
     "enterpriseReady": false,
     "officialUrl": "https://www.gorgias.com",
     "sourceUrl": "https://www.gorgias.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "salesforce-agentforce",
@@ -134,8 +162,14 @@
     "logoInitial": "SF",
     "bestFor": "Enterprises already on Salesforce that want AI agents wired directly into CRM data and workflows",
     "description": "Salesforce's AI agent platform for service (and sales) use cases, acting autonomously on live CRM records — cases, orders, knowledge — inside the Salesforce platform teams already run on.",
-    "functions": ["customer-support", "sales"],
-    "phases": ["support-maintenance", "go-to-market-sales"],
+    "functions": [
+      "customer-support",
+      "sales"
+    ],
+    "phases": [
+      "support-maintenance",
+      "go-to-market-sales"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -144,15 +178,16 @@
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 125,
+      "startingPrice": 5,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Per-user licensing starts around $125/user/month; usage-based alternatives are $2 per conversation, or Flex Credits at $500 per 100,000 credits (~$0.10 per standard action). Conversation and Flex Credit billing cannot be combined in one org."
+      "notes": "Metered Agentforce User License starts at $5/user/month (requires Flex Credits). Flat-fee, unmetered add-ons are $125/user/month (Sales/Service) or $150/user/month (Industries). Usage-based alternatives: Flex Credits at $500 per 100,000 credits (~$0.10 per standard action), or $2 per conversation. Conversation and Flex Credit billing cannot be combined in one org. Salesforce Foundations offers free basic builder tools (Agentforce Builder, Prompt Builder) without customer-facing agent capabilities."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.salesforce.com/agentforce/",
     "sourceUrl": "https://www.salesforce.com/agentforce/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   }
 ]

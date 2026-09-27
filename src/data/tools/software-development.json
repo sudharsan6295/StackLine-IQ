@@ -5,8 +5,13 @@
     "logoInitial": "GH",
     "bestFor": "AI pair programming inside the editors and workflows most dev teams already use",
     "description": "The most widely adopted AI coding assistant, with inline completions, chat, code review, and agent mode built into VS Code, JetBrains, and GitHub.com itself.",
-    "functions": ["software-development"],
-    "phases": ["build", "test-qa"],
+    "functions": [
+      "software-development"
+    ],
+    "phases": [
+      "build",
+      "test-qa"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -24,7 +29,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://github.com/features/copilot",
     "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "cursor",
@@ -32,8 +38,13 @@
     "logoInitial": "CU",
     "bestFor": "A full AI-native code editor for teams that want the deepest agentic coding experience",
     "description": "A VS Code-based editor built around AI from the ground up, with a multi-file agent (Composer), frontier model access, and enterprise controls.",
-    "functions": ["software-development"],
-    "phases": ["build", "test-qa"],
+    "functions": [
+      "software-development"
+    ],
+    "phases": [
+      "build",
+      "test-qa"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -51,34 +62,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://cursor.com",
     "sourceUrl": "https://cursor.com/pricing",
-    "lastChecked": "2026-09-25"
-  },
-  {
-    "id": "windsurf",
-    "name": "Windsurf",
-    "logoInitial": "WS",
-    "bestFor": "An AI-native IDE with simple, predictable usage quotas instead of confusing credits",
-    "description": "Cognition's AI coding editor (sibling product to Devin), on straightforward Free/Pro/Teams/Max tiers with daily and weekly usage allowances.",
-    "functions": ["software-development"],
-    "phases": ["build"],
-    "pricingModel": "freemium",
-    "badge": "Freemium",
-    "freeTier": {
-      "available": true,
-      "limits": "Free tier with a refreshing daily/weekly usage allowance"
-    },
-    "paidTier": {
-      "isCustomPricing": false,
-      "startingPrice": 20,
-      "currency": "USD",
-      "billingUnit": "per month",
-      "notes": "Pro is $20/mo; Teams $40/user/month; Max $200/mo; Enterprise is custom."
-    },
-    "topPick": false,
-    "enterpriseReady": true,
-    "officialUrl": "https://windsurf.com",
-    "sourceUrl": "https://windsurf.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "devin",
@@ -86,8 +71,13 @@
     "logoInitial": "DV",
     "bestFor": "An autonomous AI software engineer that can be assigned whole tickets, not just autocomplete",
     "description": "Cognition's agentic AI engineer that plans, writes, tests, and opens PRs for full coding tasks with minimal supervision, run from the cloud or IDE.",
-    "functions": ["software-development"],
-    "phases": ["build", "test-qa"],
+    "functions": [
+      "software-development"
+    ],
+    "phases": [
+      "build",
+      "test-qa"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -105,7 +95,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://devin.ai",
     "sourceUrl": "https://devin.ai/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "amazon-q-developer",
@@ -113,8 +104,15 @@
     "logoInitial": "AQ",
     "bestFor": "Teams standardized on AWS who want an AI coding assistant tied into their cloud stack",
     "description": "AWS's AI coding assistant with IDE/CLI completions, agentic coding, and large-scale Java version-upgrade automation, billed through AWS.",
-    "functions": ["software-development", "devops-operations"],
-    "phases": ["build", "test-qa", "release-operate"],
+    "functions": [
+      "software-development",
+      "devops-operations"
+    ],
+    "phases": [
+      "build",
+      "test-qa",
+      "release-operate"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -132,7 +130,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://aws.amazon.com/q/developer/",
     "sourceUrl": "https://aws.amazon.com/q/developer/pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "jetbrains-ai-assistant",
@@ -140,8 +139,13 @@
     "logoInitial": "JB",
     "bestFor": "Developers already living inside JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)",
     "description": "JetBrains' native AI assistant, including the Junie coding agent, built directly into its IDE family and priced on a credit system.",
-    "functions": ["software-development"],
-    "phases": ["build", "test-qa"],
+    "functions": [
+      "software-development"
+    ],
+    "phases": [
+      "build",
+      "test-qa"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -159,7 +163,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.jetbrains.com/ai-ides/",
     "sourceUrl": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "claude-code",
@@ -167,8 +172,16 @@
     "logoInitial": "CC",
     "bestFor": "Deep, agentic terminal-based coding on large codebases, from a subscription you may already have",
     "description": "Anthropic's agentic coding tool that runs in the terminal and IDEs, reading and editing entire codebases, running tests, and committing changes autonomously under supervision.",
-    "functions": ["software-development", "qa-testing", "devops-operations"],
-    "phases": ["build", "test-qa", "release-operate"],
+    "functions": [
+      "software-development",
+      "qa-testing",
+      "devops-operations"
+    ],
+    "phases": [
+      "build",
+      "test-qa",
+      "release-operate"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -186,7 +199,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://claude.com/product/claude-code",
     "sourceUrl": "https://claude.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "replit-agent",
@@ -194,8 +208,14 @@
     "logoInitial": "RP",
     "bestFor": "Going from a plain-English prompt to a deployed full-stack app fastest, especially for prototypes",
     "description": "An agentic app-building environment that generates, runs, and deploys full-stack applications from natural-language prompts, with a built-in cloud IDE.",
-    "functions": ["software-development", "product-ideation"],
-    "phases": ["ideation-discovery", "build"],
+    "functions": [
+      "software-development",
+      "product-ideation"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "build"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -213,6 +233,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://replit.com",
     "sourceUrl": "https://replit.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   }
 ]

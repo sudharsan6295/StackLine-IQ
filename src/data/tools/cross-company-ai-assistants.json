@@ -5,8 +5,14 @@
     "logoInitial": "GP",
     "bestFor": "The most widely adopted general-purpose AI assistant, for every function that needs a capable default chatbot",
     "description": "OpenAI's general-purpose assistant for writing, research, analysis, coding, and image/voice tasks — the default choice for broad, cross-functional AI assistance across an enterprise.",
-    "functions": ["cross-company-ai-assistants"],
-    "phases": ["ideation-discovery", "build", "support-maintenance"],
+    "functions": [
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "build",
+      "support-maintenance"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -24,7 +30,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://chatgpt.com",
     "sourceUrl": "https://openai.com/business/chatgpt-pricing/",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "claude",
@@ -32,8 +39,14 @@
     "logoInitial": "CL",
     "bestFor": "A general-purpose AI assistant known for careful reasoning, long-context work, and enterprise-grade trust and safety",
     "description": "Anthropic's general-purpose assistant for chat, writing, research, and analysis (distinct from Claude Code, its coding-specific tool), used broadly across teams for everyday AI-assisted work.",
-    "functions": ["cross-company-ai-assistants"],
-    "phases": ["ideation-discovery", "build", "support-maintenance"],
+    "functions": [
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "build",
+      "support-maintenance"
+    ],
     "pricingModel": "freemium",
     "badge": "Freemium",
     "freeTier": {
@@ -51,7 +64,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://claude.com",
     "sourceUrl": "https://claude.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "microsoft-365-copilot",
@@ -59,8 +73,13 @@
     "logoInitial": "M3",
     "bestFor": "An AI assistant embedded directly into Word, Excel, Outlook, and Teams for organizations already on Microsoft 365",
     "description": "Copilot layered across the Microsoft 365 apps enterprises already run on — drafting documents, summarizing email threads and meetings, and building spreadsheets and slides from a prompt.",
-    "functions": ["cross-company-ai-assistants"],
-    "phases": ["build", "support-maintenance"],
+    "functions": [
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "build",
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -78,7 +97,8 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.microsoft.com/en-us/microsoft-365/microsoft-copilot",
     "sourceUrl": "https://www.microsoft.com/en-us/microsoft-365/copilot/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-25",
+    "addedOn": "2026-09-25"
   },
   {
     "id": "glean",
@@ -86,8 +106,12 @@
     "logoInitial": "GL",
     "bestFor": "Enterprise search and a company-wide knowledge assistant that connects every internal tool and document",
     "description": "An enterprise AI search and knowledge assistant that indexes and reasons across a company's connected apps (Slack, Drive, Confluence, Jira, and more) to answer questions with cited internal sources.",
-    "functions": ["cross-company-ai-assistants"],
-    "phases": ["support-maintenance"],
+    "functions": [
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "support-maintenance"
+    ],
     "pricingModel": "paid",
     "badge": "Paid",
     "freeTier": {
@@ -102,6 +126,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.glean.com",
     "sourceUrl": "https://www.glean.com/pricing",
-    "lastChecked": "2026-09-25"
+    "lastChecked": "2026-09-26",
+    "addedOn": "2026-09-25"
   }
 ]
