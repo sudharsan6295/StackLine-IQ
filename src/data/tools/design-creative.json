@@ -24,13 +24,13 @@
       "startingPrice": 16,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Professional full seat $16/mo (3,000 AI credits/month; Dev seat $12, Collab seat $3). Organization full seat $55/mo annual (3,500 credits). Enterprise full seat $90/mo annual (4,250 credits)."
+      "notes": "Professional full seat $16/mo (Dev seat $12, Collab $3; 3,000 AI credits/month for full seats, 500 for Dev/Collab). Organization full seat $55/mo annual (Dev $25, Collab $5; 3,500 credits). Enterprise full seat $90/mo annual (Dev $35, Collab $5; 4,250 credits)."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.figma.com",
     "sourceUrl": "https://www.figma.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -50,7 +50,7 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "25 generative credits/month, unlimited standard generations"
+      "limits": "Free daily generations, with limits that refresh each day"
     },
     "paidTier": {
       "isCustomPricing": false,
@@ -63,7 +63,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://firefly.adobe.com",
     "sourceUrl": "https://firefly.adobe.com/pricing",
-    "lastChecked": "2026-09-25",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -123,13 +123,13 @@
       "startingPrice": 12,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Standard $12/mo billed annually ($15/mo monthly, 625 credits, all AI video/image models, no watermarks); Pro $28/mo (2,250 credits, 5 projects, 1 Brand Kit); Max $76/mo (9,500 credits, credit rollover, 3 Brand Kits, studio-grade HDR/ProRes export). Prices shown are the annual-billing rate."
+      "notes": "Standard $12/mo billed annually ($15 monthly; 625 credits, all AI video/image models, no watermarks); Pro $28/mo annually ($35 monthly; 2,250 credits); Max $76/mo annually ($95 monthly; 9,500 credits, one month of credit rollover). Standard and Pro credits don't roll over."
     },
     "topPick": false,
     "enterpriseReady": false,
     "officialUrl": "https://runway.com",
     "sourceUrl": "https://runway.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   },
   {
@@ -148,20 +148,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "Full editor access; no custom domain until a paid plan"
+      "limits": "Free plan: 500 AI credits to try, a Framer domain, 1 GB bandwidth; a custom domain needs a paid plan"
     },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 10,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Priced per published site, not per account — running multiple sites means multiple plans. Basic $10/mo, Pro $30/mo (the earlier $100/mo 'Scale' tier is gone; the lineup is now Basic/Pro/Enterprise only). Additional editor seats are $20/user/month on paid plans ($10 for a content-only role). Enterprise is custom, with volume-discounted credits."
+      "notes": "Priced per published site, not per account — running multiple sites means multiple plans. Basic $10/mo, Pro $30/mo; Enterprise is custom, with volume-discounted credits. Additional editors are $20/editor/month on paid plans ($10 for a content-only editor); viewers are free."
     },
     "topPick": false,
     "enterpriseReady": false,
     "officialUrl": "https://www.framer.com",
     "sourceUrl": "https://www.framer.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   }
 ]

@@ -15,17 +15,17 @@
     "badge": "Paid",
     "freeTier": {
       "available": false,
-      "limits": "No public free tier; sales-led trial only"
+      "limits": "14-day free trial; no persistent free tier"
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "mabl does not publish list pricing. Third-party contract data (Vendr and others) estimates Starter plans around $450–$600/month and Growth-tier deployments $1,200–$3,000/month on annual contracts — a market-observed range, not an official price. Confirm current pricing directly with mabl."
+      "notes": "No public list price — custom quotes, starting from 500 cloud-run credits per month (local and CI runs are unlimited). Third-party contract data (Vendr and others) estimates Starter plans around $450–$600/month and Growth-tier deployments $1,200–$3,000/month on annual contracts — a market-observed range, not an official price."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.mabl.com",
     "sourceUrl": "https://www.mabl.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -44,20 +44,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "Katalon Studio (local/manual execution) is free forever"
+      "limits": "Free plan: local authoring, record-and-playback, and local execution, plus a 30-day trial of paid features"
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 84,
+      "startingPrice": 183,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Professional is $84/seat/month billed annually for the first 3 seats ($150/seat/month from the 4th seat on; $184/seat/month if billed monthly), with AI agents for test authoring, failure analysis, and self-healing included. Runtime Engine (CI/parallel execution) is a $145/license/month add-on; cross-browser and mobile cloud execution are $158/session/month. Enterprise bundles are custom."
+      "notes": "Professional lists at $2,199/seat/year (~$183/seat/month), billed annually; a limited-time 55% discount on the first 3 seats ($1,000/seat/year) ends Oct 31, 2026. Headless/CI execution (Runtime Engine) and TestCloud execution are separate add-ons, now quoted by sales. Enterprise is custom."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://katalon.com",
     "sourceUrl": "https://katalon.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -89,7 +89,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://applitools.com",
     "sourceUrl": "https://applitools.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -97,18 +97,18 @@
     "name": "TestMu AI (KaneAI)",
     "logoInitial": "KA",
     "bestFor": "Agentic AI test authoring — describe a test in plain English and an AI agent writes, runs, and heals it",
-    "description": "KaneAI is an agentic AI QE platform (formerly LambdaTest, rebranded to TestMu AI in January 2026) that authors multi-language test scripts from natural-language intent, auto-heals broken tests, and includes cloud execution minutes in every plan.",
+    "description": "KaneAI is an agentic AI QE platform (formerly LambdaTest, rebranded to TestMu AI in January 2026) that authors multi-language test scripts from natural-language intent, auto-heals broken tests, and includes cloud execution minutes on its Pro and Max plans.",
     "functions": [
       "qa-testing"
     ],
     "phases": [
       "test-qa"
     ],
-    "pricingModel": "paid",
-    "badge": "Paid",
+    "pricingModel": "freemium",
+    "badge": "Freemium",
     "freeTier": {
-      "available": false,
-      "limits": "No-credit-card evaluation of the local Kane CLI workflow; no persistent free plan"
+      "available": true,
+      "limits": "A $0 'Free Forever' plan is listed; its credit and execution allowances aren't stated"
     },
     "paidTier": {
       "isCustomPricing": false,
@@ -121,7 +121,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.testmuai.com/kane-ai/",
     "sourceUrl": "https://www.testmuai.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   },
   {

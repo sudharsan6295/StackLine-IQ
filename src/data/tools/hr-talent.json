@@ -24,8 +24,8 @@
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://eightfold.ai",
-    "sourceUrl": "https://eightfold.ai/pricing",
-    "lastChecked": "2026-09-25",
+    "sourceUrl": "https://eightfold.ai/request-demo/",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -54,7 +54,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.hirevue.com",
     "sourceUrl": "https://www.hirevue.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -86,7 +86,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://lattice.com",
     "sourceUrl": "https://lattice.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -109,7 +109,7 @@
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "No published pricing. Industry-reported figures: entry packages around $1,000–$1,500/month for basic conversational screening and scheduling, mid-market deployments $3,000–$8,000/month, and full enterprise rollouts $25,000–$100,000+/year, scaling with hiring volume and locations — not official figures."
+      "notes": "No published pricing. Industry-reported figures: entry packages around $1,000–$1,500/month for basic conversational screening and scheduling, mid-market deployments $3,000–$8,000/month, and full enterprise rollouts $25,000–$100,000+/year, scaling with hiring volume and locations — not official figures. Workday completed its acquisition of Paradox in 2025, so packaging may move toward Workday bundles."
     },
     "topPick": false,
     "enterpriseReady": true,

@@ -22,13 +22,13 @@
       "startingPrice": 15,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Ramp Plus is $15/user/month, adding advanced approval workflows, custom policies, and procurement. Ramp Enterprise is custom-priced with dedicated support and enterprise SSO."
+      "notes": "Ramp Plus is $15/user/month plus a platform fee based on team size (20% off with annual billing), adding AI expense reviews, auto-coded bills, multi-entity support, and NetSuite/Sage Intacct integrations. Ramp Enterprise is custom-priced with dedicated support and implementation services."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://ramp.com",
     "sourceUrl": "https://ramp.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -57,7 +57,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.vic.ai",
     "sourceUrl": "https://www.vic.ai/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -108,20 +108,20 @@
     "badge": "Paid",
     "freeTier": {
       "available": false,
-      "limits": "14-day free trial; no persistent free plan"
+      "limits": "Free trial available; no persistent free plan"
     },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 30,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Starter $30/mo (1 seat, 25 lifetime AI credits); Core $72/mo (5 seats); Complete $120/mo (unlimited seats, 100 AI credits/month, AI-powered reconciliations); Scale $360/mo (unlimited seats, 300 AI credits/month, no transaction or integration limits). Bookkeeper-assisted Expert Reviewed and Full Service tiers layer on top, priced separately. US-only."
+      "notes": "Starter $30/mo (1 seat, 25 lifetime AI credits); Core $72/mo (5 seats); Complete $120/mo (unlimited seats, 100 AI credits/month, AI-powered reconciliations); Scale $360/mo (unlimited seats, 300 AI credits/month). Yearly billing saves 20%. Bookkeeper-assisted tiers are priced separately. US-only."
     },
     "topPick": false,
     "enterpriseReady": false,
     "officialUrl": "https://puzzle.io",
     "sourceUrl": "https://puzzle.io/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   }
 ]

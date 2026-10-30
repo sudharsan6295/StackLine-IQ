@@ -24,8 +24,8 @@
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.harvey.ai",
-    "sourceUrl": "https://www.harvey.ai/pricing",
-    "lastChecked": "2026-09-26",
+    "sourceUrl": "https://www.harvey.ai/contact-sales",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -54,7 +54,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://ironcladapp.com",
     "sourceUrl": "https://ironcladapp.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -73,17 +73,17 @@
     "badge": "Paid",
     "freeTier": {
       "available": false,
-      "limits": "7-day free trial; no persistent free tier"
+      "limits": "7-day free trial (extended trials for larger organizations); no persistent free tier"
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "No published price list — quoted per seat. Industry-reported figures: Associate-level plans around $89/user/month, rising through Pro, to Enterprise reported around $350/user/month with a 6-month minimum commitment — not official figures."
+      "notes": "No published price list — priced by the number of team members on a license, via demo. Industry-reported figures: Associate-level plans around $89/user/month, rising to Enterprise reported around $350/user/month with a 6-month minimum commitment — not official figures."
     },
     "topPick": false,
     "enterpriseReady": false,
     "officialUrl": "https://spellbook.com",
     "sourceUrl": "https://spellbook.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -112,7 +112,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://legal.thomsonreuters.com/en/products/cocounsel-legal",
     "sourceUrl": "https://legal.thomsonreuters.com/en/products/cocounsel-legal/plans",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   },
   {
@@ -141,7 +141,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.legalontech.com",
     "sourceUrl": "https://www.legalontech.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   }
 ]

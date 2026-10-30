@@ -16,20 +16,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "2,000 code completions and 50 chat requests per month"
+      "limits": "2,000 inline suggestions/month plus limited chat and agent usage"
     },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 10,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Pro is $10/mo; Pro+ $39/mo; Max $100/mo. Business and Enterprise org plans are custom-priced."
+      "notes": "Pro is $10/mo ($15 of monthly AI credits); Pro+ $39/mo ($70 of credits); Max $100/mo ($200 of credits) — all with unlimited inline suggestions. Business and Enterprise org plans are priced via sales, with admin-set usage limits."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://github.com/features/copilot",
     "sourceUrl": "https://github.com/features/copilot/plans",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -37,7 +37,7 @@
     "name": "Cursor",
     "logoInitial": "CU",
     "bestFor": "A full AI-native code editor for teams that want the deepest agentic coding experience",
-    "description": "A VS Code-based editor built around AI from the ground up, with a multi-file agent (Composer), frontier model access, and enterprise controls.",
+    "description": "A VS Code-based editor built around AI from the ground up, with a multi-file agent (Composer), frontier model access, and enterprise controls — sold since October 2026 inside xAI's X Subscription lineup alongside Grok.",
     "functions": [
       "software-development"
     ],
@@ -49,20 +49,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "Hobby plan: limited Agent requests, no credit card required"
+      "limits": "Free plan: limited Agent and Chat requests"
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 20,
+      "startingPrice": 8,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Individual is $20/mo; Teams $40/user/month; Enterprise is custom."
+      "notes": "Restructured in October 2026: Plus $8/mo (Grok models only), Premium $30/mo (4x Plus usage; the successor to the old $20 Pro), Super $100/mo (15x), Ultra $200/mo (50x); Teams from $30/user/month; Enterprise custom with pooled usage. Claude, GPT and Gemini models are billed separately at API list price. Existing subscribers can keep their legacy plans."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://cursor.com",
     "sourceUrl": "https://cursor.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -95,7 +95,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://devin.ai",
     "sourceUrl": "https://devin.ai/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -130,7 +130,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://aws.amazon.com/q/developer/",
     "sourceUrl": "https://aws.amazon.com/q/developer/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -163,7 +163,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.jetbrains.com/ai-ides/",
     "sourceUrl": "https://www.jetbrains.com/help/ai-assistant/licensing-and-subscriptions.html",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -193,13 +193,13 @@
       "startingPrice": 20,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Included on Pro ($20/mo, or $17/mo annual); Max plans from $100/mo (5x usage) or $200/mo (20x); Team Standard $25/seat/mo; Enterprise from $20/seat/mo plus usage."
+      "notes": "Included on Pro ($20/mo, or $17/mo annual), Max (from $100/mo), Team (Standard $25/seat/mo, $20 annual) and Enterprise ($20/seat/mo billed annually, 20-seat minimum, plus usage at API rates)."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://claude.com/product/claude-code",
     "sourceUrl": "https://claude.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -216,24 +216,24 @@
       "ideation-discovery",
       "build"
     ],
-    "pricingModel": "freemium",
-    "badge": "Freemium",
+    "pricingModel": "paid",
+    "badge": "Paid",
     "freeTier": {
-      "available": true,
-      "limits": "Starter plan: free daily Agent credits, 1 published app, ~1,200 dev minutes/month"
+      "available": false,
+      "limits": "The free Starter plan was removed in September 2026; Core is now the entry tier"
     },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 20,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Core is $20/mo ($18 annualized); Pro is $100/mo ($90 annualized); Enterprise is custom."
+      "notes": "Core is $20/mo ($18 billed annually) with $20 of model credits plus Free Mode usage (up to 30 hours of chat, 60 projects); Pro is $100/mo ($90 annually) with $100 of credits and up to 15 collaborators; Enterprise is custom."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://replit.com",
     "sourceUrl": "https://replit.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   }
 ]

@@ -18,14 +18,17 @@
       "limits": "Available only as an add-on to a paid Datadog subscription — no standalone free tier"
     },
     "paidTier": {
-      "isCustomPricing": true,
-      "notes": "Consumption-based AI Credits starting at $500 for 500 credits on an annual commitment; credits are shared across Bits investigation, chat, security, and dev agents. Average investigation cost roughly $6.50 at committed rates. Requires an underlying Datadog plan, which is priced separately."
+      "isCustomPricing": false,
+      "notes": "AI Credits from $500/month for 500 credits on an annual commitment, or $1.30 per credit on demand; credits reset monthly and don't roll over. Rough usage: ~0.5 credit per chat message, ~4 per autonomous investigation, ~5 per code fix. Requires an underlying Datadog plan, priced separately.",
+      "startingPrice": 500,
+      "currency": "USD",
+      "billingUnit": "per month"
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.datadoghq.com/product/ai/bits-ai-agents/",
     "sourceUrl": "https://www.datadoghq.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -51,13 +54,13 @@
       "startingPrice": 21,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Professional $21/responder/month (annual) or $25/month (monthly). PagerDuty has restructured its AI/analytics pricing: the legacy per-responder 'Business' tier and AIOps add-on (~$699/month) still exist for renewal, but new customers get AI via the PD Reliability Platform, a separate platform-fee product — Starter $2,800/year (10 seats, 5,000 Signal Intelligence events, 5,000 AI actions), Essential $12,000/year (20 seats), Plus $48,000/year (40 seats), Ultimate custom (500 seats)."
+      "notes": "Professional $21/user/month (annual) or $25/month (monthly); AIOps, PagerDuty Advance and other AI features are separate add-ons. The PD Reliability Platform is a separate platform-fee product: Starter $2,800/year (10 seats, 5,000 Signal Intelligence events, 1,000 AI actions), Essential $12,000/year (20 seats, 40,000 events, 4,000 AI actions), Plus $48,000/year (50 seats, 150,000 events, 16,000 AI actions), Ultimate custom (500 seats)."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.pagerduty.com",
     "sourceUrl": "https://www.pagerduty.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -78,17 +81,17 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "Free plan includes 2,000 monthly cloud credits and AIDA AI assistance"
+      "limits": "Free plan for individual developers and small teams (Harness Open Source, Chaos, community support)"
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "Priced per developer across modules (Essentials bundles core CI/CD/security modules; Enterprise unlocks the full module catalog). No flat public per-seat price is listed — quote-based beyond the free tier, with 15–30% discounts reported for multi-year annual commitments."
+      "notes": "Essentials (bundled CI, CD, IaC and security, up to 500 users) and Enterprise (any modules, unlimited users, premier support) are both quote-based — no per-developer price is published. Multi-year commitments are reported to earn 15–30% discounts."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.harness.io",
     "sourceUrl": "https://www.harness.io/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   }
 ]

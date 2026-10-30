@@ -29,7 +29,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.jasper.ai",
     "sourceUrl": "https://www.jasper.ai/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -57,13 +57,13 @@
       "startingPrice": 29,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Chat is $29/mo (5 seats). Growth/Expansion/Scale plans run $1,000–$3,000/month billed annually for larger teams and workflow credit pools. Enterprise is custom."
+      "notes": "Chat is $29/mo, or $24/mo billed annually (5 seats). Growth $1,000/mo (75 seats), Expansion $2,000/mo (150 seats), Scale $3,000/mo (200 seats), all billed annually with workflow credit pools. Enterprise is custom."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.copy.ai",
     "sourceUrl": "https://www.copy.ai/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -92,13 +92,13 @@
       "startingPrice": 7,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Starter from $7/seat/month. Professional from $800/month (3 seats incl.) plus a $3,000 onboarding fee. Enterprise from $3,600/month (5 seats) plus a $7,000 onboarding fee. AI features run on a shared HubSpot Credits pool."
+      "notes": "Starter from $7/seat/month (new-customer pricing), with 500 HubSpot Credits. Professional from $800/month (3 core seats, 3,000 credits) plus a $3,000 onboarding fee. Enterprise from $3,600/month (5 seats, 5,000 credits) plus a $7,000 onboarding fee. Breeze AI agents draw on HubSpot Credits; extra credits are $0.01 each."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.hubspot.com/products/marketing",
     "sourceUrl": "https://www.hubspot.com/pricing/marketing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -125,13 +125,13 @@
       "startingPrice": 49,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Discovery is $49/mo; Standard $99/mo; Pro $182/mo; Peace of Mind (unlimited) $299/mo; a separate AI Search Analytics add-on is $82/mo. Enterprise is custom."
+      "notes": "Billed annually: Discovery $49/mo, Standard $99/mo, Pro $182/mo, Peace of Mind $299/mo — AI search tracking is bundled from Standard up. AI Search Analytics is also sold as a standalone $82/mo plan (ChatGPT, Gemini and AI Overviews visibility). Enterprise is custom."
     },
     "topPick": false,
     "enterpriseReady": false,
-    "officialUrl": "https://surferseo.com",
-    "sourceUrl": "https://surferseo.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "officialUrl": "https://surfer.ai",
+    "sourceUrl": "https://surfer.ai/pricing/",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -151,20 +151,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "1,200 credits/month, ~10 minutes of video, 9 AI avatars"
+      "limits": "Basic plan: 500 credits/month, 10 minutes of video, 9 AI avatars, watermarked"
     },
     "paidTier": {
       "isCustomPricing": false,
-      "startingPrice": 29,
+      "startingPrice": 19,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Starter is $29/mo ($18/mo billed annually); Creator $89/mo ($64/mo annually). Enterprise is custom with unlimited minutes and SSO."
+      "notes": "Starter is $19/mo ($14/mo billed annually; 1,250 credits/month). Pro is $89/mo ($59/mo annually; 6,000 credits/month), replacing the old Creator plan. Enterprise is custom with unlimited video minutes and SSO."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.synthesia.io",
     "sourceUrl": "https://www.synthesia.io/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -192,7 +192,7 @@
       "startingPrice": 18,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Pro is $18/month (~$12/mo billed annually) with full Magic Studio access. Business (formerly Teams) is roughly $25/user/month. Enterprise is custom."
+      "notes": "Pro is $18/month or $180/year for one person, with full Magic Studio access. Business is $25/user/month or $250/user/year. Enterprise is custom."
     },
     "topPick": false,
     "enterpriseReady": true,

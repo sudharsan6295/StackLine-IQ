@@ -29,7 +29,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot",
     "sourceUrl": "https://www.microsoft.com/en-us/security/pricing/microsoft-security-copilot",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -48,17 +48,17 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "Included for qualifying Falcon customers with 50 AI credits/month; full credits included for enterprise tiers"
+      "limits": "Eligible Falcon customers can opt in to a free monthly Charlotte AI credit allowance; more requires licensing"
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "Charlotte AI is bundled into the Falcon platform rather than priced standalone; the underlying Falcon endpoint protection platform is priced per endpoint via a custom quote."
+      "notes": "Charlotte AI is bundled into the Falcon platform and the credit-based Charlotte Agentic SOAR tiers (Essentials, and the full tier adding the triage and response agents) rather than priced standalone — all quote-only. The underlying Falcon platform is priced per endpoint via a custom quote."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/",
     "sourceUrl": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/agentic-soar/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -90,7 +90,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.okta.com",
     "sourceUrl": "https://www.okta.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -116,13 +116,13 @@
       "startingPrice": 179.99,
       "currency": "USD",
       "billingUnit": "per year",
-      "notes": "Purple AI is included starting from Singularity Complete ($179.99/endpoint/year) and Singularity Commercial ($229.99/endpoint/year); lower Core ($69.99) and Control ($79.99) tiers don't include it. Singularity Enterprise is custom-quoted. AI-powered investigation usage is also metered via Singularity Credits, a platform-wide usage currency."
+      "notes": "Singularity Complete is $179.99/endpoint/year and Singularity Commercial $229.99/endpoint/year; Enterprise is quote-based, and the Core and Control tiers no longer show a public price. The package page no longer maps Purple AI to specific tiers, so confirm inclusion with SentinelOne. AI investigation usage is also metered via Singularity Credits."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.sentinelone.com/platform/purple/",
     "sourceUrl": "https://www.sentinelone.com/platform-packages/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-26"
   },
   {
@@ -145,7 +145,7 @@
     },
     "paidTier": {
       "isCustomPricing": true,
-      "notes": "No published pricing; billed per employee per year via custom quote. Third-party procurement data (Vendr) puts the median contract around $130,000/year (observed range $89,500–$271,333), with typical annual contracts commonly reported in the $90,000–$300,000 range plus $50,000–$200,000 in implementation services depending on deployment complexity — not official figures. Packaging may change following the ServiceNow acquisition."
+      "notes": "No published pricing; billed per employee per year via custom quote. Third-party procurement data (Vendr) puts the median contract around $130,000/year (observed range $89,500–$271,333), plus $50,000–$200,000 in implementation services depending on deployment complexity — not official figures. ServiceNow completed its acquisition of Moveworks in December 2025, so new deals typically run through ServiceNow."
     },
     "topPick": false,
     "enterpriseReady": true,

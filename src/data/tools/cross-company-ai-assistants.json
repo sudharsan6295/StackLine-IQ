@@ -24,7 +24,7 @@
       "startingPrice": 20,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Go is $8/mo; Plus $20/mo; Pro $100–$200/mo. Business (team workspace) is $25/user/month. Enterprise is custom, per-user pricing negotiated per organization."
+      "notes": "Go is $8/mo; Plus $20/mo; Pro $100–$200/mo. Business is $25/user/month, or $20/user/month billed annually (2-seat minimum). Enterprise is custom, per-user pricing negotiated per organization."
     },
     "topPick": true,
     "enterpriseReady": true,
@@ -58,13 +58,13 @@
       "startingPrice": 20,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Pro is $20/mo ($17/mo annual). Max plans from $100/mo (5x usage) or $200/mo (20x). Team Standard $25/seat/mo, Team Premium $125/seat/mo. Enterprise from $20/seat/month plus usage-based API costs."
+      "notes": "Pro is $20/mo ($17/mo annual). Max from $100/mo (5x usage) or $200/mo (20x). Team Standard $25/seat/mo ($20 annual), Team Premium $125/seat/mo ($100 annual). Enterprise is $20/seat/month billed annually (20-seat minimum) plus usage at API rates."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://claude.com",
     "sourceUrl": "https://claude.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -91,13 +91,13 @@
       "startingPrice": 30,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "$30/user/month with annual commitment, on top of a required Microsoft 365 base license (e.g. E3/E5). A discounted Business tier (~$18–$21/user/month) is available for organizations under 300 users."
+      "notes": "$30/user/month billed yearly, on top of a qualifying Microsoft 365 license. Copilot Business (for Microsoft 365 Business plans) is $21/user/month annual — discounted to $18 for the first year through Dec 31, 2026 — or $25.20 paid monthly. Copilot Chat is included at no extra cost with eligible plans; advanced agent experiences are billed by usage through Copilot Credits."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://www.microsoft.com/en-us/microsoft-365/microsoft-copilot",
     "sourceUrl": "https://www.microsoft.com/en-us/microsoft-365/copilot/pricing",
-    "lastChecked": "2026-09-25",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -126,7 +126,38 @@
     "enterpriseReady": true,
     "officialUrl": "https://www.glean.com",
     "sourceUrl": "https://www.glean.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
+  },
+  {
+    "id": "gemini-enterprise",
+    "name": "Gemini Enterprise",
+    "logoInitial": "GE",
+    "bestFor": "A company-wide AI agent platform for organizations standardized on Google Workspace and Google Cloud",
+    "description": "Google's enterprise AI platform combining Gemini chat, permission-aware enterprise search, Deep Research, and no-code agents that work across Workspace and connected business apps.",
+    "functions": [
+      "cross-company-ai-assistants"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "build",
+      "support-maintenance"
+    ],
+    "pricingModel": "paid",
+    "badge": "Paid",
+    "freeTier": {
+      "available": false,
+      "limits": "No persistent free tier; a free start/trial is offered"
+    },
+    "paidTier": {
+      "isCustomPricing": true,
+      "notes": "Five editions — Business (1–500 users), Standard, Plus, Pay-as-you-go, and Frontline (150+ users) — but Google doesn't publish per-seat prices in its edition docs. Widely reported list prices are around $21/seat/month for Business and $30+/seat/month for Standard on annual commitments, plus usage beyond quota — not official figures."
+    },
+    "topPick": false,
+    "enterpriseReady": true,
+    "officialUrl": "https://cloud.google.com/gemini-enterprise",
+    "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/editions",
+    "lastChecked": "2026-10-30",
+    "addedOn": "2026-10-30"
   }
 ]

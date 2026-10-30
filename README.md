@@ -1,8 +1,12 @@
-# Stackline
+# StacklineIQ
 
-The enterprise registry for AI tools: discover the best-in-category AI tool
-for every business function, at every stage of the product lifecycle, with
-sourced pricing and free-tier details kept current in version control.
+_Verified costs, smarter choices._ The enterprise registry for AI tools:
+discover the best-in-category AI tool for every business function, at every
+stage of the product lifecycle, with sourced pricing and free-tier details
+kept current in version control.
+
+- **Live:** https://ai-tools-hub-ruddy.vercel.app
+- **Repo:** https://github.com/sudharsan6295/StackLine-IQ
 
 ## Stack
 
@@ -10,7 +14,9 @@ sourced pricing and free-tier details kept current in version control.
   (SSG) — every route is prerendered at build time, no server runtime
   required, deployable straight to Vercel's or Cloudflare's CDN edge.
 - **Tailwind CSS v4** (CSS-first `@theme`) + **shadcn/ui** on **Radix UI**
-  primitives.
+  primitives. The site is **light-theme only** — dark mode (provider and
+  toggle) was removed; `globals.css` scopes `dark:` utilities so leftover
+  classes don't follow the OS preference.
 - **Framer Motion** for the handful of deliberate animations (the live stat
   count-up, respecting `prefers-reduced-motion`).
 - **Zustand** (with `persist`) for client state: shortlist and compare
@@ -53,6 +59,15 @@ src/
                            → recommended stack + Recharts cost estimate.
     governance/             Static: data privacy, access control, human
                            approval, and cost-control guidance.
+    about/, privacy/        Static: what StacklineIQ is and how its data is
+                           sourced; the privacy statement (no cookies, no
+                           analytics unless opted in).
+    whats-new/              Recently added and recently re-verified tools
+                           (driven by `addedOn` / `lastChecked`), with an
+                           RSS feed at `whats-new/feed.xml`.
+    api/                    Read-only JSON endpoints (`/api/tools`,
+                           `/api/tools/[id]`, `/api/functions`) over the same
+                           validated data, CORS-open and cached.
     sitemap.ts, robots.ts   Next.js metadata routes, generated from the same
                            data every page reads — nothing to keep in sync
                            by hand.
@@ -60,7 +75,10 @@ src/
   components/              UI components. `ui/` is shadcn-generated
                            primitives; `architecture/` is the React Flow
                            canvas (PhaseNode, FunctionNode, DetailPanel,
-                           the accessible FunctionDirectory fallback);
+                           the accessible FunctionDirectory fallback), plus
+                           the per-function WorkflowDrilldown (stages mapped
+                           to registry tools) and the AdoptionLifecycle
+                           section;
                            everything else is hand-built for this app
                            (ToolCard, FunctionPhaseMatrix, RegistryExplorer,
                            CompareBar, RoadmapTimeline, ArchitectureDiagram
@@ -68,7 +86,10 @@ src/
   data/
     functions.json           The 14 business functions, each with a
                            `subtypes[]` breakdown (e.g. Sales → Prospecting
-                           & lead enrichment, Conversation intelligence...).
+                           & lead enrichment, Conversation intelligence...)
+                           and a 3–6 stage `workflow[]` whose stages can
+                           reference registry tools via `toolIds` (or carry
+                           a `noToolSuggestion` when no tool genuinely fits).
     phases.json               The 7 lifecycle phases.
     function-connections.json  Curated, directed cross-function
                            relationships (`{from, to, relationship}`) — the
@@ -117,8 +138,9 @@ Every tool record (`src/lib/schema.ts`'s `toolSchema`) carries: `id`,
 (`free`/`freemium`/`paid`/`enterprise`), `badge` (the UI label), `freeTier`
 (availability + limits), `paidTier` (starting price + billing unit, or
 `isCustomPricing: true` when a vendor doesn't publish pricing), `topPick`,
-`enterpriseReady`, `officialUrl`, `sourceUrl`, and `lastChecked` (an
-ISO date). `npm run validate:data` fails the build on any schema violation,
+`enterpriseReady`, `officialUrl`, `sourceUrl`, `lastChecked` and `addedOn`
+(both required ISO dates; `addedOn` feeds the What's New page — test
+fixtures must include it too, or the production type-check fails). `npm run validate:data` fails the build on any schema violation,
 any reference to an unknown function/phase id, or an internally
 inconsistent record (e.g. a `Free` badge on a tool that isn't actually
 `pricingModel: "free"`) — and warns (without failing) on any tool whose
@@ -137,7 +159,7 @@ function id, a self-referencing connection, or a duplicate pair.
 
 ## Research sources & methodology
 
-No tool list was provided — all 57 tool records were researched directly
+No tool list was provided — every tool record was researched directly
 from vendors' official pricing pages (fetched live) and, where a page
 blocked automated fetching or a vendor doesn't publish self-serve pricing,
 corroborated against multiple independent secondary sources (analyst
@@ -147,14 +169,17 @@ corroborated rather than fetched directly, and `paidTier.notes` says so
 explicitly wherever a price is a reported/market estimate rather than an
 official published figure (e.g. Gong, Harvey, Ada, Glean — vendors with no
 public price list). **No price was invented.** `lastChecked` is the date
-that research pass was done (2026-09-25 for the initial data set).
+that research pass was done (2026-09-25 for the initial data set). A
+re-verification pass on 2026-10-30 moved `lastChecked` only for records
+whose vendor page could be read live that day; records whose page blocked
+fetching (e.g. ChatGPT, Tableau, Midjourney, Canva, Brex) keep their older
+date even where their notes were corrected from secondary sources.
 
-Coverage as of the initial pass: all 14 functions have real, sourced tool
-records, though not all reach the ideal 6–10-per-function range yet —
-Software Development, Product & Ideation, Marketing, and Customer Support
-were researched most deeply (6–8 tools each); the other 10 functions
-(including Design & Creative and IT & Security, added in a follow-up pass
-to round out coverage) currently have 3 tools each. Extending any
+Coverage today: 72 tool records (21 top picks, 30 with a genuine free tier)
+across 14 functions, 24 curated cross-function connections. Per-function
+primary-home counts range from Software Development (7) down to Sales (3)
+and DevOps & Operations (3); most others have 4–7. Sales and DevOps are the
+thinnest and the next to extend. Extending any
 function's coverage is exactly the "small JSON diff PR" the data model was
 built for — add a record to that function's file in `src/data/tools/`,
 following the existing schema, and `npm run validate:data` will confirm
@@ -192,8 +217,13 @@ analytics script loads at all and the CSP doesn't allow-list one.
 
 ## Deployment
 
-Zero-config on Vercel (Next.js is auto-detected; every route is static).
-Security headers (CSP, `X-Frame-Options`, `Referrer-Policy`, etc.) are set
+Hosted on Vercel (project `sudharsan8/ai-tools-hub`), linked to the GitHub
+repo above — Next.js is auto-detected, no `vercel.json` needed. Pushes to
+`master` deploy to production; `npx vercel --prod` deploys the working tree
+manually. The Vercel build runs `tsc` over test files as well, so a type
+error in a `__tests__` file fails the deploy. The `/api/*` routes and
+`whats-new/feed.xml` are server-rendered on demand; everything else is
+prerendered. Security headers (CSP, `X-Frame-Options`, `Referrer-Policy`, etc.) are set
 in `next.config.ts` and apply automatically on Vercel. `.github/workflows/
 ci.yml` runs format/lint/typecheck/data-validation/unit tests on every PR,
 end-to-end tests in a second job, and a production build in a third — all

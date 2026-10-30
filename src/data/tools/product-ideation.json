@@ -23,13 +23,13 @@
       "startingPrice": 20,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Pro is $20/mo. Enterprise Pro is $40/seat/month and Enterprise Max is $325/seat/month, with SCIM, audit logs, and configurable data retention."
+      "notes": "Pro is $20/mo ($17/mo billed annually); Max is $167/mo billed annually. Enterprise Pro and Enterprise Max are seat-priced through sales, with SCIM, audit logs, and configurable data retention."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.perplexity.ai",
-    "sourceUrl": "https://www.perplexity.ai/pricing",
-    "lastChecked": "2026-09-25",
+    "sourceUrl": "https://www.perplexity.ai/enterprise/pricing",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -57,13 +57,13 @@
       "startingPrice": 10,
       "currency": "USD",
       "billingUnit": "per user / month",
-      "notes": "Plus is $10/member/month (AI still trial-limited). Business at $20/member/month unlocks full Notion Agent, AI meeting notes, and enterprise search. Enterprise is custom."
+      "notes": "Plus is $10/member/month (AI still trial-limited). Business at $20/member/month unlocks full Notion Agent, AI meeting notes, and enterprise search. Enterprise is custom. Yearly billing saves up to 20%. Custom Agents are billed separately at $10 per 1,000 Notion credits/month."
     },
     "topPick": true,
     "enterpriseReady": true,
     "officialUrl": "https://www.notion.com/product/ai",
     "sourceUrl": "https://www.notion.com/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -96,7 +96,7 @@
     "enterpriseReady": true,
     "officialUrl": "https://miro.com",
     "sourceUrl": "https://miro.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -117,20 +117,20 @@
     "badge": "Freemium",
     "freeTier": {
       "available": true,
-      "limits": "$5 of monthly credits included, 7 messages/day"
+      "limits": "Free plan: 7 messages/day, deploy to Vercel, Design Mode, GitHub sync"
     },
     "paidTier": {
       "isCustomPricing": false,
       "startingPrice": 30,
       "currency": "USD",
       "billingUnit": "per month",
-      "notes": "Plus is $30/mo ($30 of monthly credits/user); Business is $100/user/month; Enterprise is custom with training opt-out and SAML SSO."
+      "notes": "Plus is $30/user/month ($30 of monthly credits plus $2 of daily login credits per user); Business is $100/user/month with training opt-out by default; Enterprise is custom with SAML SSO and RBAC."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://v0.app",
     "sourceUrl": "https://v0.app/pricing",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -146,24 +146,21 @@
       "ideation-discovery",
       "requirements-design"
     ],
-    "pricingModel": "freemium",
-    "badge": "Freemium",
+    "pricingModel": "paid",
+    "badge": "Paid",
     "freeTier": {
-      "available": true,
-      "limits": "Free plan: 50 AI credits/month, unlimited roadmaps, 500 feedback notes, 25 contributors"
+      "available": false,
+      "limits": "No free plan listed any more; demo-led sales"
     },
     "paidTier": {
-      "isCustomPricing": false,
-      "startingPrice": 19,
-      "currency": "USD",
-      "billingUnit": "per user / month",
-      "notes": "Plus is $19/maker/month (annual), 250 AI credits/maker; Business $59/maker/month, 500 credits; Enterprise custom, 800 credits/maker."
+      "isCustomPricing": true,
+      "notes": "Only Business and Enterprise are listed now, both quote-only with a 5-maker minimum (annual billing saves ~21%). Business includes 500 AI credits per maker/month; Enterprise 1,500 base credits plus 800 per additional maker. Credit top-ups: 50 for $5 (monthly plans) or 600 for $60/year (annual). The earlier Free and $19 Plus plans are no longer offered."
     },
     "topPick": false,
     "enterpriseReady": true,
     "officialUrl": "https://productboard.com",
     "sourceUrl": "https://productboard.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
   },
   {
@@ -192,7 +189,41 @@
     "enterpriseReady": true,
     "officialUrl": "https://dovetail.com",
     "sourceUrl": "https://dovetail.com/pricing/",
-    "lastChecked": "2026-09-26",
+    "lastChecked": "2026-10-30",
     "addedOn": "2026-09-25"
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "logoInitial": "LV",
+    "bestFor": "Turning a product idea into a working, shareable web-app prototype from a plain-English prompt",
+    "description": "An AI app builder that generates full-stack web apps from natural-language prompts, with built-in hosting, database, and GitHub sync — popular with PMs for clickable prototypes and early validation.",
+    "functions": [
+      "product-ideation"
+    ],
+    "phases": [
+      "ideation-discovery",
+      "requirements-design",
+      "build"
+    ],
+    "pricingModel": "freemium",
+    "badge": "Freemium",
+    "freeTier": {
+      "available": true,
+      "limits": "5 build credits/day (capped at 30/month), plus small monthly Cloud and AI grants"
+    },
+    "paidTier": {
+      "isCustomPricing": false,
+      "startingPrice": 25,
+      "currency": "USD",
+      "billingUnit": "per month",
+      "notes": "Pro starts at $25/mo for 100 credits ($21/mo billed annually), scaling to $2,250/mo for 10,000 credits. Business starts at $50/mo for 100 credits, adding team features. Enterprise is custom with volume-based credits."
+    },
+    "topPick": false,
+    "enterpriseReady": false,
+    "officialUrl": "https://lovable.dev",
+    "sourceUrl": "https://docs.lovable.dev/introduction/subscription-plans",
+    "lastChecked": "2026-10-30",
+    "addedOn": "2026-10-30"
   }
 ]
